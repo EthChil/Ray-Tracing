@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc libPointLight.a  CMakeFiles/PointLight.dir/PointLight.cpp.obj
+C:\MinGW\bin\ranlib.exe libPointLight.a

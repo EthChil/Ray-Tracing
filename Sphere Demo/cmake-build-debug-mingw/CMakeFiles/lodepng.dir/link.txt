@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc liblodepng.a  CMakeFiles/lodepng.dir/Libraries/lodepng.cpp.obj
+C:\MinGW\bin\ranlib.exe liblodepng.a

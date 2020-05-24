@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc libSphereObj.a  CMakeFiles/SphereObj.dir/SphereObj.cpp.obj
+C:\MinGW\bin\ranlib.exe libSphereObj.a

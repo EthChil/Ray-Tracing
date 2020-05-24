@@ -1,0 +1,4 @@
+C:\Users\ethan\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\192.6262.62\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE= -G "CodeBlocks - MinGW Makefiles" "C:\Users\ethan\Documents\GitHub\Ray-Tracing\Sphere Demo"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-default-mingw

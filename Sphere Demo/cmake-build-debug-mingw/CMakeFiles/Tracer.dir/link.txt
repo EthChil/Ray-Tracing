@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc libTracer.a  CMakeFiles/Tracer.dir/Tracer.cpp.obj
+C:\MinGW\bin\ranlib.exe libTracer.a

@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/PlaneObj.cpp
+PlaneObj.hpp
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/PlaneObj.hpp
+Tracer.hpp
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/Tracer.hpp
+cmath
+-
+iostream
+-
+
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/PlaneObj.hpp
+Tracer.hpp
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/Tracer.hpp
+
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/PointLight.hpp
+Tracer.hpp
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/Tracer.hpp
+
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/SphereObj.hpp
+Tracer.hpp
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/Tracer.hpp
+
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/Tracer.hpp
+vector
+-
+SphereObj.hpp
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/SphereObj.hpp
+PointLight.hpp
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/PointLight.hpp
+PlaneObj.hpp
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/PlaneObj.hpp
+

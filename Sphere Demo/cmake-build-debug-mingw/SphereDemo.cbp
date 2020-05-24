@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="SphereDemo"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SphereDemo">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/SphereDemo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 SphereDemo"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SphereDemo/fast">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/SphereDemo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 SphereDemo/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Tracer">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/libTracer.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 Tracer"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Tracer/fast">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/libTracer.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 Tracer/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SphereObj">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/libSphereObj.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 SphereObj"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SphereObj/fast">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/libSphereObj.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 SphereObj/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PointLight">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/libPointLight.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 PointLight"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PointLight/fast">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/libPointLight.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 PointLight/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/PointLight.cpp">
+			<Option target="PointLight"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/PointLight.hpp">
+			<Option target="PointLight"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/SphereObj.cpp">
+			<Option target="SphereObj"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/SphereObj.hpp">
+			<Option target="SphereObj"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/Tracer.cpp">
+			<Option target="Tracer"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/Tracer.hpp">
+			<Option target="Tracer"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/main.cpp">
+			<Option target="SphereDemo"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

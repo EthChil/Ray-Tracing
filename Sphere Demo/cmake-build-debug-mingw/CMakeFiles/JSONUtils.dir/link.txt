@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc libJSONUtils.a  CMakeFiles/JSONUtils.dir/Libraries/lodepng.cpp.obj
+C:\MinGW\bin\ranlib.exe libJSONUtils.a

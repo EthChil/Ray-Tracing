@@ -1,0 +1,21 @@
+C:\Users\ethan\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\192.6262.62\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\ethan\Documents\GitHub\Ray-Tracing\Sphere Demo"
+CMake Error: Could not find cmake module file: CMakeDetermineDemoCompiler.cmake
+CMake Error: Error required internal CMake variable not set, cmake may not be built correctly.
+Missing variable is:
+CMAKE_Demo_COMPILER_ENV_VAR
+CMake Error: Error required internal CMake variable not set, cmake may not be built correctly.
+Missing variable is:
+CMAKE_Demo_COMPILER
+CMake Error: Could not find cmake module file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug/CMakeFiles/3.14.5/CMakeDemoCompiler.cmake
+CMake Error at CMakeLists.txt:2 (project):
+  No CMAKE_Demo_COMPILER could be found.
+
+  Tell CMake where to find the compiler by setting the CMake cache entry
+  CMAKE_Demo_COMPILER to the full path to the compiler, or to the compiler
+  name if it is in the PATH.
+
+
+CMake Error: Could not find cmake module file: CMakeDemoInformation.cmake
+CMake Error: CMAKE_Demo_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug/CMakeFiles/CMakeOutput.log".

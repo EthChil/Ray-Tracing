@@ -1,0 +1,48 @@
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /cygdrive/c/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/WinAVR-20100110/utils/bin/make.exe cmTC_7da24/fast 
+C:/WinAVR-20100110/utils/bin/make -f CMakeFiles/cmTC_7da24.dir/build.make CMakeFiles/cmTC_7da24.dir/build
+make[1]: Entering directory `C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7da24.dir/testCXXCompiler.cxx.o
+/cygdrive/c/MinGW/bin/c++.exe     -o CMakeFiles/cmTC_7da24.dir/testCXXCompiler.cxx.o -c "/cygdrive/c/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
+c++.exe: error: /cygdrive/c/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp/testCXXCompiler.cxx: No such file or directory
+c++.exe: fatal error: no input files
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_7da24.dir/testCXXCompiler.cxx.o] Error 1
+make[1]: Leaving directory `C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp'
+make: *** [cmTC_7da24/fast] Error 2
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /cygdrive/c/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/WinAVR-20100110/utils/bin/make.exe cmTC_878bd/fast 
+C:/WinAVR-20100110/utils/bin/make -f CMakeFiles/cmTC_878bd.dir/build.make CMakeFiles/cmTC_878bd.dir/build
+make[1]: Entering directory `C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_878bd.dir/testCXXCompiler.cxx.o
+/cygdrive/c/MinGW/bin/c++.exe     -o CMakeFiles/cmTC_878bd.dir/testCXXCompiler.cxx.o -c "/cygdrive/c/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
+c++.exe: error: /cygdrive/c/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp/testCXXCompiler.cxx: No such file or directory
+c++.exe: fatal error: no input files
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_878bd.dir/testCXXCompiler.cxx.o] Error 1
+make[1]: Leaving directory `C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp'
+make: *** [cmTC_878bd/fast] Error 2
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /cygdrive/c/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/cygdrive/c/WinAVR-20100110/utils/bin/make.exe cmTC_0d4b7/fast 
+C:/WinAVR-20100110/utils/bin/make -f CMakeFiles/cmTC_0d4b7.dir/build.make CMakeFiles/cmTC_0d4b7.dir/build
+make[1]: Entering directory `C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0d4b7.dir/testCXXCompiler.cxx.o
+/cygdrive/c/MinGW/bin/c++.exe     -o CMakeFiles/cmTC_0d4b7.dir/testCXXCompiler.cxx.o -c "/cygdrive/c/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
+c++.exe: error: /cygdrive/c/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp/testCXXCompiler.cxx: No such file or directory
+c++.exe: fatal error: no input files
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_0d4b7.dir/testCXXCompiler.cxx.o] Error 1
+make[1]: Leaving directory `C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-debug-cygwin/CMakeFiles/CMakeTmp'
+make: *** [cmTC_0d4b7/fast] Error 2
+
+

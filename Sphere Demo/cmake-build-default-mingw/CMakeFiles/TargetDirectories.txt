@@ -1,0 +1,7 @@
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-default-mingw/CMakeFiles/SphereDemo.dir
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-default-mingw/CMakeFiles/Tracer.dir
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-default-mingw/CMakeFiles/rebuild_cache.dir
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-default-mingw/CMakeFiles/SphereObj.dir
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-default-mingw/CMakeFiles/PointLight.dir
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-default-mingw/CMakeFiles/PlaneObj.dir
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Sphere Demo/cmake-build-default-mingw/CMakeFiles/edit_cache.dir
