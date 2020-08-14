@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SphereDemo.dir/main.cpp.obj"
-  "SphereDemo.pdb"
   "SphereDemo.exe"
   "SphereDemo.exe.manifest"
+  "SphereDemo.pdb"
   "libSphereDemo.dll.a"
 )
 

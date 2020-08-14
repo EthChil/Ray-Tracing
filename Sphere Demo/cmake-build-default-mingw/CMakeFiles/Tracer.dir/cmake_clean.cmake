@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Tracer.dir/Tracer.cpp.obj"
-  "libTracer.pdb"
   "libTracer.a"
+  "libTracer.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

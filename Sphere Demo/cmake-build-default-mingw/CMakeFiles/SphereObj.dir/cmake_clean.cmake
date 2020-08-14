@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SphereObj.dir/SphereObj.cpp.obj"
-  "libSphereObj.pdb"
   "libSphereObj.a"
+  "libSphereObj.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

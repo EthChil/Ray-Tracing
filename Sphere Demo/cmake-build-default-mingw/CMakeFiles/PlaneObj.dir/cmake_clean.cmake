@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/PlaneObj.dir/PlaneObj.cpp.obj"
-  "libPlaneObj.pdb"
   "libPlaneObj.a"
+  "libPlaneObj.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
