@@ -1,0 +1,4 @@
+/Users/ethanchilderhose/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/ethanchilderhose/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/ethanchilderhose/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-debug/CMakeFiles/Core.dir
+/Users/ethanchilderhose/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-debug/CMakeFiles/WhittedProper.dir
