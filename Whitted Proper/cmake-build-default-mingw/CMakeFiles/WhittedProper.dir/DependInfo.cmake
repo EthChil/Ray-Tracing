@@ -14,7 +14,11 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/Core.dir/DependInfo.cmake"
+  "C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/Point.dir/DependInfo.cmake"
+  "C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/Vector.dir/DependInfo.cmake"
+  "C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/Normal.dir/DependInfo.cmake"
+  "C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/Ray.dir/DependInfo.cmake"
+  "C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/Bound.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

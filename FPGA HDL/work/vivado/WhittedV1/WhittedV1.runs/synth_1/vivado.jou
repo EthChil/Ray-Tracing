@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Oct  4 22:39:00 2020
+# Process ID: 28200
+# Current directory: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1
+# Command line: vivado.exe -log Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
+# Log file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1/Top.vds
+# Journal file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Top.tcl -notrace

@@ -78,7 +78,11 @@ WhittedProper_EXTERNAL_OBJECTS =
 
 WhittedProper.exe: CMakeFiles/WhittedProper.dir/main.cpp.obj
 WhittedProper.exe: CMakeFiles/WhittedProper.dir/build.make
-WhittedProper.exe: libCore.a
+WhittedProper.exe: libPoint.a
+WhittedProper.exe: libVector.a
+WhittedProper.exe: libNormal.a
+WhittedProper.exe: libRay.a
+WhittedProper.exe: libBound.a
 WhittedProper.exe: CMakeFiles/WhittedProper.dir/linklibs.rsp
 WhittedProper.exe: CMakeFiles/WhittedProper.dir/objects1.rsp
 WhittedProper.exe: CMakeFiles/WhittedProper.dir/link.txt

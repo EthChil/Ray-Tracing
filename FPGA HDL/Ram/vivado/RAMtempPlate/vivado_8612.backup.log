@@ -1,0 +1,85 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sat Oct  3 22:38:56 2020
+# Process ID: 8612
+# Current directory: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent576 C:\Users\ethan\Documents\GitHub\Ray-Tracing\FPGA Programs\RamAndVGATests\vivado\RAMtempPlate\RAMtempPlate.xpr
+# Log file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/vivado.log
+# Journal file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.xpr}
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate'
+INFO: [Project 1-313] Project file moved from 'C:/Users/ethan/Documents/temp/RAMtempPlate/work/vivado/RAMtempPlate' since last save.
+WARNING: [Project 1-312] File not found as 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/cores/managed_ip_project/mig.prj'; using path 'C:/Users/ethan/Documents/temp/RAMtempPlate/cores/managed_ip_project/mig.prj' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc'; using path 'C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc' instead.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-312] File not found as 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/cores/managed_ip_project/mig.prj'; using path 'C:/Users/ethan/Documents/temp/RAMtempPlate/cores/managed_ip_project/mig.prj' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc'; using path 'C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/cores/managed_ip_project/mig.prj'; using path 'C:/Users/ethan/Documents/temp/RAMtempPlate/cores/managed_ip_project/mig.prj' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc'; using path 'C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc' instead.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'I:/Xilinx/Vivado/2020.1/data/ip'.
+open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1079.926 ; gain = 0.000
+update_compile_order -fileset sources_1
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tftg256-1
+INFO: [Device 21-403] Loading part xc7a35tftg256-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1261.684 ; gain = 0.000
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/constraint/alchitry.xdc]
+Finished Parsing XDC File [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/constraint/alchitry.xdc]
+Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
+Finished Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1364.828 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:21 ; elapsed = 00:00:15 . Memory (MB): peak = 1577.160 ; gain = 497.234
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name clk_wiz_0 -dir {c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.srcs/sources_1/ip}
+set_property -dict [list CONFIG.CLKOUT2_USED {true} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {200.000} CONFIG.MMCM_CLKOUT1_DIVIDE {5} CONFIG.NUM_OUT_CLKS {2} CONFIG.CLKOUT2_JITTER {114.829} CONFIG.CLKOUT2_PHASE_ERROR {98.575}] [get_ips clk_wiz_0]
+generate_target {instantiation_template} [get_files {{c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci}}]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_0'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  {{c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci}}]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_wiz_0'...
+catch { config_ip_cache -export [get_ips -all clk_wiz_0] }
+export_ip_user_files -of_objects [get_files {{c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci}}] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] {{c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci}}]
+launch_runs clk_wiz_0_synth_1 -jobs 4
+[Sat Oct  3 22:50:47 2020] Launched clk_wiz_0_synth_1...
+Run output will be captured here: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.runs/clk_wiz_0_synth_1/runme.log
+export_simulation -of_objects [get_files {{c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci}}] -directory {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.ip_user_files/sim_scripts} -ip_user_files_dir {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.ip_user_files} -ipstatic_source_dir {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.ip_user_files/ipstatic} -lib_map_path [list {modelsim=C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.cache/compile_simlib/modelsim} {questa=C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.cache/compile_simlib/questa} {riviera=C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.cache/compile_simlib/riviera} {activehdl=C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mig_7series_0'...
+ERROR: [xilinx.com:ip:mig_7series:4.2-0] mig_7series_0: Code generation aborted: Can not read PRJ file: c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/cores/managed_ip_project/mig.prj
+CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file 'i:/Xilinx/Vivado/2020.1/data/ip/xilinx/mig_7series_v4_2/xit/synthesis.xit': 
+ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
+ERROR: [IP_Flow 19-3505] IP Generation error: Failed to generate IP 'mig_7series_0'. Failed to generate 'Synthesis' outputs: 
+ERROR: [IP_Flow 19-98] Generation of the IP CORE failed.
+Failed to generate IP 'mig_7series_0'. Failed to generate 'Synthesis' outputs: 
+close_design
+launch_runs synth_1 -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate/RAMtempPlate.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci' is already up-to-date
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mig_7series_0'...
+ERROR: [xilinx.com:ip:mig_7series:4.2-0] mig_7series_0: Code generation aborted: Can not read PRJ file: c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/cores/managed_ip_project/mig.prj
+CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file 'i:/Xilinx/Vivado/2020.1/data/ip/xilinx/mig_7series_v4_2/xit/synthesis.xit': 
+ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
+ERROR: [IP_Flow 19-3505] IP Generation error: Failed to generate IP 'mig_7series_0'. Failed to generate 'Synthesis' outputs: 
+ERROR: [IP_Flow 19-98] Generation of the IP CORE failed.
+Failed to generate IP 'mig_7series_0'. Failed to generate 'Synthesis' outputs: 
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Oct  4 00:38:44 2020...

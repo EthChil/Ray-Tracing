@@ -3,10 +3,6 @@
 //
 
 /*
- * TODO: Add vector classes
- * TODO: Add ray classes
- */
-
 #include "Core.hpp"
 #include <iostream>
 
@@ -87,3 +83,4 @@ std::ostream& operator<<(std::ostream &os, const Ray &r) {
     return os;
 }
 
+/**/

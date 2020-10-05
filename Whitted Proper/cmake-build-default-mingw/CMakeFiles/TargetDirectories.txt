@@ -1,4 +1,8 @@
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/Normal.dir
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/Vector.dir
 C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/WhittedProper.dir
-C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/Core.dir
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/Point.dir
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/Ray.dir
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/Bound.dir
 C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/edit_cache.dir
 C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/CMakeFiles/rebuild_cache.dir

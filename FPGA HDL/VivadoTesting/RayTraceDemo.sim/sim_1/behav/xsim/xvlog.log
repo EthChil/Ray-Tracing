@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/ip/dist_mem_gen_0/sim/dist_mem_gen_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dist_mem_gen_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/VGAHandler.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGAHandler
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sim_1/new/top_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_TB

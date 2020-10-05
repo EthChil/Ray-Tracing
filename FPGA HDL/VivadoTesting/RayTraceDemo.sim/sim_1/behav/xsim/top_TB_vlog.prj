@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../RayTraceDemo.srcs/sources_1/ip/dist_mem_gen_0/sim/dist_mem_gen_0.v" \
+"../../../../RayTraceDemo.srcs/sources_1/new/VGAHandler.v" \
+"../../../../RayTraceDemo.srcs/sources_1/new/top.v" \
+"../../../../RayTraceDemo.srcs/sim_1/new/top_TB.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

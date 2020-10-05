@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [VGA Buddy.PrjPcb]
+   Generated File[Rev1.TXT]
+   Generated File[Rev1.LDP]
+   Generated File[Rev1.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 10:56:25 PM On 9/28/2020

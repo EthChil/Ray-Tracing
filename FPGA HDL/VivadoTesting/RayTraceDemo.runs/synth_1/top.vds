@@ -1,0 +1,468 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sat Oct  3 21:37:09 2020
+# Process ID: 7380
+# Current directory: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.runs/synth_1/top.vds
+# Journal file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: synth_design -top top -part xc7a35tftg256-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tftg256-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 2448
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module mig_7series_0 [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.runs/synth_1/.Xil/Vivado-7380-Tony-Maloney/realtime/mig_7series_0_stub.v:5]
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module mig_7series_0 [C:/Users/ethan/Documents/temp/thing/cores/ip_user_files/ip/mig_7series_0/mig_7series_0_stub.v:16]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1080.691 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:27]
+	Parameter IDLE bound to: 3'b000 
+	Parameter WRITE bound to: 3'b001 
+	Parameter WRITE_DONE bound to: 3'b010 
+	Parameter READ bound to: 3'b011 
+	Parameter READ_DONE bound to: 3'b100 
+	Parameter PARK bound to: 3'b101 
+	Parameter CMD_WRITE bound to: 3'b000 
+	Parameter CMD_READ bound to: 3'b001 
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:105]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.runs/synth_1/.Xil/Vivado-7380-Tony-Maloney/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.runs/synth_1/.Xil/Vivado-7380-Tony-Maloney/realtime/clk_wiz_0_stub.v:5]
+WARNING: [Synth 8-7071] port 'clk_out1' of module 'clk_wiz_0' is unconnected for instance 'wiz' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:105]
+WARNING: [Synth 8-7071] port 'clk_out2' of module 'clk_wiz_0' is unconnected for instance 'wiz' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:105]
+WARNING: [Synth 8-7071] port 'reset' of module 'clk_wiz_0' is unconnected for instance 'wiz' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:105]
+WARNING: [Synth 8-7071] port 'locked' of module 'clk_wiz_0' is unconnected for instance 'wiz' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:105]
+WARNING: [Synth 8-7071] port 'clk_in1' of module 'clk_wiz_0' is unconnected for instance 'wiz' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:105]
+WARNING: [Synth 8-7023] instance 'wiz' of module 'clk_wiz_0' has 5 connections declared, but only 0 given [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:105]
+WARNING: [Synth 8-6104] Input port 'reset' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:107]
+WARNING: [Synth 8-6104] Input port 'clk_in1' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:108]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [C:/Users/ethan/Documents/temp/thing/cores/ip_user_files/ip/mig_7series_0/mig_7series_0_stub.v:16]
+WARNING: [Synth 8-7071] port 'ddr3_dq' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_dqs_n' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_dqs_p' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_addr' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_ba' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_ras_n' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_cas_n' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_we_n' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_reset_n' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_ck_p' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_ck_n' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_cke' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_cs_n' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_dm' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ddr3_odt' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'sys_clk_i' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'clk_ref_i' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_addr' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_cmd' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_en' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_wdf_data' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_wdf_end' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_wdf_mask' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_wdf_wren' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_rd_data' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_rd_data_end' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_rd_data_valid' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_rdy' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_wdf_rdy' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_sr_req' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_ref_req' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_zq_req' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_sr_active' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_ref_ack' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'app_zq_ack' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ui_clk' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'ui_clk_sync_rst' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'init_calib_complete' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'device_temp' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7071] port 'sys_rst' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-7023] instance 'mig' of module 'mig_7series_0' has 40 connections declared, but only 0 given [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:111]
+WARNING: [Synth 8-6104] Input port 'app_addr' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:131]
+WARNING: [Synth 8-6104] Input port 'app_cmd' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:132]
+WARNING: [Synth 8-6104] Input port 'app_en' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:133]
+WARNING: [Synth 8-6104] Input port 'app_wdf_data' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:134]
+WARNING: [Synth 8-6104] Input port 'app_wdf_end' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:135]
+WARNING: [Synth 8-6104] Input port 'app_wdf_wren' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:136]
+WARNING: [Synth 8-6104] Input port 'app_sr_req' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:142]
+WARNING: [Synth 8-6104] Input port 'app_ref_req' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:143]
+WARNING: [Synth 8-6104] Input port 'app_zq_req' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:144]
+WARNING: [Synth 8-6104] Input port 'app_wdf_mask' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:150]
+WARNING: [Synth 8-6104] Input port 'sys_clk_i' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:155]
+WARNING: [Synth 8-6104] Input port 'sys_rst' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:159]
+INFO: [Synth 8-6155] done synthesizing module 'top' (2#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v:27]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1105.285 ; gain = 24.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1105.285 ; gain = 24.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1105.285 ; gain = 24.594
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1105.285 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/ethan/Documents/temp/thing/cores/managed_ip_project/managed_ip_project.runs/mig_7series_0_synth_1/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'mig'
+WARNING: [Vivado 12-584] No ports matched ''. [C:/Users/ethan/Documents/temp/thing/cores/managed_ip_project/managed_ip_project.runs/mig_7series_0_synth_1/mig_7series_0/mig_7series_0_in_context.xdc:2]
+Finished Parsing XDC File [C:/Users/ethan/Documents/temp/thing/cores/managed_ip_project/managed_ip_project.runs/mig_7series_0_synth_1/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'mig'
+Parsing XDC File [c:/Users/ethan/Documents/temp/thing/cores/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'mig'
+WARNING: [Constraints 18-619] A clock with name 'mig/ui_clk' already exists, overwriting the previous clock with the same name. [c:/Users/ethan/Documents/temp/thing/cores/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc:1]
+WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/ethan/Documents/temp/thing/cores/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc:2]
+Finished Parsing XDC File [c:/Users/ethan/Documents/temp/thing/cores/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'mig'
+Parsing XDC File [c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'wiz'
+WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc:1]
+WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc:4]
+WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc:6]
+Finished Parsing XDC File [c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'wiz'
+Parsing XDC File [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/constrs_1/new/topCons.xdc]
+WARNING: [Vivado 12-508] No pins matched 'mig/u_mig_7series_0_mig/u_ddr3_infrastructure/plle2_i/CLKIN1'. [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/constrs_1/new/topCons.xdc:27]
+Finished Parsing XDC File [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/constrs_1/new/topCons.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/constrs_1/new/topCons.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/constrs_1/new/topCons.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1224.402 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1224.402 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1224.402 ; gain = 143.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tftg256-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1224.402 ; gain = 143.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for mig. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for wiz. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1224.402 ; gain = 143.711
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                           000001 |                              000
+                   WRITE |                           000010 |                              001
+              WRITE_DONE |                           000100 |                              010
+                    READ |                           001000 |                              011
+               READ_DONE |                           010000 |                              100
+                    PARK |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1224.402 ; gain = 143.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 1     
++---Registers : 
+	              128 Bit    Registers := 2     
+	               28 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   6 Input    1 Bit        Muxes := 9     
+	   2 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1224.402 ; gain = 143.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-565] redefining clock 'mig/ui_clk'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'wiz/clk_in1' to pin 'clk'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'wiz/clk_in1' to 'i_0/por_counter_reg[0]/C'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'wiz/clk_in1' to 'i_0/por_counter_reg[0]/C'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1224.402 ; gain = 143.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1224.402 ; gain = 143.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 1224.402 ; gain = 143.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin clk_out2_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin wiz:reset to constant 0
+WARNING: [Synth 8-3295] tying undriven pin wiz:clk_in1 to constant 0
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin sys_clk_i
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin clk_ref_i
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[27]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[26]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[25]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[24]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[23]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[22]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[21]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[20]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[19]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[18]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[17]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[16]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_addr[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_cmd[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_cmd[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_cmd[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_en
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[127]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[126]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[125]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[124]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[123]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[122]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[121]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[120]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[119]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[118]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[117]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[116]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[115]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[114]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[113]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[112]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[111]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[110]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[109]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[108]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[107]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[106]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[105]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[104]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[103]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[102]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[101]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[100]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[99]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[98]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[97]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[96]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[95]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[94]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[93]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[92]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[91]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[90]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[89]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[88]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[87]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[86]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[85]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[84]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[83]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[82]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[81]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[80]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[79]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[78]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[77]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[76]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[75]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[74]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[73]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[72]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[71]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[70]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[69]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[68]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[67]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[66]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[65]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[64]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[63]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module mig has unconnected pin app_wdf_data[62]
+INFO: [Common 17-14] Message 'Synth 8-4442' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_addr_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_ba_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_ba_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_ba_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_ras_n_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_cas_n_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_we_n_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_reset_n_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_ck_p_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_ck_n_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_cke_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_cs_n_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_dm_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_dm_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ddr3_odt_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin app_rd_data_end_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin app_sr_active_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin app_ref_ack_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin app_zq_ack_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ui_clk_inferred:in0 to constant 0
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1227.930 ; gain = 147.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1227.930 ; gain = 147.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1227.930 ; gain = 147.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1227.930 ; gain = 147.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1227.930 ; gain = 147.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1227.930 ; gain = 147.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |mig_7series_0 |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-------------------+------+
+|      |Cell               |Count |
++------+-------------------+------+
+|1     |mig_7series_0_bbox |     1|
+|2     |BUFG               |     1|
+|3     |LUT1               |   194|
+|4     |LUT2               |     2|
+|5     |LUT3               |     2|
+|6     |LUT4               |     2|
+|7     |LUT5               |     4|
+|8     |LUT6               |     2|
+|9     |FDRE               |   167|
+|10    |IBUF               |    21|
+|11    |OBUF               |     3|
+|12    |OBUFT              |    28|
++------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1227.930 ; gain = 147.238
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 184 critical warnings and 37 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:30 . Memory (MB): peak = 1227.930 ; gain = 28.121
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1227.930 ; gain = 147.238
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1227.930 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1240.988 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+25 Infos, 108 Warnings, 102 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:43 . Memory (MB): peak = 1240.988 ; gain = 160.297
+INFO: [Common 17-1381] The checkpoint 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Oct  3 21:38:02 2020...

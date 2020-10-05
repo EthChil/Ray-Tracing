@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Oct  4 00:45:07 2020
+# Process ID: 9524
+# Current directory: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7540 C:\Users\ethan\Documents\GitHub\Ray-Tracing\FPGA HDL\Ram\vivado\RAMtempPlate\RAMtempPlate.xpr
+# Log file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate/vivado.log
+# Journal file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate/RAMtempPlate.xpr}
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+update_files -from_files C:/Users/ethan/Documents/temp/thing/cores/mig_7series_0/mig_7series_0/mig.prj -to_files {{C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/cores/managed_ip_project/mig.prj}} -filesets [get_filesets *]
+launch_runs synth_1 -jobs 4
+update_files -from_files C:/Users/ethan/Documents/temp/RAMtempPlate/cores/mig_7series_0/mig_7series_0/mig.prj -to_files C:/Users/ethan/Documents/temp/thing/cores/mig_7series_0/mig_7series_0/mig.prj -filesets [get_filesets *]
+launch_runs synth_1 -jobs 4
+update_files -from_files {{C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/cores/managed_ip_project/mig.prj}} -to_files C:/Users/ethan/Documents/temp/RAMtempPlate/cores/managed_ip_project/mig.prj -filesets [get_filesets *]
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1

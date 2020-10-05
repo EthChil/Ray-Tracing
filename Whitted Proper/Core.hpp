@@ -2,10 +2,12 @@
 // Created by ethan on 8/14/2020.
 //
 
+/*
 #ifndef SPHEREDEMO_CORE_HPP
 #define SPHEREDEMO_CORE_HPP
 
 #include <limits>
+#include <cmath>
 
 using namespace std;
 
@@ -45,6 +47,10 @@ public:
 
     Point3<T> operator+(const Vector3<T> &v) const {
         return Point3<T>(x + v.x, y + v.y, z + v.z);
+    }
+
+    Vector3<T> operator-(const Point3<T> &p) const {
+        return Vector3<T>(x - p.x, y - p.y, z - p.z);
     }
 
     bool HasNaNs() const {
@@ -150,6 +156,10 @@ public:
     Vector3<T> operator/(T s){
         Assert(s != 0);
         return Vector3<T>(x / s, y / s, z / s);
+    }
+
+    Vector3<T> operator-(const Vector3<T> &v) const {
+        return Vector3<T>(x - v.x, y - v.y, z - v.z);
     }
 
     float mag() const {
@@ -269,8 +279,37 @@ public:
         return (o.HasNaNs() || d.HasNaNs() || isnan(tMax));
     }
 
+
+};
+
+//Used to handle antialiasing, casts additional rays which are averaged
+class RayDifferential : public Ray {
+    bool hasDifferentials;
+    Point3f rxOrigin, ryOrigin;
+    Vector3f rxDirection, ryDirection;
+
+    RayDifferential() {hasDifferentials = false;}
+    RayDifferential(const Point3f &o, const Vector3f &d, float tMax = Infinity, float time = 0.f, const Medium *medium = nullptr):
+    Ray(o, d, tMax, time, medium) {
+        hasDifferentials = false;
+    }
+    RayDifferential(const Ray &r) : Ray(r){
+        hasDifferentials = false;
+    }
+    bool HasNaNs() const {
+        return Ray::HasNaNs() ||
+        (hasDifferentials && (rxDirection.HasNaNs() || ryDirection.HasNaNs() || rxOrigin.HasNaNs() || ryOrigin.HasNaNs()));
+    }
+    void ScaleDifferentials(float s) {
+        rxOrigin = o + (rxOrigin - o) * s;
+        ryOrigin = o + (ryOrigin - o) * s;
+        rxDirection = d + (rxDirection - d) * s;
+        ryDirection = d + (ryDirection - d) * s;
+    }
 };
 
 
 
 #endif //SPHEREDEMO_CORE_HPP
+
+/**/

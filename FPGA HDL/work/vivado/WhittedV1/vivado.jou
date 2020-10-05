@@ -1,0 +1,205 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Oct  4 01:12:47 2020
+# Process ID: 20780
+# Current directory: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10500 C:\Users\ethan\Documents\GitHub\Ray-Tracing\FPGA HDL\work\vivado\WhittedV1\WhittedV1.xpr
+# Log file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/vivado.log
+# Journal file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.xpr}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name clk_wiz_0 -dir {c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip}
+set_property -dict [list CONFIG.CLKOUT2_USED {true} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {200.000} CONFIG.MMCM_CLKOUT1_DIVIDE {5} CONFIG.NUM_OUT_CLKS {2} CONFIG.CLKOUT2_JITTER {114.829} CONFIG.CLKOUT2_PHASE_ERROR {98.575}] [get_ips clk_wiz_0]
+generate_target {instantiation_template} [get_files {{c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci}}]
+update_compile_order -fileset sources_1
+generate_target all [get_files  {{c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci}}]
+catch { config_ip_cache -export [get_ips -all clk_wiz_0] }
+export_ip_user_files -of_objects [get_files {{c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci}}] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] {{c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci}}]
+launch_runs clk_wiz_0_synth_1 -jobs 4
+wait_on_run clk_wiz_0_synth_1
+export_simulation -of_objects [get_files {{c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci}}] -directory {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.ip_user_files/sim_scripts} -ip_user_files_dir {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.ip_user_files} -ipstatic_source_dir {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.ip_user_files/ipstatic} -lib_map_path [list {modelsim=C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.cache/compile_simlib/modelsim} {questa=C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.cache/compile_simlib/questa} {riviera=C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.cache/compile_simlib/riviera} {activehdl=C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run synth_1 -name synth_1
+close_design
+synth_design -rtl -name rtl_1
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+report_methodology -name ultrafast_methodology_1 -checks {ULMTCS-2 ULMTCS-1 XDCH-2 XDCH-1 XDCC-8 XDCC-7 XDCC-6 XDCC-5 XDCC-4 XDCC-3 XDCC-2 XDCC-1 XDCB-6 XDCB-5 XDCB-4 XDCB-3 XDCB-2 XDCB-1 CLKC-77 CLKC-76 CLKC-54 CLKC-53 CLKC-78 CLKC-9 CLKC-5 CLKC-38 CLKC-37 CLKC-36 CLKC-35 CLKC-4 CLKC-18 CLKC-3 CLKC-2 CLKC-1 HPDR-1 RRRS-1 RROR-1 ROAS-1 RMOR-1 RMIR-1 RFTL-1 RFRC-1 RFRA-1 RFFI-1 RFFH-1 RFCF-1 RCCL-1 RCBG-1 RAMP-1 RAMF-1 RAMD-1 RAKN-1}
+refresh_design
+open_run synth_1 -name synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_design
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_example_project -force -dir C:/Users/ethan/Documents/temp [get_ips  mig_7series_0]
+open_example_project -force -dir {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado} [get_ips  mig_7series_0]
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+refresh_design
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+report_methodology -name ultrafast_methodology_1 -checks {ULMTCS-2 ULMTCS-1 XDCH-2 XDCH-1 XDCC-8 XDCC-7 XDCC-6 XDCC-5 XDCC-4 XDCC-3 XDCC-2 XDCC-1 XDCB-6 XDCB-5 XDCB-4 XDCB-3 XDCB-2 XDCB-1 CLKC-77 CLKC-76 CLKC-54 CLKC-53 CLKC-78 CLKC-9 CLKC-5 CLKC-38 CLKC-37 CLKC-36 CLKC-35 CLKC-4 CLKC-18 CLKC-3 CLKC-2 CLKC-1 HPDR-1 RRRS-1 RROR-1 ROAS-1 RMOR-1 RMIR-1 RFTL-1 RFRC-1 RFRA-1 RFFI-1 RFFH-1 RFCF-1 RCCL-1 RCBG-1 RAMP-1 RAMF-1 RAMD-1 RAKN-1}
+open_run synth_1 -name synth_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+refresh_design
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+current_design rtl_1
+current_design synth_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+refresh_design
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+refresh_design
+startgroup
+route_design -physical_nets
+select_objects [get_nets mig/u_mig_7series_0_mig/u_iodelay_ctrl/lopt]
+endgroup
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+current_design rtl_1
+refresh_design
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+refresh_design
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+close_design
+open_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+refresh_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+refresh_design
+set_property target_constrs_file {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/constraint/alchitry.xdc} [current_fileset -constrset]
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+refresh_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+refresh_design
+current_design synth_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+refresh_design
+launch_simulation
+source au_top_0.tcl
+file mkdir C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sim_1/new
+file mkdir C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sim_1/new
+file mkdir C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sim_1/new
+file mkdir C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sim_1/new
+file mkdir C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+file mkdir C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sim_1/new
+file mkdir {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sim_1/new}
+close [ open {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sim_1/new/topTB.v} w ]
+add_files -fileset sim_1 {{C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sim_1/new/topTB.v}}
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top topTB [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+launch_simulation
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+launch_simulation
+close_sim

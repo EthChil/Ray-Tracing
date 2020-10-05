@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.sim/sim_1/synth/func/xsim/top_TB_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sim_1/new/top_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_TB

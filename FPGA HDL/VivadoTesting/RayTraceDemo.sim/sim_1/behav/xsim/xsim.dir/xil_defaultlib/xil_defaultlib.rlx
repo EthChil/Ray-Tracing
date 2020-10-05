@@ -1,0 +1,9 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sim_1/new/top_TB.v,1601173360,verilog,,,,top_TB,,,,,,,,
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/ip/dist_mem_gen_0/sim/dist_mem_gen_0.v,1601156798,verilog,,C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/VGAHandler.v,,dist_mem_gen_0,,,,,,,,
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/VGAHandler.v,1601156994,verilog,,C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v,,VGAHandler,,,,,,,,
+C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sources_1/new/top.v,1601175454,verilog,,C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RayTraceDemo/RayTraceDemo.srcs/sim_1/new/top_TB.v,,top,,,,,,,,

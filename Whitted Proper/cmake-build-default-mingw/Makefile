@@ -110,6 +110,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named Normal
+
+# Build rule for target.
+Normal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Normal
+.PHONY : Normal
+
+# fast build rule for target.
+Normal/fast:
+	$(MAKE) -f CMakeFiles\Normal.dir\build.make CMakeFiles/Normal.dir/build
+.PHONY : Normal/fast
+
+#=============================================================================
+# Target rules for targets named Vector
+
+# Build rule for target.
+Vector: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Vector
+.PHONY : Vector
+
+# fast build rule for target.
+Vector/fast:
+	$(MAKE) -f CMakeFiles\Vector.dir\build.make CMakeFiles/Vector.dir/build
+.PHONY : Vector/fast
+
+#=============================================================================
 # Target rules for targets named WhittedProper
 
 # Build rule for target.
@@ -123,44 +149,178 @@ WhittedProper/fast:
 .PHONY : WhittedProper/fast
 
 #=============================================================================
-# Target rules for targets named Core
+# Target rules for targets named Point
 
 # Build rule for target.
-Core: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 Core
-.PHONY : Core
+Point: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Point
+.PHONY : Point
 
 # fast build rule for target.
-Core/fast:
-	$(MAKE) -f CMakeFiles\Core.dir\build.make CMakeFiles/Core.dir/build
-.PHONY : Core/fast
+Point/fast:
+	$(MAKE) -f CMakeFiles\Point.dir\build.make CMakeFiles/Point.dir/build
+.PHONY : Point/fast
 
-Core.obj: Core.cpp.obj
+#=============================================================================
+# Target rules for targets named Ray
 
-.PHONY : Core.obj
+# Build rule for target.
+Ray: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Ray
+.PHONY : Ray
+
+# fast build rule for target.
+Ray/fast:
+	$(MAKE) -f CMakeFiles\Ray.dir\build.make CMakeFiles/Ray.dir/build
+.PHONY : Ray/fast
+
+#=============================================================================
+# Target rules for targets named Bound
+
+# Build rule for target.
+Bound: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Bound
+.PHONY : Bound
+
+# fast build rule for target.
+Bound/fast:
+	$(MAKE) -f CMakeFiles\Bound.dir\build.make CMakeFiles/Bound.dir/build
+.PHONY : Bound/fast
+
+Core/Bound.obj: Core/Bound.cpp.obj
+
+.PHONY : Core/Bound.obj
 
 # target to build an object file
-Core.cpp.obj:
-	$(MAKE) -f CMakeFiles\Core.dir\build.make CMakeFiles/Core.dir/Core.cpp.obj
-.PHONY : Core.cpp.obj
+Core/Bound.cpp.obj:
+	$(MAKE) -f CMakeFiles\Bound.dir\build.make CMakeFiles/Bound.dir/Core/Bound.cpp.obj
+.PHONY : Core/Bound.cpp.obj
 
-Core.i: Core.cpp.i
+Core/Bound.i: Core/Bound.cpp.i
 
-.PHONY : Core.i
+.PHONY : Core/Bound.i
 
 # target to preprocess a source file
-Core.cpp.i:
-	$(MAKE) -f CMakeFiles\Core.dir\build.make CMakeFiles/Core.dir/Core.cpp.i
-.PHONY : Core.cpp.i
+Core/Bound.cpp.i:
+	$(MAKE) -f CMakeFiles\Bound.dir\build.make CMakeFiles/Bound.dir/Core/Bound.cpp.i
+.PHONY : Core/Bound.cpp.i
 
-Core.s: Core.cpp.s
+Core/Bound.s: Core/Bound.cpp.s
 
-.PHONY : Core.s
+.PHONY : Core/Bound.s
 
 # target to generate assembly for a file
-Core.cpp.s:
-	$(MAKE) -f CMakeFiles\Core.dir\build.make CMakeFiles/Core.dir/Core.cpp.s
-.PHONY : Core.cpp.s
+Core/Bound.cpp.s:
+	$(MAKE) -f CMakeFiles\Bound.dir\build.make CMakeFiles/Bound.dir/Core/Bound.cpp.s
+.PHONY : Core/Bound.cpp.s
+
+Core/Normal.obj: Core/Normal.cpp.obj
+
+.PHONY : Core/Normal.obj
+
+# target to build an object file
+Core/Normal.cpp.obj:
+	$(MAKE) -f CMakeFiles\Normal.dir\build.make CMakeFiles/Normal.dir/Core/Normal.cpp.obj
+.PHONY : Core/Normal.cpp.obj
+
+Core/Normal.i: Core/Normal.cpp.i
+
+.PHONY : Core/Normal.i
+
+# target to preprocess a source file
+Core/Normal.cpp.i:
+	$(MAKE) -f CMakeFiles\Normal.dir\build.make CMakeFiles/Normal.dir/Core/Normal.cpp.i
+.PHONY : Core/Normal.cpp.i
+
+Core/Normal.s: Core/Normal.cpp.s
+
+.PHONY : Core/Normal.s
+
+# target to generate assembly for a file
+Core/Normal.cpp.s:
+	$(MAKE) -f CMakeFiles\Normal.dir\build.make CMakeFiles/Normal.dir/Core/Normal.cpp.s
+.PHONY : Core/Normal.cpp.s
+
+Core/Point.obj: Core/Point.cpp.obj
+
+.PHONY : Core/Point.obj
+
+# target to build an object file
+Core/Point.cpp.obj:
+	$(MAKE) -f CMakeFiles\Point.dir\build.make CMakeFiles/Point.dir/Core/Point.cpp.obj
+.PHONY : Core/Point.cpp.obj
+
+Core/Point.i: Core/Point.cpp.i
+
+.PHONY : Core/Point.i
+
+# target to preprocess a source file
+Core/Point.cpp.i:
+	$(MAKE) -f CMakeFiles\Point.dir\build.make CMakeFiles/Point.dir/Core/Point.cpp.i
+.PHONY : Core/Point.cpp.i
+
+Core/Point.s: Core/Point.cpp.s
+
+.PHONY : Core/Point.s
+
+# target to generate assembly for a file
+Core/Point.cpp.s:
+	$(MAKE) -f CMakeFiles\Point.dir\build.make CMakeFiles/Point.dir/Core/Point.cpp.s
+.PHONY : Core/Point.cpp.s
+
+Core/Ray.obj: Core/Ray.cpp.obj
+
+.PHONY : Core/Ray.obj
+
+# target to build an object file
+Core/Ray.cpp.obj:
+	$(MAKE) -f CMakeFiles\Ray.dir\build.make CMakeFiles/Ray.dir/Core/Ray.cpp.obj
+.PHONY : Core/Ray.cpp.obj
+
+Core/Ray.i: Core/Ray.cpp.i
+
+.PHONY : Core/Ray.i
+
+# target to preprocess a source file
+Core/Ray.cpp.i:
+	$(MAKE) -f CMakeFiles\Ray.dir\build.make CMakeFiles/Ray.dir/Core/Ray.cpp.i
+.PHONY : Core/Ray.cpp.i
+
+Core/Ray.s: Core/Ray.cpp.s
+
+.PHONY : Core/Ray.s
+
+# target to generate assembly for a file
+Core/Ray.cpp.s:
+	$(MAKE) -f CMakeFiles\Ray.dir\build.make CMakeFiles/Ray.dir/Core/Ray.cpp.s
+.PHONY : Core/Ray.cpp.s
+
+Core/Vector.obj: Core/Vector.cpp.obj
+
+.PHONY : Core/Vector.obj
+
+# target to build an object file
+Core/Vector.cpp.obj:
+	$(MAKE) -f CMakeFiles\Vector.dir\build.make CMakeFiles/Vector.dir/Core/Vector.cpp.obj
+.PHONY : Core/Vector.cpp.obj
+
+Core/Vector.i: Core/Vector.cpp.i
+
+.PHONY : Core/Vector.i
+
+# target to preprocess a source file
+Core/Vector.cpp.i:
+	$(MAKE) -f CMakeFiles\Vector.dir\build.make CMakeFiles/Vector.dir/Core/Vector.cpp.i
+.PHONY : Core/Vector.cpp.i
+
+Core/Vector.s: Core/Vector.cpp.s
+
+.PHONY : Core/Vector.s
+
+# target to generate assembly for a file
+Core/Vector.cpp.s:
+	$(MAKE) -f CMakeFiles\Vector.dir\build.make CMakeFiles/Vector.dir/Core/Vector.cpp.s
+.PHONY : Core/Vector.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -195,13 +355,29 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
+	@echo ... Normal
+	@echo ... Vector
 	@echo ... WhittedProper
-	@echo ... Core
+	@echo ... Point
+	@echo ... Ray
+	@echo ... Bound
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Core.obj
-	@echo ... Core.i
-	@echo ... Core.s
+	@echo ... Core/Bound.obj
+	@echo ... Core/Bound.i
+	@echo ... Core/Bound.s
+	@echo ... Core/Normal.obj
+	@echo ... Core/Normal.i
+	@echo ... Core/Normal.s
+	@echo ... Core/Point.obj
+	@echo ... Core/Point.i
+	@echo ... Core/Point.s
+	@echo ... Core/Ray.obj
+	@echo ... Core/Ray.i
+	@echo ... Core/Ray.s
+	@echo ... Core/Vector.obj
+	@echo ... Core/Vector.i
+	@echo ... Core/Vector.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

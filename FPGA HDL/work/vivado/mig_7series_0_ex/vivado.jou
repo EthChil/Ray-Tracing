@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Oct  4 02:08:55 2020
+# Process ID: 12708
+# Current directory: c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/mig_7series_0_ex
+# Command line: vivado.exe -notrace -source c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/mig_7series_0/mig_7series_0_ex.tcl
+# Log file: c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/mig_7series_0_ex/vivado.log
+# Journal file: c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/mig_7series_0_ex\vivado.jou
+#-----------------------------------------------------------
+start_gui
+source {c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/mig_7series_0/mig_7series_0_ex.tcl} -notrace

@@ -1,0 +1,64 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Oct  4 00:45:07 2020
+# Process ID: 9524
+# Current directory: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7540 C:\Users\ethan\Documents\GitHub\Ray-Tracing\FPGA HDL\Ram\vivado\RAMtempPlate\RAMtempPlate.xpr
+# Log file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate/vivado.log
+# Journal file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate/RAMtempPlate.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/RamAndVGATests/vivado/RAMtempPlate' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/cores/managed_ip_project/mig.prj', nor could it be found using path 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA Programs/cores/managed_ip_project/mig.prj'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'I:/Xilinx/Vivado/2020.1/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 1073.297 ; gain = 0.000
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate/RAMtempPlate.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci' is already up-to-date
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mig_7series_0'...
+ERROR: [xilinx.com:ip:mig_7series:4.2-0] mig_7series_0: Code generation aborted: Can not read PRJ file: c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/cores/managed_ip_project/mig.prj
+CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file 'i:/Xilinx/Vivado/2020.1/data/ip/xilinx/mig_7series_v4_2/xit/synthesis.xit': 
+ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
+ERROR: [IP_Flow 19-3505] IP Generation error: Failed to generate IP 'mig_7series_0'. Failed to generate 'Synthesis' outputs: 
+ERROR: [IP_Flow 19-98] Generation of the IP CORE failed.
+Failed to generate IP 'mig_7series_0'. Failed to generate 'Synthesis' outputs: 
+update_files -from_files C:/Users/ethan/Documents/temp/thing/cores/mig_7series_0/mig_7series_0/mig.prj -to_files {{C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/cores/managed_ip_project/mig.prj}} -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/cores/managed_ip_project/mig.prj' with file 'C:/Users/ethan/Documents/temp/thing/cores/mig_7series_0/mig_7series_0/mig.prj'.
+launch_runs synth_1 -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate/RAMtempPlate.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci' is already up-to-date
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mig_7series_0'...
+ERROR: [xilinx.com:ip:mig_7series:4.2-0] mig_7series_0: Code generation aborted: Can not read PRJ file: c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/cores/managed_ip_project/mig.prj
+CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file 'i:/Xilinx/Vivado/2020.1/data/ip/xilinx/mig_7series_v4_2/xit/synthesis.xit': 
+ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
+ERROR: [IP_Flow 19-3505] IP Generation error: Failed to generate IP 'mig_7series_0'. Failed to generate 'Synthesis' outputs: 
+ERROR: [IP_Flow 19-98] Generation of the IP CORE failed.
+Failed to generate IP 'mig_7series_0'. Failed to generate 'Synthesis' outputs: 
+update_files -from_files C:/Users/ethan/Documents/temp/RAMtempPlate/cores/mig_7series_0/mig_7series_0/mig.prj -to_files C:/Users/ethan/Documents/temp/thing/cores/mig_7series_0/mig_7series_0/mig.prj -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file 'C:/Users/ethan/Documents/temp/thing/cores/mig_7series_0/mig_7series_0/mig.prj' with file 'C:/Users/ethan/Documents/temp/RAMtempPlate/cores/mig_7series_0/mig_7series_0/mig.prj'.
+launch_runs synth_1 -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate/RAMtempPlate.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci' is already up-to-date
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mig_7series_0'...
+ERROR: [xilinx.com:ip:mig_7series:4.2-0] mig_7series_0: Code generation aborted: Can not read PRJ file: c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/cores/managed_ip_project/mig.prj
+CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file 'i:/Xilinx/Vivado/2020.1/data/ip/xilinx/mig_7series_v4_2/xit/synthesis.xit': 
+ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
+ERROR: [IP_Flow 19-3505] IP Generation error: Failed to generate IP 'mig_7series_0'. Failed to generate 'Synthesis' outputs: 
+ERROR: [IP_Flow 19-98] Generation of the IP CORE failed.
+Failed to generate IP 'mig_7series_0'. Failed to generate 'Synthesis' outputs: 
+update_files -from_files {{C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/cores/managed_ip_project/mig.prj}} -to_files C:/Users/ethan/Documents/temp/RAMtempPlate/cores/managed_ip_project/mig.prj -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file 'C:/Users/ethan/Documents/temp/RAMtempPlate/cores/managed_ip_project/mig.prj' with file 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/cores/managed_ip_project/mig.prj'.
+launch_runs synth_1 -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate/RAMtempPlate.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci' is already up-to-date
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mig_7series_0'...
+INFO: [IP_Flow 19-1706] Not generating 'Implementation' target for IP 'mig_7series_0'. Target already exists and is up to date.
+[Sun Oct  4 00:56:36 2020] Launched synth_1...
+Run output will be captured here: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/Ram/vivado/RAMtempPlate/RAMtempPlate.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1233.246 ; gain = 159.949
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Oct  4 01:12:44 2020...

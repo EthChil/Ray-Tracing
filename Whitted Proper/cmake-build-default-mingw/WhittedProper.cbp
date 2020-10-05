@@ -17,6 +17,90 @@
 					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="Normal">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/libNormal.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 Normal"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Normal/fast">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/libNormal.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 Normal/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Vector">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/libVector.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 Vector"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Vector/fast">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/libVector.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 Vector/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="WhittedProper">
 				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/WhittedProper.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw"/>
@@ -59,8 +143,8 @@
 					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="Core">
-				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/libCore.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="Point">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/libPoint.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -74,14 +158,14 @@
 					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 Core"/>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 Point"/>
 					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="Core/fast">
-				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/libCore.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="Point/fast">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/libPoint.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -95,7 +179,91 @@
 					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 Core/fast"/>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 Point/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Ray">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/libRay.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 Ray"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Ray/fast">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/libRay.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 Ray/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Bound">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/libBound.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 Bound"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Bound/fast">
+				<Option output="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/libBound.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 Bound/fast"/>
 					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/cmake-build-default-mingw/Makefile&quot;  VERBOSE=1 clean"/>
@@ -122,11 +290,35 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/Core.cpp">
-			<Option target="Core"/>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/Core/Bound.cpp">
+			<Option target="Bound"/>
 		</Unit>
-		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/Core.hpp">
-			<Option target="Core"/>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/Core/Bound.hpp">
+			<Option target="Bound"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/Core/Normal.cpp">
+			<Option target="Normal"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/Core/Normal.hpp">
+			<Option target="Normal"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/Core/Point.cpp">
+			<Option target="Point"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/Core/Point.hpp">
+			<Option target="Point"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/Core/Ray.cpp">
+			<Option target="Ray"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/Core/Ray.hpp">
+			<Option target="Ray"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/Core/Vector.cpp">
+			<Option target="Vector"/>
+		</Unit>
+		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/Core/Vector.hpp">
+			<Option target="Vector"/>
 		</Unit>
 		<Unit filename="C:/Users/ethan/Documents/GitHub/Ray-Tracing/Whitted Proper/main.cpp">
 			<Option target="WhittedProper"/>

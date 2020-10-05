@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"top_TB_func_synth.v" \
+"../../../../../RayTraceDemo.srcs/sim_1/new/top_TB.v" \
+
+# Do not sort compile order
+nosort
