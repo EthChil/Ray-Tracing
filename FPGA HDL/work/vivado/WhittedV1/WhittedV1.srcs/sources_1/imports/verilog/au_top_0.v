@@ -36,10 +36,15 @@ module MemController(
     output [1:0]ddr3_dm,
     output ddr3_odt,
     
-    input reg [127:0] wr_data_ext,
-    input reg [15:0] wr_mask_ext,
-    input reg [27:0] addr_ext,
-    output wire [127:0] rd_data,
+    input reg request_read_vga,
+    input reg [27:0]addr_vga,
+    output wire [127:0]rd_data_vga,
+    
+    input reg request_read_rt,
+    input reg [127:0] wr_data_rt,
+    input reg [15:0] wr_mask_rt,
+    input reg [27:0] addr_rt,
+    output wire [127:0] rd_data_rt,
 
     //Default stuff
     input clk,            // 100MHz clock
@@ -153,15 +158,15 @@ module MemController(
         case(state)
             WRITE_DATA: begin
                 wr_en <= 1;
-                wr_mask <= wr_mask_ext;
-                wr_data <= wr_data_ext;
+                wr_mask <= wr_mask_rt;
+                wr_data <= wr_data_rt;
                 if(wr_rdy)
                     state <= WRITE_CMD;
             end
             WRITE_CMD: begin
                 en <= 1;
                 cmd <= 0; //0 = write
-                addr <= addr_ext; // THIS MIGHT BE WRONG 0s should lead
+                addr <= addr_rt; // THIS MIGHT BE WRONG 0s should lead
                 
                 if(rdy) begin
                     state <= READ_CMD;
@@ -170,7 +175,10 @@ module MemController(
             READ_CMD: begin
                 en <= 1;
                 cmd <= 1; //1 = read
-                addr <= 28'b0; 
+                if(request_read_vga)
+                    addr <= addr_vga; 
+                else if(request_read_vga)
+                    addr <= addr_rt;
                 
                 if(rdy)
                     state <= WAIT_READ;
