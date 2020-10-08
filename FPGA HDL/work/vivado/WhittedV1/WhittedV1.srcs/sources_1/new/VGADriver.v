@@ -17,33 +17,15 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-//1920 x 1080 specs
-//pixel clock 173Mhz
-//horizontal
-//front porch .74us 128px
-//sync 1.156us 200px
-//back porch 1.896us 328px
-//
-//vertical
-//front porch 44.671us 3 lines (7728px)
-//sync 74.451us 5 lines (12880px)
-//back porch 476.486us 32 lines (82432px)
 
-//VGA constants
-`define hFrontPorch 128 //pix
-`define hSync 200 //pix
-`define hBackPorch 328 //pix
-`define hLength 2576
 
-`define vFrontPorch 3 //lines
-`define vSync 5 //lines
-`define vBackPorch 32 //lines
-`define vLength 1120
+`include "display_specs.vh"
 
-//1920 x 1080 = 49,766,400px
+//(1920 x 1080) x 24bit colour = 49,766,400bit
 //each pixel is 24bits (8bit x 3colours)
-//this results in 5.3 pixels per row of memory, to make it easy we will do 3
-//this results in us using one row per pixel 
+//this results in 5.3 pixels per row of memory, to make it easy we will do 5
+//this results in us placing 5 pixels in every row where a pixel is a block of 24bits 
+//TODO change code from one row per pixel to one row per five pixels
 
 module VGADriver(
 //VGA stuff
@@ -62,13 +44,18 @@ output reg VGA_request_read,
 output reg [27:0]VGA_addr,
 input wire [127:0]VGA_rd,
 
-input refClk,
-input rst
+//Peripheral lines
+output reg readyToDraw,
+input wire refClk,
+input wire rst
 );
-
-    wire paintPixel;
-    reg nextLineReady = 0;
     
+    reg [119:0]pixelBuffer = 0;
+    wire paintPixel;
+    wire [3:0]pixOffset;
+    
+    
+    assign pixOffset = (hPix%5);
     assign paintPixel = (hPix < 1920 & vPix < 1080);
     
     clk_wiz_1 clk(.clk_in1(refClk), .clk_out1(pixelClock), .reset(~rst));
@@ -77,45 +64,65 @@ input rst
     assign hSync = ((hPix > (`hLength - `hBackPorch)) | (hPix < (`hLength - (`hBackPorch + `hSync))));
     assign vSync = ((vPix > (`vLength - `vBackPorch)) | (vPix < (`vLength - (`vBackPorch + `vSync))));
     
+    //TODO add pixel prep that will populate buffers
     
     always @(posedge pixelClock) begin
         //Incrememnt the pixel positions
-        if(hPix >= `hLength & vPix >= `vLength) begin
-            hPix <= 0;
-            vPix <= 0;
-        end 
-        else if(hPix >= `hLength) begin
-            hPix <= 1;
-            vPix <= vPix + 1;
-        end
-        else begin
-            hPix <= hPix + 1;
-        end
+        if(readyToDraw) begin
+            if(hPix >= `hLength & vPix >= `vLength) fork
+                hPix <= 1;
+                vPix <= 0;
+            join 
+            else if(hPix >= `hLength) fork
+                hPix <= 1;
+                vPix <= vPix + 1;
+            join
+            else
+                hPix <= hPix + 1;
         
-        //Handle drawing the pixels
-        if(VGA_request_read !== 0 & paintPixel) //this verifies that we have recieved the next pixel
-            $finish;
-        else if(paintPixel) begin //this will paint the next pixel
-            red <= VGA_rd[7:0];
-            green <= VGA_rd[15:8];
-            blue <= VGA_rd[23:16];
+            //Handle drawing the pixels
+            if(paintPixel) fork //this will paint the next pixel
+                red <= pixelBuffer >> (pixOffset * 24);
+                green <= pixelBuffer >> ((pixOffset * 24) + 8);
+                blue <= pixelBuffer >> ((pixOffset * 24) + 16);
+            join
+            
+            //Send a request to memory for the next pixel
+            if(paintPixel & hPix%5 == 0 & VGA_request_read == 0) begin //this will send a request to the ram for the next pixel*
+                pixelBuffer <= VGA_rd[119:0]; //load pixel from memory into buffer
+                
+                //Grab address of next group
+                if(hPix >= 1915 & vPix >= 1080) //edge case end of frame
+                    VGA_addr <= 0;
+                else if(hPix >= 1915) //edge case end of line
+                    VGA_addr <= ((vPix+1) * 385);
+                else
+                    VGA_addr <= (vPix * 385) + (hPix*0.2) + 1;
+                    
+                //Request next group from memory
+                VGA_request_read <= 1;
+            end
         end
-        
-        //Send a request to memory for the next pixel
-        if(paintPixel) begin //this will send a request to the ram for the next pixel
-            VGA_addr <= (vPix * 1920) + hPix;
-            VGA_request_read <= 1;
-        end
-        else if(~nextLineReady) begin //this pretty much will prep the upcoming pixel while in the porch
-            VGA_addr <= ((vPix+1) * 1920) + 1;
-            VGA_request_read <= 1;
-            nextLineReady <= 1;
-        end    
         
         //If the chip is reset the draw should restart
-        if(rst) begin
-            hPix <= 0;
+        //This will reset all the crucial values
+        if(rst) fork
+            hPix <= 1;
             vPix <= 0;
+            readyToDraw <= 0;
+        join
+        
+        //This will be set at the beginning and after a reset
+        //This ensures that the memory is hit and the buffer prepped for the initial frame
+        if(~readyToDraw & ~rst) begin
+            hPix <= 1;
+            vPix <= 0;
+        
+            if(VGA_request_read == 0) fork
+                VGA_addr <= 0;
+                VGA_request_read = 1;
+                readyToDraw <= 1;
+            join
         end
     end
 endmodule

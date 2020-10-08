@@ -38,13 +38,14 @@ module MemController(
     
     input reg request_read_vga,
     input reg [27:0]addr_vga,
-    output wire [127:0]rd_data_vga,
+    output reg [127:0]rd_data_vga,
     
+    input reg request_write_rt,
     input reg request_read_rt,
     input reg [127:0] wr_data_rt,
     input reg [15:0] wr_mask_rt,
     input reg [27:0] addr_rt,
-    output wire [127:0] rd_data_rt,
+    output reg [127:0] rd_data_rt,
 
     //Default stuff
     input clk,            // 100MHz clock
@@ -166,9 +167,10 @@ module MemController(
             WRITE_CMD: begin
                 en <= 1;
                 cmd <= 0; //0 = write
-                addr <= addr_rt; // THIS MIGHT BE WRONG 0s should lead
+                addr <= addr_rt; 
                 
                 if(rdy) begin
+                    request_write_rt <= 0;
                     state <= READ_CMD;
                 end
             end
@@ -179,19 +181,34 @@ module MemController(
                     addr <= addr_vga; 
                 else if(request_read_vga)
                     addr <= addr_rt;
+                else 
+                    addr <= 28'b0;
                 
                 if(rdy)
                     state <= WAIT_READ;
             end
             WAIT_READ: begin
                 if(rd_valid) begin
-                    led <= rd_data[7:0];
+                    //this will pipe the read data to the correct endpoint
+                    if(request_read_vga) begin //VGA gets priority to ensure that the pixels are being driven
+                        rd_data_vga <= rd_data;
+                        request_read_vga <= 0;
+                    end
+                    else if(request_read_rt) begin
+                        rd_data_rt <= rd_data;
+                        request_read_rt <= 0;
+                    end
+                    
                     state <= DELAY;
-                end 
+                end
+                //TODO error handling here
             end
             DELAY: begin
-                state <= READ_CMD;
-                #20;
+                //This will maximize read cycles which are crucial for 
+                if(request_write_rt)
+                    state <= WRITE_DATA;
+                else
+                    state <= READ_CMD;
             end
             default: begin
                 state <= WRITE_DATA;

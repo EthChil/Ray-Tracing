@@ -76,6 +76,7 @@ module Top(
     reg [7:0]red8;
     reg [7:0]green8;
     reg [7:0]blue8;
+    wire VGA_rd;
     
     assign red = (| red8);
     assign green = (| green8);
@@ -110,6 +111,7 @@ module Top(
         .VGA_rd(VGA_rd),
 
         //Peripherals
+        .readyToDraw(VGA_rd),
         .refClk(clk),
         .rst(rst)
     );
@@ -117,17 +119,24 @@ module Top(
     //VGA will exclusively read from memory
     //RayTracer will read and write (maybe just write actually)
     
-    reg VGA_request_read;
-    reg [27:0]VGA_addr;
-    wire [127:0]VGA_rd;
+    reg request_read_vga;
+    reg [27:0]addr_vga;
+    wire [127:0]rd_data_vga;
     
+    reg RT_request_write = 0;
     reg RT_request_read = 0;
-    reg [127:0] RT_wr_data = 16'h0000000000000069;
-    reg [15:0] RT_wr_mask = 16'b0;
-    reg [27:0] RT_addr = 28'b0;
-    wire [127:0] RT_rd_data;
+    reg [127:0] wr_data_rt = 16'h0000000000000069;
+    reg [15:0] wr_mask_rt = 16'b0;
+    reg [27:0] addr_rt = 28'b0;
+    wire [127:0] rd_data_rt;
+    
+    
     
     MemController ram(
+    //Peripherals
+    .clk(clk),
+    .rst(rst),
+    
     //inouts
     .ddr3_dq(ddr3_dq),
     .ddr3_dqs_n(ddr3_dqs_n),
@@ -147,14 +156,21 @@ module Top(
     .ddr3_dm(ddr3_dm),
     .ddr3_odt(ddr3_odt),
     
-    .clk(clk),
-    .rst(rst),
-    .wr_data_ext(wr_data),
-    .wr_mask_ext(wr_mask),
-    .addr_ext(addr),
-    .rd_data(rd_data));
+    //Memory connection VGA
+    .request_read_vga(request_read_vga),
+    .addr_vga(addr_vga),
+    .rd_data_vga(rd_data_vga),
+    
+    //Memory connection ray tracing core
+    .request_write_rt(request_write_rt),
+    .request_read_rt(request_read_rt),
+    .wr_data_rt(wr_data_rt),
+    .wr_mask_rt(wr_mask_rt),
+    .addr_rt(addr_rt),
+    .rd_data_rt(rd_data_rt)
+    );
     
     assign usb_tx = usb_rx;  // echo the serial data
     
-    assign led = rd_data[7:0];
+    //assign led = rd_data[7:0];
 endmodule
