@@ -78,7 +78,6 @@ module Top(
     reg [7:0]red8;
     reg [7:0]green8;
     reg [7:0]blue8;
-    wire VGA_rd;
     
     assign red = (| red8);
     assign green = (| green8);
@@ -127,7 +126,6 @@ module Top(
         .VGA_rd(rd_data_vga),
 
         //Peripherals
-        .readyToDraw(VGA_rd),
         .rst(rst)
     );
 
@@ -147,9 +145,9 @@ module Top(
     //VGA will exclusively read from memory
     //RayTracer will read and write (maybe just write actually)
     
-    reg request_read_vga;
-    reg [27:0]addr_vga;
-    wire [127:0]rd_data_vga;
+//    reg request_read_vga;
+//    reg [27:0]addr_vga;
+//    wire [127:0]rd_data_vga;
     
 //    reg RT_request_write;
 //    reg RT_request_read;

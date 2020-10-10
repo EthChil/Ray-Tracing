@@ -155,11 +155,7 @@ module MemController(
     //Develop robust system to allow memory to be read and written to on request
     //TODO: add reset system
     //TODO: add error code system using leds
-    
-    initial fork
-        request_read_rt = 0;
-        request_read_vga = 0;
-    join
+
     
     always @(posedge ui_clk) begin
         case(state)
