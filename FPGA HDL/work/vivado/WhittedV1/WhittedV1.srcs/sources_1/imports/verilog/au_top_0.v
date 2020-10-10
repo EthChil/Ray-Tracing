@@ -48,8 +48,10 @@ module MemController(
     output reg [127:0] rd_data_rt,
 
     //Default stuff
-    input clk,            // 100MHz clock
-    input rst,            // reset button (active low)
+    input wire clk100,            // 100MHz clock
+    input wire clk200,
+    input wire clkLock,
+    input wire rst,            // reset button (active low)
     output reg [7:0]led
     );
     
@@ -72,17 +74,17 @@ module MemController(
     
     wire ui_clk;
     
-    wire clk200;
-    wire clk100;
-    wire clkLock;
+//    wire clk200;
+//    wire clk100;
+
     
-    clk_wiz_0 clk_wiz(    
-    .clk_in1(clk),
-    .reset(~rst),
-    .clk_out1(clk100),
-    .clk_out2(clk200),
-    .locked(clkLock)
-    );
+//    clk_wiz_0 clk_wiz(    
+//    .clk_in1(clk),
+//    .reset(~rst),
+//    .clk_out1(clk100),
+//    .clk_out2(clk200),
+//    .locked(clkLock)
+//    );
 
     
     mig_7series_0 mig(
@@ -154,6 +156,10 @@ module MemController(
     //TODO: add reset system
     //TODO: add error code system using leds
     
+    initial fork
+        request_read_rt = 0;
+        request_read_vga = 0;
+    join
     
     always @(posedge ui_clk) begin
         case(state)
@@ -179,7 +185,7 @@ module MemController(
                 cmd <= 1; //1 = read
                 if(request_read_vga)
                     addr <= addr_vga; 
-                else if(request_read_vga)
+                else if(request_read_rt)
                     addr <= addr_rt;
                 else 
                     addr <= 28'b0;

@@ -141,7 +141,29 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ethan/Documents/GitHub/Ray
 INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module clk_wiz_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module au_top_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RayTracer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2458] undeclared symbol vPix, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:119]
+INFO: [VRFC 10-2458] undeclared symbol request_read_vga, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:125]
+INFO: [VRFC 10-2458] undeclared symbol addr_vga, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:126]
+INFO: [VRFC 10-2458] undeclared symbol rd_data_vga, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:127]
+INFO: [VRFC 10-2458] undeclared symbol RT_request_write, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:136]
+INFO: [VRFC 10-2458] undeclared symbol RT_request_read, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:137]
+INFO: [VRFC 10-2458] undeclared symbol wr_data_rt, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:138]
+INFO: [VRFC 10-2458] undeclared symbol wr_mask_rt, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:139]
+INFO: [VRFC 10-2458] undeclared symbol addr_rt, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:140]
+INFO: [VRFC 10-2458] undeclared symbol rd_data_rt, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:141]
+WARNING: [VRFC 10-2938] 'request_read_vga' is already implicitly declared on line 125 [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:150]
+WARNING: [VRFC 10-2938] 'addr_vga' is already implicitly declared on line 126 [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:151]
+WARNING: [VRFC 10-2938] 'rd_data_vga' is already implicitly declared on line 127 [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:152]
+INFO: [VRFC 10-2458] undeclared symbol request_write_rt, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:195]
+INFO: [VRFC 10-2458] undeclared symbol request_read_rt, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:196]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGADriver
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemController
+INFO: [VRFC 10-2458] undeclared symbol rd_data, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:92]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sim_1/new/topTB.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module topTB

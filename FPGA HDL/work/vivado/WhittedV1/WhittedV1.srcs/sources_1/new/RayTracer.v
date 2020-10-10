@@ -31,30 +31,34 @@ module RayTracer(
     //These are the current pixels being drawn on the screen piped in from VGA
     //input reg vgaH,
     input reg vgaV,
-    input wire rst
+    input wire rst,
+    input wire clk
     );
     
     wire paintPixel;
-    wire [3:0]offset;
+    reg [3:0]offset = 1;
     
     reg [11:0]hPix = 0;
     reg [10:0]vPix = 0;
-    assign offset = (hPix%5);
     
     assign paintPixel = (hPix < 1920 & vPix < 1080);
     
     always @(*) begin
         if(vPix < vgaV) begin
+            offset <= offset + 1;
+            
             fork
                 wr_mask_rt <= (28'b1 & (3'b000 << (offset * 3)));
-                wr_data_rt <=  ((hPix % 3 == 0 | vPix % 9 == 0) ? 24'b1 : 24'b0) << (offset * 24);
+                wr_data_rt <=  ((hPix < 500 & vPix < 500) ? 24'b1 : 24'b0) << (offset * 24);
                 
-                if(paintPixel)
-                     addr_rt <= ((vPix * 385) + (hPix*0.2));
+                if(paintPixel & offset == 5) fork
+                     offset <= 1;
+                     addr_rt <= addr_rt + 1;
+                join
             join
             
             RT_request_write <= 1;
-            
+
             if(hPix >= `hLength & vPix >= `vLength) fork
                 hPix <= 0;
                 vPix <= 0;
@@ -65,6 +69,7 @@ module RayTracer(
             join
             else
                 hPix <= hPix + 1;
+
         end
     end
     

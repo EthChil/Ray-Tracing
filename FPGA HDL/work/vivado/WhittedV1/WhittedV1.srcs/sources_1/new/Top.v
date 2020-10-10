@@ -43,6 +43,8 @@ module Top(
     output reg red,
     output reg blue,
     output reg green,
+    
+    output reg[11:0] hPix,
 
     //Peripherals
     input clk,
@@ -82,10 +84,24 @@ module Top(
     assign green = (| green8);
     assign blue = (| blue8);
     
-    reg hPix[11:0];
-    reg vPix[11:0];
+    //reg [11:0]hPix;
+    //reg [10:0]vPix;
     
     wire pxClk;
+    
+    wire clk100;
+    wire clk200;
+    wire clk173;
+    wire clkLock;
+    
+    clk_wiz_0 clk_wiz(    
+    .clk_in1(clk),
+    .reset(~rst),
+    .clk_out1(clk100),
+    .clk_out2(clk200),
+    .clk_out3(clk173),
+    .locked(clkLock)
+    );
     
     
     VGADriver disp(
@@ -103,16 +119,28 @@ module Top(
         .vPix(vPix),
         
         //Pixel clock every pulse it will march onto the next pixel
-        .pixelClock(pxClk),
+        .pixelClock(clk173),
         
         //Memory interface
-        .VGA_request_read(VGA_request_read),
-        .VGA_addr(VGA_addr),
-        .VGA_rd(VGA_rd),
+        .VGA_request_read(request_read_vga),
+        .VGA_addr(addr_vga),
+        .VGA_rd(rd_data_vga),
 
         //Peripherals
         .readyToDraw(VGA_rd),
-        .refClk(clk),
+        .rst(rst)
+    );
+
+    
+    RayTracer RT(
+        .RT_request_write(RT_request_write),
+        .RT_request_read(RT_request_read),
+        .wr_data_rt(wr_data_rt),
+        .wr_mask_rt(wr_mask_rt),
+        .addr_rt(addr_rt),
+        .rd_data_rt(rd_data_rt),
+        
+        .vgaV(vPix),
         .rst(rst)
     );
 
@@ -123,18 +151,20 @@ module Top(
     reg [27:0]addr_vga;
     wire [127:0]rd_data_vga;
     
-    reg RT_request_write = 0;
-    reg RT_request_read = 0;
-    reg [127:0] wr_data_rt = 16'h0000000000000069;
-    reg [15:0] wr_mask_rt = 16'b0;
-    reg [27:0] addr_rt = 28'b0;
-    wire [127:0] rd_data_rt;
+//    reg RT_request_write;
+//    reg RT_request_read;
+//    reg [127:0] wr_data_rt;
+//    reg [15:0] wr_mask_rt;
+//    reg [27:0] addr_rt;
+//    wire [127:0] rd_data_rt;
     
     
     
     MemController ram(
     //Peripherals
-    .clk(clk),
+    .clkLock(clkLock),
+    .clk100(clk100),
+    .clk200(clk200),
     .rst(rst),
     
     //inouts

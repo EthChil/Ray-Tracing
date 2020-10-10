@@ -37,7 +37,7 @@ output wire vSync,
 
 output reg [11:0]hPix,
 output reg [10:0]vPix,
-output wire pixelClock,
+input wire pixelClock,
 
 //Memory Interface
 output reg VGA_request_read,
@@ -46,29 +46,45 @@ input wire [127:0]VGA_rd,
 
 //Peripheral lines
 output reg readyToDraw,
-input wire refClk,
 input wire rst
 );
     
+    initial fork
+        readyToDraw = 0;
+        VGA_request_read = 0;
+    join
+    
     reg [119:0]pixelBuffer = 0;
     wire paintPixel;
-    wire [3:0]pixOffset;
+    reg [3:0]pixOffset = 1;
     
-    
-    assign pixOffset = (hPix%5);
     assign paintPixel = (hPix < 1920 & vPix < 1080);
     
-    clk_wiz_1 clk(.clk_in1(refClk), .clk_out1(pixelClock), .reset(~rst));
+    //clk_wiz_1 clk(.clk_in1(refClk), .clk_out1(pixelClock), .reset(~rst));
     
     //This handles the hSync and vSync lines
-    assign hSync = ((hPix > (`hLength - `hBackPorch)) | (hPix < (`hLength - (`hBackPorch + `hSync))));
-    assign vSync = ((vPix > (`vLength - `vBackPorch)) | (vPix < (`vLength - (`vBackPorch + `vSync))));
+    assign hSync = ~((hPix >= `hSyncStart) & (hPix <= `hSyncEnd));
+    assign vSync = ~((vPix >= `vSyncStart) & (vPix <= `vSyncEnd));
     
     //TODO add pixel prep that will populate buffers
     
     always @(posedge pixelClock) begin
         //Incrememnt the pixel positions
+        
         if(readyToDraw) begin
+            //Handle drawing the pixels
+            if(paintPixel) fork //this will paint the next pixel
+                red <= pixelBuffer >> ((pixOffset-1) * 24);
+                green <= pixelBuffer >> (((pixOffset-1) * 24) + 8);
+                blue <= pixelBuffer >> (((pixOffset-1) * 24) + 16);
+            join
+            else fork
+                red <= 8'b0;
+                green <= 8'b0;
+                blue <= 8'b0;
+            join
+            
+            //Increment horizontal and vertical counters
             if(hPix >= `hLength & vPix >= `vLength) fork
                 hPix <= 1;
                 vPix <= 0;
@@ -79,30 +95,28 @@ input wire rst
             join
             else
                 hPix <= hPix + 1;
-        
-            //Handle drawing the pixels
-            if(paintPixel) fork //this will paint the next pixel
-                red <= pixelBuffer >> (pixOffset * 24);
-                green <= pixelBuffer >> ((pixOffset * 24) + 8);
-                blue <= pixelBuffer >> ((pixOffset * 24) + 16);
-            join
             
-            //Send a request to memory for the next pixel
-            if(paintPixel & hPix%5 == 0 & VGA_request_read == 0) begin //this will send a request to the ram for the next pixel*
-                pixelBuffer <= VGA_rd[119:0]; //load pixel from memory into buffer
-                
-                //Grab address of next group
-                if(hPix >= 1915 & vPix >= 1080) //edge case end of frame
-                    VGA_addr <= 0;
-                else if(hPix >= 1915) //edge case end of line
-                    VGA_addr <= ((vPix+1) * 385);
-                else
-                    VGA_addr <= (vPix * 385) + (hPix*0.2) + 1;
-                    
-                //Request next group from memory
-                VGA_request_read <= 1;
-            end
+            //increment pix offset
+            pixOffset <= pixOffset + 1;
         end
+            
+        //Send a request to memory for the next pixel
+        if(paintPixel & pixOffset == 5 & VGA_request_read == 0) begin //this will send a request to the ram for the next pixel*
+            pixelBuffer <= VGA_rd[119:0]; //load pixel from memory into buffer
+            
+            //Reset the offset counter
+            pixOffset <= 1;
+            
+            //Grab address of next group
+            if(hPix >= 1915 & vPix >= 1080) //edge case end of frame
+                VGA_addr <= 0;
+            else
+                VGA_addr <= VGA_addr + 1;
+                
+            //Request next group from memory
+            VGA_request_read <= 1;
+        end
+
         
         //If the chip is reset the draw should restart
         //This will reset all the crucial values
@@ -110,11 +124,12 @@ input wire rst
             hPix <= 1;
             vPix <= 0;
             readyToDraw <= 0;
+            pixOffset <= 1;
         join
         
         //This will be set at the beginning and after a reset
         //This ensures that the memory is hit and the buffer prepped for the initial frame
-        if(~readyToDraw & ~rst) begin
+        if(~readyToDraw | ~rst) fork
             hPix <= 1;
             vPix <= 0;
         
@@ -123,6 +138,6 @@ input wire rst
                 VGA_request_read = 1;
                 readyToDraw <= 1;
             join
-        end
+        join
     end
 endmodule

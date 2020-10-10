@@ -1,5 +1,5 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  --include "../../../../WhittedV1.srcs/sources_1/ip/clk_wiz_0" \
+verilog xil_defaultlib  --include "../../../../WhittedV1.srcs/sources_1/new" --include "../../../../WhittedV1.srcs/sources_1/ip/clk_wiz_0" \
 "../../../../WhittedV1.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_clk_ibuf.v" \
 "../../../../WhittedV1.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v" \
 "../../../../WhittedV1.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_iodelay_ctrl.v" \
@@ -69,7 +69,14 @@ verilog xil_defaultlib  --include "../../../../WhittedV1.srcs/sources_1/ip/clk_w
 "../../../../WhittedV1.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0.v" \
 "../../../../WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
 "../../../../WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
+
+sv xil_defaultlib  --include "../../../../WhittedV1.srcs/sources_1/new" --include "../../../../WhittedV1.srcs/sources_1/ip/clk_wiz_0" \
+"../../../../WhittedV1.srcs/sources_1/new/RayTracer.v" \
+"../../../../WhittedV1.srcs/sources_1/new/Top.v" \
+"../../../../WhittedV1.srcs/sources_1/new/VGADriver.v" \
 "../../../../WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v" \
+
+verilog xil_defaultlib  --include "../../../../WhittedV1.srcs/sources_1/new" --include "../../../../WhittedV1.srcs/sources_1/ip/clk_wiz_0" \
 "../../../../WhittedV1.srcs/sim_1/new/topTB.v" \
 
 # compile glbl module
