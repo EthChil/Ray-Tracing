@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Sat Oct 10 13:16:21 2020
-# Process ID: 18320
+# Start of session at: Sat Oct 10 17:00:46 2020
+# Process ID: 15084
 # Current directory: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1
 # Command line: vivado.exe -log Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
 # Log file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1/Top.vds
@@ -17,41 +17,47 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 804
-WARNING: [Synth 8-6901] identifier 'hPix' is used before its declaration [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:38]
-WARNING: [Synth 8-6901] identifier 'vPix' is used before its declaration [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:38]
+INFO: [Synth 8-7075] Helper process launched with PID 15572
+WARNING: [Synth 8-6901] identifier 'hPix' is used before its declaration [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:41]
+WARNING: [Synth 8-6901] identifier 'vPix' is used before its declaration [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:41]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1079.531 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1079.039 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:21]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1/.Xil/Vivado-18320-Tony-Maloney/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1/.Xil/Vivado-18320-Tony-Maloney/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Arbitrator' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Arbitrator.v:23]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Arbitrator.v:31]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Arbitrator.v:37]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Arbitrator.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'Arbitrator' (1#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Arbitrator.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1/.Xil/Vivado-15084-Tony-Maloney/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (2#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1/.Xil/Vivado-15084-Tony-Maloney/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'VGADriver' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:30]
 	Parameter WAIT bound to: 0 - type: integer 
 	Parameter REQ_FIRST_BLOCK bound to: 1 - type: integer 
 	Parameter REQ_SECOND_BLOCK bound to: 2 - type: integer 
 	Parameter DRAW bound to: 3 - type: integer 
-WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:67]
-WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:97]
-WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:102]
-WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:109]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:69]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:108]
 WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:113]
-WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:144]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:165]
-INFO: [Synth 8-6155] done synthesizing module 'VGADriver' (2#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:30]
-WARNING: [Synth 8-689] width (1) of port connection 'vPix' does not match port width (11) of module 'VGADriver' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:118]
-WARNING: [Synth 8-689] width (1) of port connection 'VGA_addr' does not match port width (28) of module 'VGADriver' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:125]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:120]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:124]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:155]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator !== with logical equality operator != [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:176]
+INFO: [Synth 8-6155] done synthesizing module 'VGADriver' (3#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v:30]
+WARNING: [Synth 8-689] width (1) of port connection 'vPix' does not match port width (11) of module 'VGADriver' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:140]
+WARNING: [Synth 8-689] width (1) of port connection 'VGA_addr' does not match port width (28) of module 'VGADriver' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:149]
 INFO: [Synth 8-6157] synthesizing module 'RayTracer' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:23]
-WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:44]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:47]
 WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:61]
-WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:65]
-WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:73]
-WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'RayTracer' (3#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:23]
-WARNING: [Synth 8-689] width (1) of port connection 'wr_data_rt' does not match port width (128) of module 'RayTracer' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:136]
-WARNING: [Synth 8-689] width (1) of port connection 'wr_mask_rt' does not match port width (16) of module 'RayTracer' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:137]
-WARNING: [Synth 8-689] width (1) of port connection 'addr_rt' does not match port width (28) of module 'RayTracer' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:138]
-WARNING: [Synth 8-689] width (1) of port connection 'rd_data_rt' does not match port width (128) of module 'RayTracer' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:139]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:83]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:87]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:95]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'RayTracer' (4#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'wr_data_rt' does not match port width (128) of module 'RayTracer' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:163]
+WARNING: [Synth 8-689] width (1) of port connection 'wr_mask_rt' does not match port width (16) of module 'RayTracer' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:164]
+WARNING: [Synth 8-689] width (1) of port connection 'addr_rt' does not match port width (28) of module 'RayTracer' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:165]
+WARNING: [Synth 8-689] width (1) of port connection 'rd_data_rt' does not match port width (128) of module 'RayTracer' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:166]
 INFO: [Synth 8-6157] synthesizing module 'MemController' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:20]
 	Parameter WRITE_DATA bound to: 3'b000 
 	Parameter WRITE_CMD bound to: 3'b001 
@@ -59,38 +65,40 @@ INFO: [Synth 8-6157] synthesizing module 'MemController' [C:/Users/ethan/Documen
 	Parameter READ bound to: 3'b011 
 	Parameter WAIT_READ bound to: 3'b100 
 	Parameter DELAY bound to: 3'b101 
-INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1/.Xil/Vivado-18320-Tony-Maloney/realtime/mig_7series_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (4#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1/.Xil/Vivado-18320-Tony-Maloney/realtime/mig_7series_0_stub.v:5]
-WARNING: [Synth 8-689] width (1) of port connection 'app_rd_data' does not match port width (128) of module 'mig_7series_0' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:92]
-WARNING: [Synth 8-7071] port 'app_rd_data_end' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:90]
-WARNING: [Synth 8-7071] port 'app_sr_active' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:90]
-WARNING: [Synth 8-7071] port 'app_ref_ack' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:90]
-WARNING: [Synth 8-7071] port 'app_zq_ack' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:90]
-WARNING: [Synth 8-7071] port 'init_calib_complete' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:90]
-WARNING: [Synth 8-7071] port 'device_temp' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:90]
-WARNING: [Synth 8-7023] instance 'mig' of module 'mig_7series_0' has 40 connections declared, but only 34 given [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:90]
-WARNING: [Synth 8-6104] Input port 'request_write_rt' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:175]
-WARNING: [Synth 8-6104] Input port 'request_read_vga' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:197]
-WARNING: [Synth 8-6104] Input port 'request_read_rt' has an internal driver [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:201]
-INFO: [Synth 8-6155] done synthesizing module 'MemController' (5#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:20]
-WARNING: [Synth 8-689] width (1) of port connection 'rd_data_vga' does not match port width (128) of module 'MemController' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:190]
-WARNING: [Synth 8-689] width (1) of port connection 'rd_data_rt' does not match port width (128) of module 'MemController' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:198]
-WARNING: [Synth 8-7071] port 'led' of module 'MemController' is unconnected for instance 'ram' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:161]
-WARNING: [Synth 8-7023] instance 'ram' of module 'MemController' has 29 connections declared, but only 28 given [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:161]
-INFO: [Synth 8-6155] done synthesizing module 'Top' (6#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:21]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:149]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1/.Xil/Vivado-15084-Tony-Maloney/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (5#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1/.Xil/Vivado-15084-Tony-Maloney/realtime/mig_7series_0_stub.v:5]
+WARNING: [Synth 8-689] width (1) of port connection 'app_rd_data' does not match port width (128) of module 'mig_7series_0' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:97]
+WARNING: [Synth 8-7071] port 'app_rd_data_end' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:95]
+WARNING: [Synth 8-7071] port 'app_sr_active' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:95]
+WARNING: [Synth 8-7071] port 'app_ref_ack' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:95]
+WARNING: [Synth 8-7071] port 'app_zq_ack' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:95]
+WARNING: [Synth 8-7071] port 'init_calib_complete' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:95]
+WARNING: [Synth 8-7071] port 'device_temp' of module 'mig_7series_0' is unconnected for instance 'mig' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:95]
+WARNING: [Synth 8-7023] instance 'mig' of module 'mig_7series_0' has 40 connections declared, but only 34 given [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:95]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:172]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:228]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:232]
+WARNING: [Synth 8-290] fork/join block will be implemented as sequential block [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:236]
+INFO: [Synth 8-6155] done synthesizing module 'MemController' (6#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v:20]
+WARNING: [Synth 8-689] width (1) of port connection 'rd_data_vga' does not match port width (128) of module 'MemController' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:203]
+WARNING: [Synth 8-689] width (1) of port connection 'rd_data_rt' does not match port width (128) of module 'MemController' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:214]
+WARNING: [Synth 8-7071] port 'led' of module 'MemController' is unconnected for instance 'ram' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:172]
+WARNING: [Synth 8-7023] instance 'ram' of module 'MemController' has 32 connections declared, but only 31 given [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:172]
+INFO: [Synth 8-6155] done synthesizing module 'Top' (7#1) [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:21]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1108.309 ; gain = 28.777
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1108.816 ; gain = 29.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1108.309 ; gain = 28.777
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1108.816 ; gain = 29.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1108.309 ; gain = 28.777
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1108.816 ; gain = 29.777
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1108.309 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1108.816 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -113,20 +121,20 @@ Parsing XDC File [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/viva
 Finished Parsing XDC File [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1234.395 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1238.555 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1234.395 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1238.555 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1234.395 ; gain = 154.863
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1238.555 ; gain = 159.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1234.395 ; gain = 154.863
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1238.555 ; gain = 159.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -232,15 +240,18 @@ Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  {c:/Use
 Applied set_property DONT_TOUCH = true for ram/mig. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for clk_wiz. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1234.395 ; gain = 154.863
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1238.555 ; gain = 159.516
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'MemController'
-WARNING: [Synth 8-327] inferring latch for variable 'RT_request_write_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:71]
-WARNING: [Synth 8-327] inferring latch for variable 'wr_data_rt_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:63]
-WARNING: [Synth 8-327] inferring latch for variable 'addr_rt_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:67]
-WARNING: [Synth 8-327] inferring latch for variable 'vPix_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:38]
-WARNING: [Synth 8-327] inferring latch for variable 'offset_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:59]
-WARNING: [Synth 8-327] inferring latch for variable 'hPix_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'requestOut_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Arbitrator.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'completeOut_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Arbitrator.v:39]
+WARNING: [Synth 8-327] inferring latch for variable 'request_write_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:62]
+WARNING: [Synth 8-327] inferring latch for variable 'wr_data_rt_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:85]
+WARNING: [Synth 8-327] inferring latch for variable 'wr_mask_rt_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:65]
+WARNING: [Synth 8-327] inferring latch for variable 'addr_rt_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:66]
+WARNING: [Synth 8-327] inferring latch for variable 'vPix_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:41]
+WARNING: [Synth 8-327] inferring latch for variable 'offset_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:71]
+WARNING: [Synth 8-327] inferring latch for variable 'hPix_reg' [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v:41]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -252,7 +263,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'hPix_reg' [C:/Users/ethan/D
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'MemController'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1234.395 ; gain = 154.863
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1238.555 ; gain = 159.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -278,21 +289,18 @@ Detailed RTL Component Info :
 +---Multipliers : 
 	               5x32  Multipliers := 1     
 +---Muxes : 
-	   2 Input  120 Bit        Muxes := 2     
-	   4 Input  120 Bit        Muxes := 1     
-	   2 Input   28 Bit        Muxes := 4     
-	   4 Input   28 Bit        Muxes := 1     
+	   2 Input  120 Bit        Muxes := 4     
+	   2 Input   28 Bit        Muxes := 10    
 	   5 Input   28 Bit        Muxes := 1     
 	   2 Input   12 Bit        Muxes := 2     
-	   2 Input   11 Bit        Muxes := 1     
+	   5 Input   12 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 3     
 	   2 Input    4 Bit        Muxes := 1     
 	   5 Input    3 Bit        Muxes := 2     
 	   2 Input    3 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 1     
-	   5 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 19    
-	   4 Input    1 Bit        Muxes := 4     
-	   5 Input    1 Bit        Muxes := 8     
+	   2 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 62    
+	   5 Input    1 Bit        Muxes := 11    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -309,26 +317,26 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1234.395 ; gain = 154.863
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1238.555 ; gain = 159.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'clk'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 1234.395 ; gain = 154.863
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1238.555 ; gain = 159.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1234.395 ; gain = 154.863
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1238.555 ; gain = 159.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1242.516 ; gain = 162.984
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1240.246 ; gain = 161.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -345,3 +353,98 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1240.246 ; gain = 161.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1240.246 ; gain = 161.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1240.246 ; gain = 161.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1240.246 ; gain = 161.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1240.246 ; gain = 161.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1240.246 ; gain = 161.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |mig_7series_0 |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |clk_wiz     |     1|
+|2     |mig_7series |     1|
+|3     |CARRY4      |    26|
+|4     |LUT1        |    55|
+|5     |LUT2        |    24|
+|6     |LUT3        |    35|
+|7     |LUT4        |    27|
+|8     |LUT5        |    24|
+|9     |LUT6        |    57|
+|10    |FDRE        |    44|
+|11    |FDSE        |     2|
+|12    |LD          |     2|
+|13    |LDC         |    27|
+|14    |LDCP        |     3|
+|15    |LDP         |     2|
+|16    |IBUF        |     2|
+|17    |OBUF        |    18|
+|18    |OBUFT       |     8|
++------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1240.246 ; gain = 161.207
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:31 . Memory (MB): peak = 1240.246 ; gain = 31.469
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 1240.246 ; gain = 161.207
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1247.934 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 60 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1249.773 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 34 instances were transformed.
+  LD => LDCE: 2 instances
+  LDC => LDCE: 27 instances
+  LDCP => LDCP (GND, LDCE, LUT3(x2), VCC): 3 instances
+  LDP => LDPE: 2 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+31 Infos, 57 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:43 . Memory (MB): peak = 1249.773 ; gain = 170.734
+INFO: [Common 17-1381] The checkpoint 'C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA HDL/work/vivado/WhittedV1/WhittedV1.runs/synth_1/Top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 10 17:01:39 2020...

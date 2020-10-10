@@ -36,12 +36,17 @@ module MemController(
     output [1:0]ddr3_dm,
     output ddr3_odt,
     
-    input reg request_read_vga,
+    input wire request_read_vga,
+    output reg read_complete_vga,
     input reg [27:0]addr_vga,
     output reg [127:0]rd_data_vga,
     
-    input reg request_write_rt,
-    input reg request_read_rt,
+    input wire request_write_rt,
+    output reg write_complete_rt,
+    input wire request_read_rt,
+    output reg read_complete_rt,
+    
+    
     input reg [127:0] wr_data_rt,
     input reg [15:0] wr_mask_rt,
     input reg [27:0] addr_rt,
@@ -141,6 +146,14 @@ module MemController(
     
     //assign led = 8'h00;      // turn LEDs off
 
+    initial fork
+        write_complete_rt = 0;
+        read_complete_rt = 0;
+        
+        read_complete_vga = 0;
+        
+        rd_data_vga = 0;
+    join
     
     
     localparam WRITE_DATA = 3'd0;
@@ -158,6 +171,13 @@ module MemController(
 
     
     always @(posedge ui_clk) begin
+        if(rst) fork
+            write_complete_rt <= 1;
+            read_complete_rt <= 1;
+            
+            read_complete_vga <= 1;
+        join
+    
         case(state)
             WRITE_DATA: begin
                 wr_en <= 1;
@@ -172,7 +192,7 @@ module MemController(
                 addr <= addr_rt; 
                 
                 if(rdy) begin
-                    request_write_rt <= 0;
+                    write_complete_rt <= 1;
                     state <= READ_CMD;
                 end
             end
@@ -194,11 +214,11 @@ module MemController(
                     //this will pipe the read data to the correct endpoint
                     if(request_read_vga) begin //VGA gets priority to ensure that the pixels are being driven
                         rd_data_vga <= rd_data;
-                        request_read_vga <= 0;
+                        read_complete_vga <= 1;
                     end
                     else if(request_read_rt) begin
                         rd_data_rt <= rd_data;
-                        request_read_rt <= 0;
+                        read_complete_vga <= 1;
                     end
                     
                     state <= DELAY;
@@ -207,10 +227,18 @@ module MemController(
             end
             DELAY: begin
                 //This will maximize read cycles which are crucial for 
-                if(request_write_rt)
+                if(request_write_rt & write_complete_rt) fork
+                    write_complete_rt <= 0;
                     state <= WRITE_DATA;
-                else
+                join
+                else if(request_read_vga & read_complete_vga) fork
+                    read_complete_vga <= 0;
                     state <= READ_CMD;
+                join
+                else if(request_read_rt & read_complete_rt) fork
+                    read_complete_rt <= 0;
+                    state <= READ_CMD;
+                join
             end
             default: begin
                 state <= WRITE_DATA;

@@ -40,7 +40,9 @@ output reg [10:0]vPix,
 input wire pixelClock,
 
 //Memory Interface
-output reg VGA_request_read,
+output reg request_read,
+input wire read_complete,
+
 output reg [27:0]VGA_addr,
 input wire [127:0]VGA_rd,
 
@@ -82,7 +84,7 @@ input wire rst
         //pixel buffer starts at 0 and will be set once things are called from memory
         pixelBuffer = 0;
         
-        VGA_request_read <= 0;
+        request_read = 0;
     join
     
     
@@ -90,8 +92,17 @@ input wire rst
     assign hSync = ~((hPix >= `hSyncStart) & (hPix <= `hSyncEnd));
     assign vSync = ~((vPix >= `vSyncStart) & (vPix <= `vSyncEnd));
     
+    
+    
     //on every clock the pixels must be driven
     always @(posedge pixelClock) begin
+        //request read 
+        //TODO: replace 
+        
+        //C1, R1 Done -> Reset
+        if(read_complete & request_read)
+            request_read <= 0;
+    
         if(startupStateMachine == DRAW) begin
             //Handle drawing the pixels
             if(paintPixel) fork //this will paint the next pixel
@@ -122,7 +133,7 @@ input wire rst
         end
             
         //Send a request to memory for the next pixel
-        if(paintPixel & pixOffset >= 5 & VGA_request_read == 0) begin //this will send a request to the ram for the next pixel*
+        if(paintPixel & pixOffset >= 5 & ~request_read) begin //this will send a request to the ram for the next pixel*
             pixelBuffer <= VGA_rd[119:0]; //load pixel from memory into buffer
             
             //Reset the offset counter
@@ -135,7 +146,7 @@ input wire rst
                 VGA_addr <= VGA_addr + 1;
                 
             //Request next group from memory
-            VGA_request_read <= 1;
+            request_read <= 1;
         end
 
         
@@ -166,21 +177,18 @@ input wire rst
             //When starting up the pixel buffer needs to be filled and a request needs to be sent for the next set
             case(startupStateMachine)
                 WAIT:
-                    if(VGA_request_read == 0)
+                    if(request_read == 0 & read_complete) begin
+                        VGA_addr <= 0;
+                        request_read <= 1;
                         startupStateMachine <= REQ_FIRST_BLOCK;
+                    end
                 REQ_FIRST_BLOCK: begin
-                    VGA_addr <= 0;
-                    VGA_request_read <= 1;
-                    
-                    if(VGA_request_read == 0) begin
+                    if(request_read == 0 & read_complete) begin
                         VGA_addr <= VGA_addr + 1;
                         pixelBuffer <= VGA_rd[119:0];
-                        startupStateMachine <= REQ_SECOND_BLOCK;
+                        request_read <= 1;
+                        startupStateMachine <= DRAW;
                     end
-                end
-                REQ_SECOND_BLOCK: begin
-                    VGA_request_read <= 1;
-                    startupStateMachine <= DRAW;
                 end
                 default:
                     startupStateMachine <= WAIT;

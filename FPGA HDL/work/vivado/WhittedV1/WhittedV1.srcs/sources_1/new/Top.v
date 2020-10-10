@@ -83,15 +83,37 @@ module Top(
     assign green = (| green8);
     assign blue = (| blue8);
     
-    //reg [11:0]hPix;
-    //reg [10:0]vPix;
-    
     wire pxClk;
     
     wire clk100;
     wire clk200;
     wire clk173;
     wire clkLock;
+    
+    Arbitrator read_vga2ram (
+        .requestIn(request_read_vga_out),
+        .requestOut(request_read_vga_in),
+        
+        .completeIn(read_complete_vga_out),
+        .completeOut(read_complete_vga_in)
+    );
+    
+    Arbitrator write_rt2ram (
+        .requestIn(request_write_rt_out),
+        .requestOut(request_write_rt_in),
+        
+        .completeIn(write_complete_rt_out),
+        .completeOut(write_complete_rt_in)
+    );
+    
+    Arbitrator read_rt2ram (
+        .requestIn(request_read_rt_out),
+        .requestOut(request_read_rt_in),
+        
+        .completeIn(read_complete_rt_out),
+        .completeOut(read_complete_rt_in)
+    );
+
     
     clk_wiz_0 clk_wiz(    
     .clk_in1(clk),
@@ -121,7 +143,9 @@ module Top(
         .pixelClock(clk173),
         
         //Memory interface
-        .VGA_request_read(request_read_vga),
+        .request_read(request_read_vga_out),
+        .read_complete(read_complete_vga_in),
+        
         .VGA_addr(addr_vga),
         .VGA_rd(rd_data_vga),
 
@@ -131,8 +155,11 @@ module Top(
 
     
     RayTracer RT(
-        .RT_request_write(RT_request_write),
-        .RT_request_read(RT_request_read),
+        .request_write(request_write_rt_out),
+        .write_complete(write_complete_rt_in),
+        .request_read(request_read_rt_out),
+        .read_complete(read_complete_rt_in),
+        
         .wr_data_rt(wr_data_rt),
         .wr_mask_rt(wr_mask_rt),
         .addr_rt(addr_rt),
@@ -141,22 +168,6 @@ module Top(
         .vgaV(vPix),
         .rst(rst)
     );
-
-    //VGA will exclusively read from memory
-    //RayTracer will read and write (maybe just write actually)
-    
-//    reg request_read_vga;
-//    reg [27:0]addr_vga;
-//    wire [127:0]rd_data_vga;
-    
-//    reg RT_request_write;
-//    reg RT_request_read;
-//    reg [127:0] wr_data_rt;
-//    reg [15:0] wr_mask_rt;
-//    reg [27:0] addr_rt;
-//    wire [127:0] rd_data_rt;
-    
-    
     
     MemController ram(
     //Peripherals
@@ -185,13 +196,18 @@ module Top(
     .ddr3_odt(ddr3_odt),
     
     //Memory connection VGA
-    .request_read_vga(request_read_vga),
+    .request_read_vga(request_read_vga_in),
+    .read_complete_vga(read_complete_vga_out),
+    
     .addr_vga(addr_vga),
     .rd_data_vga(rd_data_vga),
     
     //Memory connection ray tracing core
-    .request_write_rt(request_write_rt),
-    .request_read_rt(request_read_rt),
+    .request_write_rt(request_write_rt_in),
+    .write_complete_rt(write_complete_rt_out),
+    .request_read_rt(request_read_rt_in),
+    .read_complete_rt(read_complete_rt_out),
+    
     .wr_data_rt(wr_data_rt),
     .wr_mask_rt(wr_mask_rt),
     .addr_rt(addr_rt),

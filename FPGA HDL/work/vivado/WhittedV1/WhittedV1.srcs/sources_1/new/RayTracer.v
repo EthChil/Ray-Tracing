@@ -21,8 +21,11 @@
 `include "display_specs.vh"
 
 module RayTracer(
-    output reg RT_request_write,
-    output reg RT_request_read,
+    output reg request_write,
+    input wire write_complete,
+    output reg request_read,
+    input wire read_complete,
+    
     output reg [127:0]wr_data_rt,
     output reg [15:0]wr_mask_rt,
     output reg [27:0]addr_rt,
@@ -42,44 +45,64 @@ module RayTracer(
     reg [10:0]vPix;
     
     initial fork
-        RT_request_write <= 0;
-        RT_request_read <= 0;
+        request_write = 0;
+        request_read = 0;
         
-        wr_mask_rt <= 0;
-        addr_rt <= 0;
+        wr_mask_rt = 0;
+        addr_rt = 0;
         
-        hPix <= 0;
-        vPix <= 0;
+        hPix = 0;
+        vPix = 0;
         
-        offset <= 1;
+        offset = 1;
     join
     
     always @(*) begin
+        if(rst) fork
+            request_write <= 0;
+            request_read <= 0;
+            
+            wr_mask_rt <= 0;
+            addr_rt <= 0;
+            
+            hPix <= 0;
+            vPix <= 0;
+            
+            offset <= 1;
+        join
+    
+        if(write_complete & request_write)
+            request_write <= 0;
+        if(read_complete & request_write)
+            request_write <= 0;
+    
         if(vPix < vgaV) begin
             offset <= offset + 1;
             
-            fork
-                wr_mask_rt <= (28'b1 & (3'b000 << (offset * 3)));
-                wr_data_rt <=  ((hPix < 500 & vPix < 500) ? 24'b1 : 24'b0) << (offset * 24);
-                
-                if(paintPixel & offset >= 5) fork
-                     offset <= 1;
-                     addr_rt <= addr_rt + 1;
+            if(write_complete) begin
+                fork
+                    wr_mask_rt <= (28'b1 & (3'b000 << (offset * 3)));
+                    wr_data_rt <=  ((hPix < 500 & vPix < 500) ? 24'b1 : 24'b0) << (offset * 24);
+                    
+                    if(paintPixel & offset >= 5) fork
+                         offset <= 1;
+                         addr_rt <= addr_rt + 1;
+                    join
                 join
-            join
-            
-            RT_request_write <= 1;
-
-            if(hPix >= `hLength & vPix >= `vLength) fork
-                hPix <= 0;
-                vPix <= 0;
-            join 
-            else if(hPix >= `hLength) fork
-                hPix <= 1;
-                vPix <= vPix + 1;
-            join
-            else
-                hPix <= hPix + 1;
+                
+                request_write <= 1;
+    
+                if(hPix >= `hLength & vPix >= `vLength) fork
+                    hPix <= 0;
+                    vPix <= 0;
+                join 
+                else if(hPix >= `hLength) fork
+                    hPix <= 1;
+                    vPix <= vPix + 1;
+                join
+                else
+                    hPix <= hPix + 1;
+             end
 
         end
     end
