@@ -90,6 +90,34 @@ module Top(
     wire clk173;
     wire clkLock;
     
+    wire [10:0]vPix;
+    wire [10:0]vPixOut;
+    wire vga_encoded;
+    wire vga_req;
+    wire rt_ready;
+    
+    wire ram_encoded;
+    wire ram_req;
+    wire vga_ready;
+    
+    ramToVGA r2v(
+        .ramIn(rd_data_vga),
+        .vgaOut(rd_data_vga_clean),
+        
+        .encoded(ram_encoded),
+        .req(ram_req),
+        .ready(vga_ready)
+    );
+    
+    vgaToRt vga(
+        .vgaIn(vPix),
+        .rtOut(vPixOut),
+        
+        .encoded(vga_encoded),
+        .req(vga_req),
+        .ready(rt_ready)
+    );
+    
     Arbitrator read_vga2ram (
         .requestIn(request_read_vga_out),
         .requestOut(request_read_vga_in),
@@ -113,6 +141,8 @@ module Top(
         .completeIn(read_complete_rt_out),
         .completeOut(read_complete_rt_in)
     );
+    
+
 
     
     clk_wiz_0 clk_wiz(    
@@ -136,8 +166,7 @@ module Top(
         .vSync(vSync),
         
         //Next driven pixel
-        .hPix(hPix),
-        .vPix(vPix),
+        .vPix_o(vPix),
         
         //Pixel clock every pulse it will march onto the next pixel
         .pixelClock(clk173),
@@ -147,10 +176,13 @@ module Top(
         .read_complete(read_complete_vga_in),
         
         .VGA_addr(addr_vga),
-        .VGA_rd(rd_data_vga),
+        .VGA_rd(rd_data_vga_clean),
 
         //Peripherals
-        .rst(rst)
+        .rst(rst),
+        .encoded(vga_encoded),
+        .req(vga_req),
+        .ready(vga_ready)
     );
 
     
@@ -165,8 +197,10 @@ module Top(
         .addr_rt(addr_rt),
         .rd_data_rt(rd_data_rt),
         
-        .vgaV(vPix),
-        .rst(rst)
+        .vgaV(vPixOut),
+        .ready(rt_ready),
+        .rst(rst),
+        .clk(clk200)
     );
     
     MemController ram(
@@ -196,6 +230,9 @@ module Top(
     .ddr3_odt(ddr3_odt),
     
     //Memory connection VGA
+    .encoded_vga(ram_encoded),
+    .request_vga(ram_req),
+    
     .request_read_vga(request_read_vga_in),
     .read_complete_vga(read_complete_vga_out),
     

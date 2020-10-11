@@ -17,6 +17,8 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+//TODO: add error code system using leds
+
 module MemController(
     /* DDR3 Connections */
     inout [15:0]ddr3_dq,
@@ -36,6 +38,8 @@ module MemController(
     output [1:0]ddr3_dm,
     output ddr3_odt,
     
+    output reg request_vga,
+    input wire encoded_vga,
     input wire request_read_vga,
     output reg read_complete_vga,
     input reg [27:0]addr_vga,
@@ -45,7 +49,6 @@ module MemController(
     output reg write_complete_rt,
     input wire request_read_rt,
     output reg read_complete_rt,
-    
     
     input reg [127:0] wr_data_rt,
     input reg [15:0] wr_mask_rt,
@@ -146,14 +149,7 @@ module MemController(
     
     //assign led = 8'h00;      // turn LEDs off
 
-    initial fork
-        write_complete_rt = 0;
-        read_complete_rt = 0;
-        
-        read_complete_vga = 0;
-        
-        rd_data_vga = 0;
-    join
+
     
     
     localparam WRITE_DATA = 3'd0;
@@ -165,10 +161,37 @@ module MemController(
     
     reg [2:0]state = WRITE_DATA;
 
-    //Develop robust system to allow memory to be read and written to on request
-    //TODO: add reset system
-    //TODO: add error code system using leds
 
+    reg [15:0]pipe1;
+    reg [27:0]pipe2;
+    reg [27:0]pipe3;
+    reg [127:0]pipe4;
+    
+    reg [15:0]wr_mask_rt_lcl;
+    reg [27:0]addr_rt_lcl;
+    reg [27:0]addr_vga_lcl;
+    reg [127:0]wr_data_rt_lcl;
+    
+    initial fork
+        write_complete_rt = 0;
+        read_complete_rt = 0;
+        
+        read_complete_vga = 0;
+        
+        rd_data_vga = 0;
+        
+        pipe1 = 0;
+        pipe2 = 0;
+        pipe3 = 0;
+        pipe4 = 0;
+        
+        wr_mask_rt_lcl = 0; 
+        addr_rt_lcl = 0;
+        addr_vga_lcl = 0;
+        wr_data_rt_lcl = 0;
+        
+        request_vga <= 0;
+    join
     
     always @(posedge ui_clk) begin
         if(rst) fork
@@ -176,20 +199,40 @@ module MemController(
             read_complete_rt <= 1;
             
             read_complete_vga <= 1;
+            
+            pipe1 <= 0;
+            pipe2 <= 0;
+            pipe3 <= 0;
+            pipe4 <= 0;
+            
+            wr_mask_rt_lcl <= 0; 
+            addr_rt_lcl <= 0;
+            addr_vga_lcl <= 0;
+            wr_data_rt_lcl <= 0;
+            
+            request_vga <= 0;
         join
+        
+        if(encoded_vga & request_vga)
+            request_vga <= 0;
+        
+        {wr_mask_rt_lcl, pipe1} <= {pipe1, wr_mask_rt};
+        {addr_rt_lcl, pipe2} <= {pipe2, addr_rt};
+        {addr_vga_lcl, pipe3} <= {pipe3, addr_vga};
+        {wr_data_rt_lcl, pipe4} <= {pipe4, wr_data_rt};
     
         case(state)
             WRITE_DATA: begin
                 wr_en <= 1;
-                wr_mask <= wr_mask_rt;
-                wr_data <= wr_data_rt;
+                wr_mask <= wr_mask_rt_lcl;
+                wr_data <= wr_data_rt_lcl;
                 if(wr_rdy)
                     state <= WRITE_CMD;
             end
             WRITE_CMD: begin
                 en <= 1;
                 cmd <= 0; //0 = write
-                addr <= addr_rt; 
+                addr <= addr_rt_lcl; 
                 
                 if(rdy) begin
                     write_complete_rt <= 1;
@@ -200,9 +243,9 @@ module MemController(
                 en <= 1;
                 cmd <= 1; //1 = read
                 if(request_read_vga)
-                    addr <= addr_vga; 
+                    addr <= addr_vga_lcl; 
                 else if(request_read_rt)
-                    addr <= addr_rt;
+                    addr <= addr_rt_lcl;
                 else 
                     addr <= 28'b0;
                 
@@ -212,9 +255,10 @@ module MemController(
             WAIT_READ: begin
                 if(rd_valid) begin
                     //this will pipe the read data to the correct endpoint
-                    if(request_read_vga) begin //VGA gets priority to ensure that the pixels are being driven
+                    if(request_read_vga & ~encoded_vga & ~request_vga) begin //VGA gets priority to ensure that the pixels are being driven
                         rd_data_vga <= rd_data;
                         read_complete_vga <= 1;
+                        request_vga <= 1;
                     end
                     else if(request_read_rt) begin
                         rd_data_rt <= rd_data;

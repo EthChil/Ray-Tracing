@@ -21,10 +21,10 @@
 `include "display_specs.vh"
 
 module RayTracer(
-    output reg request_write,
-    input wire write_complete,
-    output reg request_read,
-    input wire read_complete,
+    output reg request_write, 
+    input wire write_complete, //conditioned outside
+    output reg request_read, //conditioned outside
+    input wire read_complete, //conditioned outside
     
     output reg [127:0]wr_data_rt,
     output reg [15:0]wr_mask_rt,
@@ -34,8 +34,10 @@ module RayTracer(
     //These are the current pixels being drawn on the screen piped in from VGA
     //input reg vgaH,
     input reg[10:0] vgaV,
-    input wire rst
-    //input wire clk
+    output reg ready,
+    
+    input wire rst,
+    input wire clk
     );
     
     wire paintPixel = (hPix < 1920 & vPix < 1080);
@@ -43,6 +45,8 @@ module RayTracer(
     
     reg [11:0]hPix;
     reg [10:0]vPix;
+    
+    reg vertVGA;
     
     initial fork
         request_write = 0;
@@ -55,9 +59,13 @@ module RayTracer(
         vPix = 0;
         
         offset = 1;
+        vertVGA = 0;
     join
     
-    always @(*) begin
+
+    
+    always @(posedge clk) begin
+    
         if(rst) fork
             request_write <= 0;
             request_read <= 0;
@@ -69,14 +77,19 @@ module RayTracer(
             vPix <= 0;
             
             offset <= 1;
+            vertVGA <= 0;
         join
     
         if(write_complete & request_write)
             request_write <= 0;
         if(read_complete & request_write)
             request_write <= 0;
+        ready <= 0;
+        vertVGA <= vgaV;
+        ready <= 1;
+
     
-        if(vPix < vgaV) begin
+        if(vPix < vertVGA) begin
             offset <= offset + 1;
             
             if(write_complete) begin
@@ -107,7 +120,7 @@ module RayTracer(
         end
     end
     
-    //The clock for this
+    //The clock for this (temporarily using 200mhz clock which should allow it to run faster than vga)
     //The clock must be such that a ray is traced faster than pixels are drawn, therefore the minimum clock would be the 
     
     //Actual ray tracer design

@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Sat Oct 10 17:04:15 2020
+| Date         : Sun Oct 11 02:09:08 2020
 | Host         : Tony-Maloney running 64-bit major release  (build 9200)
 | Command      : report_drc -file Top_drc_routed.rpt -pb Top_drc_routed.pb -rpx Top_drc_routed.rpx
 | Design       : Top
@@ -24,13 +24,13 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 14
+             Violations found: 7
 +-----------+------------------+----------------------------+------------+
 | Rule      | Severity         | Description                | Violations |
 +-----------+------------------+----------------------------+------------+
 | NSTD-1    | Critical Warning | Unspecified I/O Standard   | 1          |
 | UCIO-1    | Critical Warning | Unconstrained Logical Port | 1          |
-| PDRC-153  | Warning          | Gated clock check          | 11         |
+| PDRC-153  | Warning          | Gated clock check          | 4          |
 | REQP-1709 | Warning          | Clock output buffering     | 1          |
 +-----------+------------------+----------------------------+------------+
 
@@ -48,55 +48,20 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net RT/addr_rt_reg[0]_i_2_n_0 is a gated clock net sourced by a combinational pin RT/addr_rt_reg[0]_i_2/O, cell RT/addr_rt_reg[0]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net RT/requestOut00_out is a gated clock net sourced by a combinational pin RT/requestOut_reg_i_1__0/O, cell RT/requestOut_reg_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net RT/hPix_reg[0]/G0 is a gated clock net sourced by a combinational pin RT/hPix_reg[0]/L3_2/O, cell RT/hPix_reg[0]/L3_2 (in RT/hPix_reg[0] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net disp/requestOut00_out is a gated clock net sourced by a combinational pin disp/requestOut_reg_i_1/O, cell disp/requestOut_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net RT/offset_reg[3]_i_2_n_0 is a gated clock net sourced by a combinational pin RT/offset_reg[3]_i_2/O, cell RT/offset_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#4 Warning
-Gated clock check  
-Net RT/request_write_reg_i_1_n_0 is a gated clock net sourced by a combinational pin RT/request_write_reg_i_1/O, cell RT/request_write_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#5 Warning
-Gated clock check  
-Net RT/request_write_reg_i_2_n_0 is a gated clock net sourced by a combinational pin RT/request_write_reg_i_2/O, cell RT/request_write_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#6 Warning
-Gated clock check  
-Net RT/vPix_reg[10]_i_2_n_0 is a gated clock net sourced by a combinational pin RT/vPix_reg[10]_i_2/O, cell RT/vPix_reg[10]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#7 Warning
-Gated clock check  
-Net RT/write_complete_rt_reg is a gated clock net sourced by a combinational pin RT/requestOut_reg_i_1__0/O, cell RT/requestOut_reg_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#8 Warning
-Gated clock check  
-Net disp/request_read_reg_0 is a gated clock net sourced by a combinational pin disp/requestOut_reg_i_1/O, cell disp/requestOut_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#9 Warning
-Gated clock check  
 Net read_vga2ram/completeOut_reg/G0 is a gated clock net sourced by a combinational pin read_vga2ram/completeOut_reg/L3_2/O, cell read_vga2ram/completeOut_reg/L3_2 (in read_vga2ram/completeOut_reg macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
-PDRC-153#10 Warning
-Gated clock check  
-Net write_rt2ram/E[0] is a gated clock net sourced by a combinational pin write_rt2ram/hPix_reg[11]_i_2/O, cell write_rt2ram/hPix_reg[11]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#11 Warning
+PDRC-153#4 Warning
 Gated clock check  
 Net write_rt2ram/completeOut_reg/G0 is a gated clock net sourced by a combinational pin write_rt2ram/completeOut_reg/L3_2/O, cell write_rt2ram/completeOut_reg/L3_2 (in write_rt2ram/completeOut_reg macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>

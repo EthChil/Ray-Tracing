@@ -35,8 +35,7 @@ output reg [7:0]blue,
 output wire hSync,
 output wire vSync,
 
-output reg [11:0]hPix,
-output reg [10:0]vPix,
+output reg [10:0]vPix_o,
 input wire pixelClock,
 
 //Memory Interface
@@ -47,7 +46,10 @@ output reg [27:0]VGA_addr,
 input wire [127:0]VGA_rd,
 
 //Peripheral lines
-input wire rst
+input wire rst,
+output reg req,
+input wire encoded,
+output reg ready
 );
     
     //Pixel buffer holds current group of 5 pixels
@@ -58,6 +60,8 @@ input wire rst
     parameter REQ_SECOND_BLOCK = 2;
     parameter DRAW = 3;
     
+    reg [11:0] hPix;
+    reg [10:0] vPix;
     
     reg [1:0]startupStateMachine;
     
@@ -65,6 +69,9 @@ input wire rst
     wire paintPixel = (hPix <= 1920 & vPix < 1080);
     //pix offset tracks position within 5 pixel group
     reg [3:0]pixOffset;
+    
+    reg [6:0]bitOffset = ((pixOffset - 1) * 24);
+    
     
     initial fork
         //Ready to draw begins wait as things need to load up first
@@ -92,23 +99,29 @@ input wire rst
     assign hSync = ~((hPix >= `hSyncStart) & (hPix <= `hSyncEnd));
     assign vSync = ~((vPix >= `vSyncStart) & (vPix <= `vSyncEnd));
     
-    
+    //NOTE on the ram vga states
+    //R0,C0 <- Rest (waiting on vga to send request)
+    //R1,C0 <- request (waiting on ram to fulfil request)
+    //R1,C1 <- Done (request filled waiting on vga to accept)
+    //R0,C1 <- Reset (vga into rest waiting on ram to follow)
     
     //on every clock the pixels must be driven
     always @(posedge pixelClock) begin
-        //request read 
-        //TODO: replace 
         
         //C1, R1 Done -> Reset
         if(read_complete & request_read)
             request_read <= 0;
+        if(req & encoded)
+            req <= 0;
+            
     
         if(startupStateMachine == DRAW) begin
+            
             //Handle drawing the pixels
             if(paintPixel) fork //this will paint the next pixel
-                red <= pixelBuffer >> ((pixOffset-1) * 24);
-                green <= pixelBuffer >> (((pixOffset-1) * 24) + 8);
-                blue <= pixelBuffer >> (((pixOffset-1) * 24) + 16);
+                red <= pixelBuffer >> (bitOffset);
+                green <= pixelBuffer >> (bitOffset + 8);
+                blue <= pixelBuffer >> (bitOffset + 16);
             join
             else fork
                 red <= 8'b0;
@@ -122,8 +135,14 @@ input wire rst
                 vPix <= 0;
             join 
             else if(hPix >= `hLength) fork
+                begin
+                    if(encoded & ~req) fork
+                        vPix_o <= vPix;
+                        req <= 1;
+                    join
+                    vPix <= vPix + 1;
+                end
                 hPix <= 1;
-                vPix <= vPix + 1;
             join
             else
                 hPix <= hPix + 1;
@@ -134,7 +153,9 @@ input wire rst
             
         //Send a request to memory for the next pixel
         if(paintPixel & pixOffset >= 5 & ~request_read) begin //this will send a request to the ram for the next pixel*
+            ready <= 0;
             pixelBuffer <= VGA_rd[119:0]; //load pixel from memory into buffer
+            ready <= 1;
             
             //Reset the offset counter
             pixOffset <= 1;
@@ -185,7 +206,9 @@ input wire rst
                 REQ_FIRST_BLOCK: begin
                     if(request_read == 0 & read_complete) begin
                         VGA_addr <= VGA_addr + 1;
+                        ready <= 0;
                         pixelBuffer <= VGA_rd[119:0];
+                        ready <= 1;
                         request_read <= 1;
                         startupStateMachine <= DRAW;
                     end
