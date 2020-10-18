@@ -5,8 +5,8 @@ create_clock -period 10.0 [get_ports clk]
 #Peripherals
 set_property PACKAGE_PIN N14 [get_ports {clk}]
 set_property IOSTANDARD LVCMOS33 [get_ports {clk}]
-set_property PACKAGE_PIN P6 [get_ports {rst}]
-set_property IOSTANDARD LVCMOS33 [get_ports {rst}]
+#set_property PACKAGE_PIN P6 [get_ports {rst}]
+#set_property IOSTANDARD LVCMOS33 [get_ports {rst}]
 
 #LED Stuff
 set_property PACKAGE_PIN K13 [get_ports led[0]]
@@ -38,23 +38,23 @@ set_property IOSTANDARD LVCMOS33 [get_ports {usb_rx}]
 set_property PACKAGE_PIN P16 [get_ports {usb_tx}]
 set_property IOSTANDARD LVCMOS33 [get_ports {usb_tx}]
 
-##VGA Outputs
-##orange BR C14
-#set_property PACKAGE_PIN P3 [get_ports {hSync}] 
-#set_property IOSTANDARD LVCMOS33 [get_ports {hSync}] 
-##yellow BR C15
-#set_property PACKAGE_PIN P4 [get_ports {vSync}] 
-#set_property IOSTANDARD LVCMOS33 [get_ports {vSync}]
+#VGA Outputs
+#orange BR C14
+set_property PACKAGE_PIN P3 [get_ports {hSync}] 
+set_property IOSTANDARD LVCMOS33 [get_ports {hSync}] 
+#yellow BR C15
+set_property PACKAGE_PIN P4 [get_ports {vSync}] 
+set_property IOSTANDARD LVCMOS33 [get_ports {vSync}]
 
-##red BR C34
-#set_property PACKAGE_PIN R1 [get_ports {red}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {red}]
-##green BR C33
-#set_property PACKAGE_PIN R2 [get_ports {green}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {green}]
-##blue BR C30
-#set_property PACKAGE_PIN R3 [get_ports {blue}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {blue}]
+#red BR C34
+set_property PACKAGE_PIN R1 [get_ports {red}]
+set_property IOSTANDARD LVCMOS33 [get_ports {red}]
+#green BR C33
+set_property PACKAGE_PIN R2 [get_ports {green}]
+set_property IOSTANDARD LVCMOS33 [get_ports {green}]
+#blue BR C30
+set_property PACKAGE_PIN R3 [get_ports {blue}]
+set_property IOSTANDARD LVCMOS33 [get_ports {blue}]
 
 #Bitstream Settings
 set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]

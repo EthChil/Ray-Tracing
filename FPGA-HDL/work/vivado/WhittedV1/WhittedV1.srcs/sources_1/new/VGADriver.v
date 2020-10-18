@@ -122,16 +122,10 @@ input wire rst
         if(read_complete & request_read)
             request_read <= 0;
             
-        
-            
         if(startupStateMachine == DRAW) begin
                 //Send a request to memory for the next pixel
             if(paintPixel & pixOffset >= 4 & ~request_read & ~read_complete) begin //this will send a request to the ram for the next pixel*
-                //`ifdef noRam
-                //pixelBuffer <= 119'hFFFF00FFFF00FFFF00FFFF00FFFF00;
-                //`else
                 pixelBuffer <= VGA_rd; //load pixel from memory into buffer
-                //`endif
                 
                 //Reset the offset counter
                 pixOffset <= 0;
@@ -143,12 +137,8 @@ input wire rst
                 else
                     VGA_addr <= VGA_addr + 1;
                     
-                //Request next group from memory
-                //`ifdef noRam
-                //    request_read <= 0;
-                //`else
                 request_read <= 1;
-                //`endif
+                
             end
             else if(pixOffset >= 4 & paintPixel) fork
                 pixOffset <= 0;
@@ -158,28 +148,16 @@ input wire rst
                 pixOffset <= pixOffset + 1;
                 bitOffset <= ((pixOffset +1) * 24);
             join
-        
-//            led[0] <= 1;
-//            led[1] <= pixelBuffer[119];//off
-//            led[2] <= pixelBuffer[118];//on
-//            led[3] <= pixelBuffer[117];//on
-//            led[4] <= pixelBuffer[116];//off
-//            led[5] <= pixelBuffer[115];//off
-//            led[6] <= pixelBuffer[114];//on
-            
-//            if(pixOffset >= 4)
-//                pixOffset <= 0;
-//            else
-//                pixOffset <= pixOffset + 1;
 
             
             //Handle drawing the pixels
             if(paintPixel) fork //this will paint the next pixel
-                //red <= pixelBuffer >> (bitOffset);
-                red <= request_read;
+                red <= pixelBuffer >> (bitOffset);
+                //red <= request_read;
                 green <= pixelBuffer >> (bitOffset + 8);
-                blue <= read_complete;
-                //blue <= pixelBuffer >> (bitOffset + 16);
+                //green <= (pixOffset >= 4 ? 1 : 0);
+                //blue <= read_complete;
+                blue <= pixelBuffer >> (bitOffset + 16);
             join
             else begin
                 red <= 0;

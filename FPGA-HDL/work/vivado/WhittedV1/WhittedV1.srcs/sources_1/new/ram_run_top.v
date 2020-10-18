@@ -1,32 +1,35 @@
 module ram_run_top(    
     //DDR3 passthroughs
-    inout [15:0]ddr3_dq,
-    inout [1:0]ddr3_dqs_n,
-    inout [1:0]ddr3_dqs_p,
+    inout wire [15:0]ddr3_dq,
+    inout wire [1:0]ddr3_dqs_n,
+    inout wire [1:0]ddr3_dqs_p,
     
-    output [13:0]ddr3_addr,
-    output [2:0]ddr3_ba,
-    output ddr3_ras_n,
-    output ddr3_cas_n,
-    output ddr3_we_n,
-    output ddr3_reset_n,
-    output ddr3_ck_p,
-    output ddr3_ck_n,
-    output ddr3_cke,
-    output ddr3_cs_n,
-    output [1:0]ddr3_dm,
-    output ddr3_odt,
+    output wire [13:0]ddr3_addr,
+    output wire [2:0]ddr3_ba,
+    output wire ddr3_ras_n,
+    output wire ddr3_cas_n,
+    output wire ddr3_we_n,
+    output wire ddr3_reset_n,
+    output wire ddr3_ck_p,
+    output wire ddr3_ck_n,
+    output wire ddr3_cke,
+    output wire ddr3_cs_n,
+    output wire [1:0]ddr3_dm,
+    output wire ddr3_odt,
 
     input wire clk,
     input wire rst,
     output reg [7:0]led,
-    input usb_rx,           // USB->Serial input
-    output usb_tx           // USB->Serial output
+    input wire usb_rx,           // USB->Serial input
+    output wire usb_tx           // USB->Serial output
     );
     
     wire clk200;
     wire clk173;
     wire clk100;
+    
+    wire complete_t;
+    wire clkLock;
     
     reg [127:0] wr_data = 128'h0000000000000069;
     reg [15:0] wr_mask = 16'b0;

@@ -91,7 +91,7 @@ module Top(
     
     wire clk100;
     wire clk200;
-    wire clk173;
+    wire clk141;
     wire clkLock;
     wire ram_clk;
     
@@ -153,9 +153,7 @@ module Top(
         .requestOut(request_read_vga_in),
         
         .completeIn(read_complete_vga_out),
-        .completeOut(read_complete_vga_in),
-        .clk_ram(ram_clk),
-        .clk_vga(clk173)
+        .completeOut(read_complete_vga_in)
         //.rst(rst)
     );
     
@@ -170,9 +168,7 @@ module Top(
         .requestOut(request_read_rt_in),
         
         .completeIn(read_complete_rt_out),
-        .completeOut(read_complete_rt_in),
-        .clk_ram(ram_clk),
-        .clk_vga(clk173)
+        .completeOut(read_complete_rt_in)
         //.rst(rst)
     );
     
@@ -200,7 +196,7 @@ module Top(
         .reset(~rst),
         .clk_out1(clk100),
         .clk_out2(clk200),
-        .clk_out3(clk173),
+        .clk_out3(clk141),//actually 142.87125
         .locked(clkLock)
     );
     
@@ -219,7 +215,7 @@ module Top(
         .vPix(vPix),
         
         //Pixel clock every pulse it will march onto the next pixel
-        .pixelClock(clk173),
+        .pixelClock(clk141),
         
         //Memory interface
         .request_read(request_read_vga_out),

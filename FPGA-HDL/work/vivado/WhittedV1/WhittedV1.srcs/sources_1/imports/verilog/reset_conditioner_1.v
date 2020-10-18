@@ -9,8 +9,8 @@
      STAGES = 4
 */
 module reset_conditioner_1 (
-    input clk,
-    input in,
+    input wire clk,
+    input wire in,
     output reg out
   );
   

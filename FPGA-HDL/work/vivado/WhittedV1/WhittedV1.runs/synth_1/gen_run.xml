@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1603040083">
-  <File Type="PA-TCL" Name="ram_run_top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="ram_run_top_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="ram_run_top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="ram_run_top.vds"/>
-  <File Type="RDS-UTIL" Name="ram_run_top_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="ram_run_top_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="ram_run_top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="ram_run_top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="ram_run_top_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1603043102">
+  <File Type="PA-TCL" Name="Top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Top_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="Top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Top.vds"/>
+  <File Type="RDS-UTIL" Name="Top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="Top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/mig_7series_0/mig_7series_0.xci">
@@ -29,6 +29,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/RamTB.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -115,7 +116,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="ram_run_top"/>
+      <Option Name="TopModule" Val="Top"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

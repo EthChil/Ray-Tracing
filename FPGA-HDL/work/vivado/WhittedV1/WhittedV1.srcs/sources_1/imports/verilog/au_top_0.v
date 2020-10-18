@@ -21,22 +21,22 @@
 
 module MemController(
     /* DDR3 Connections */
-    inout [15:0]ddr3_dq,
-    inout [1:0]ddr3_dqs_n,
-    inout [1:0]ddr3_dqs_p,
+    inout wire [15:0]ddr3_dq,
+    inout wire [1:0]ddr3_dqs_n,
+    inout wire [1:0]ddr3_dqs_p,
     
-    output [13:0]ddr3_addr,
-    output [2:0]ddr3_ba,
-    output ddr3_ras_n,
-    output ddr3_cas_n,
-    output ddr3_we_n,
-    output ddr3_reset_n,
-    output ddr3_ck_p,
-    output ddr3_ck_n,
-    output ddr3_cke,
-    output ddr3_cs_n,
-    output [1:0]ddr3_dm,
-    output ddr3_odt,
+    output wire [13:0]ddr3_addr,
+    output wire [2:0]ddr3_ba,
+    output wire ddr3_ras_n,
+    output wire ddr3_cas_n,
+    output wire ddr3_we_n,
+    output wire ddr3_reset_n,
+    output wire ddr3_ck_p,
+    output wire ddr3_ck_n,
+    output wire ddr3_cke,
+    output wire ddr3_cs_n,
+    output wire [1:0]ddr3_dm,
+    output wire ddr3_odt,
     
     input wire request_read_vga,
     output reg read_complete_vga,
@@ -65,7 +65,6 @@ module MemController(
     );
     
     wire sync_rst;
-    //initial msg = 8'b01101001;
     
     reg wr_en = 0;
 
@@ -80,22 +79,7 @@ module MemController(
     wire rd_valid;
     wire rdy;
     wire wr_rdy;
-    
-    //wire ui_clk;
-    
-//    wire clk200;
-//    wire clk100;
 
-    
-//    clk_wiz_0 clk_wiz(    
-//    .clk_in1(clk),
-//    .reset(~rst),
-//    .clk_out1(clk100),
-//    .clk_out2(clk200),
-//    .locked(clkLock)
-//    );
-
-    
     mig_7series_0 mig(
     //inouts
     .app_rd_data(rd_data), 
@@ -229,6 +213,7 @@ module MemController(
             end
             WAIT_READ: begin
                 if(rd_valid) begin
+                
                     //this will pipe the read data to the correct endpoint
                     if(request_read_vga) begin //VGA gets priority to ensure that the pixels are being driven
                         //rd_data_vga <= rd_data;
@@ -240,21 +225,10 @@ module MemController(
                         read_complete_rt <= 1;
                     end
                     
-                    led <= rd_data;
+                    //led <= rd_data;
                     
                     state <= DELAY;
                 end
-                else begin
-                    if(request_read_vga) begin //VGA gets priority to ensure that the pixels are being driven
-                        read_complete_vga <= 1;
-                    end
-                    else if(request_read_rt) begin
-                        read_complete_rt <= 1;
-                    end
-                
-                    //state <= DELAY;
-                end
-                //TODO error handling here
             end
             DELAY: begin
                 //This will maximize read cycles which are crucial for 

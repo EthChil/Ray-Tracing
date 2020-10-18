@@ -22,6 +22,9 @@
 
 module RamTB();
     
+    reg clk = 0;
+    
+
 
     initial begin
         
