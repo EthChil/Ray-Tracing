@@ -24,22 +24,22 @@
 
 module Top(    
     //DDR3 passthroughs
-    inout [15:0]ddr3_dq,
-    inout [1:0]ddr3_dqs_n,
-    inout [1:0]ddr3_dqs_p,
+    inout wire [15:0]ddr3_dq,
+    inout wire [1:0]ddr3_dqs_n,
+    inout wire [1:0]ddr3_dqs_p,
     
-    output [13:0]ddr3_addr,
-    output [2:0]ddr3_ba,
-    output ddr3_ras_n,
-    output ddr3_cas_n,
-    output ddr3_we_n,
-    output ddr3_reset_n,
-    output ddr3_ck_p,
-    output ddr3_ck_n,
-    output ddr3_cke,
-    output ddr3_cs_n,
-    output [1:0]ddr3_dm,
-    output ddr3_odt,
+    output wire [13:0]ddr3_addr,
+    output wire [2:0]ddr3_ba,
+    output wire ddr3_ras_n,
+    output wire ddr3_cas_n,
+    output wire ddr3_we_n,
+    output wire ddr3_reset_n,
+    output wire ddr3_ck_p,
+    output wire ddr3_ck_n,
+    output wire ddr3_cke,
+    output wire ddr3_cs_n,
+    output wire [1:0]ddr3_dm,
+    output wire ddr3_odt,
 
     //VGA Outputs
     output wire hSync,
@@ -51,34 +51,14 @@ module Top(
     //Peripherals
     input wire clk,
     //input wire rst,
-    output reg [7:0]led,
+    output wire [7:0]led,
     input wire usb_rx,           // USB->Serial input
     output wire usb_tx           // USB->Serial output
     );
     
     wire rst = 1;
     
-    
-//module VGADriver(
-////VGA stuff
-//output reg [7:0]red,
-//output reg [7:0]green,
-//output reg [7:0]blue,
-//output wire hSync,
-//output wire vSync,
 
-//output reg [11:0]hPix,
-//output reg [10:0]vPix,
-//output wire pixelClock,
-
-////Memory Interface
-//output reg VGA_request_read,
-//output reg [27:0]VGA_addr,
-//input wire [127:0]VGA_rd,
-
-//input refClk,
-//input rst
-    
     reg [7:0]red8;
     reg [7:0]green8;
     reg [7:0]blue8;
@@ -225,8 +205,8 @@ module Top(
         .VGA_rd(rd_data_vga_b),
 
         //Peripherals
-        .rst(rst)
-        //.led(led)
+        .rst(rst),
+        .led(led)
     );
 
     
@@ -245,7 +225,7 @@ module Top(
         
         .vgaV(vPix),
         .rst(rst),
-        .clk(clk173)
+        .clk(clk141)
     );
     
     MemController ram(
@@ -255,7 +235,7 @@ module Top(
     .clk100(clk100),
     .clk200(clk200),
     .rst(rst),
-    .led(led),
+//    .led(led),
     
     //inouts
     .ddr3_dq(ddr3_dq),

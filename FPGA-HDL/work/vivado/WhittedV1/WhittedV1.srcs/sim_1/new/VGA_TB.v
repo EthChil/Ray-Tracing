@@ -40,6 +40,22 @@ module VGA_TB();
     always 
         #5 clk <= ~clk;
 
+    wire clk100;
+    wire clk200;
+    wire clk173;
+    wire clkLock;
+    
+    wire [7:0]red8;
+    wire [7:0]blue8;
+    wire [7:0]green8;
+    
+    wire vPix;
+    
+    wire request_read_vga_out;
+    wire read_complete_vga_in;
+    
+    wire [27:0]addr_vga_a;
+    wire [127:0] rd_data_vga_b;
     
     clk_wiz_0 clk_wiz(    
         .clk_in1(clk),
@@ -71,11 +87,11 @@ module VGA_TB();
         .read_complete(read_complete_vga_in),
         
         .VGA_addr(addr_vga_a),
-        .VGA_rd(rd_data_vga_b),
+        .VGA_rd(rd_data_vga_b)
 
         //Peripherals
-        .rst(rst),
-        .led(led)
+        //.rst(rst)
+        //.led(led)
     );
     
     assign red = (| red8);

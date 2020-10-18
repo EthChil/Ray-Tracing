@@ -60,7 +60,7 @@ module MemController(
     input wire clk200,
     input wire clkLock,
     input wire rst,            // reset button (active low)
-    output reg [7:0]led,
+    //output reg [7:0]led,
     output wire ui_clk
     );
     
@@ -174,7 +174,7 @@ module MemController(
             read_complete_rt <= 0;
         
         //led <= 0;
-        led <= state;
+        //led <= state;
         //led[7] <= ~wr_rdy;
 
         case(state) //SUPER XL NOTE this is the issue it's not getting past write data

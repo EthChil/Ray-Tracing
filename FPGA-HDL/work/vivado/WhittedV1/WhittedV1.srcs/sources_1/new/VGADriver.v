@@ -46,7 +46,8 @@ output reg [27:0]VGA_addr,
 input wire [127:0]VGA_rd,
 
 //Peripheral lines
-input wire rst
+input wire rst,
+output reg [7:0]led
 );
     //ui_clk is 81.25mhz
     //
@@ -116,6 +117,8 @@ input wire rst
     //drawn     1   2   3   4   1   2   3
     //
     
+    //NOTE although the pipeline from ram to the display appears good there may be a timing issue that needs to be remedied
+    
     //on every clock the pixels must be driven
     always @(posedge pixelClock) begin
         //C1, R1 Done -> Reset
@@ -123,6 +126,7 @@ input wire rst
             request_read <= 0;
             
         if(startupStateMachine == DRAW) begin
+            led <= 0;
                 //Send a request to memory for the next pixel
             if(paintPixel & pixOffset >= 4 & ~request_read & ~read_complete) begin //this will send a request to the ram for the next pixel*
                 pixelBuffer <= VGA_rd; //load pixel from memory into buffer
@@ -141,6 +145,7 @@ input wire rst
                 
             end
             else if(pixOffset >= 4 & paintPixel) fork
+                //pixelBuffer <= 0;
                 pixOffset <= 0;
                 bitOffset <= 0;
             join
@@ -148,16 +153,21 @@ input wire rst
                 pixOffset <= pixOffset + 1;
                 bitOffset <= ((pixOffset +1) * 24);
             join
-
+            
+            //5 pixel red (this is reading off the buffer)
+            //5 pixel red and green (sometimes 6) (last pixel is blue meaning the read is complete)
+            //5 pixel red last pixel is not green or blue
+            
+            //note: draw vs wait initial value doesn't change anything
             
             //Handle drawing the pixels
             if(paintPixel) fork //this will paint the next pixel
                 red <= pixelBuffer >> (bitOffset);
                 //red <= request_read;
-                green <= pixelBuffer >> (bitOffset + 8);
-                //green <= (pixOffset >= 4 ? 1 : 0);
-                //blue <= read_complete;
-                blue <= pixelBuffer >> (bitOffset + 16);
+                //green <= pixelBuffer >> (bitOffset + 8);
+                green <= request_read;
+                blue <= read_complete;
+                //blue <= pixelBuffer >> (bitOffset + 16);
             join
             else begin
                 red <= 0;
@@ -210,6 +220,7 @@ input wire rst
         //This will be set at the beginning and after a reset
         //This ensures that the memory is hit and the buffer prepped for the initial frame
         if(startupStateMachine != DRAW | ~rst) begin
+            led <= 1;
         
             //When starting up the pixel buffer needs to be filled and a request needs to be sent for the next set
             case(startupStateMachine)
