@@ -1,7 +1,0 @@
-# compile verilog/system verilog design source files
-verilog xil_defaultlib  --include "../../../../../WhittedV1.srcs/sources_1/new" --include "../../../../../WhittedV1.srcs/sources_1/ip/clk_wiz_0" \
-"topTB_func_synth.v" \
-"../../../../../WhittedV1.srcs/sim_1/new/topTB.v" \
-
-# Do not sort compile order
-nosort

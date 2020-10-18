@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/RayTracer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RayTracer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2458] undeclared symbol vPixOut, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:149]
+INFO: [VRFC 10-2458] undeclared symbol rt_ready, assumed default net type wire [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/Top.v:153]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/new/VGADriver.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGADriver
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/imports/verilog/au_top_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemController
