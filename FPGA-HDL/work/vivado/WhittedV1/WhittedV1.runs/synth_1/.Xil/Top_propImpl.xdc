@@ -1,19 +1,19 @@
-set_property SRC_FILE_INFO {cfile:c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc rfile:../../../WhittedV1.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc id:1 order:EARLY scoped_inst:ram/mig} [current_design]
-set_property SRC_FILE_INFO {cfile:c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc rfile:../../../WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc id:2 order:EARLY scoped_inst:clk_wiz} [current_design]
+set_property SRC_FILE_INFO {cfile:c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc rfile:../../../WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc id:1 order:EARLY scoped_inst:clk_wiz} [current_design]
+set_property SRC_FILE_INFO {cfile:c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc rfile:../../../WhittedV1.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc id:2 order:EARLY scoped_inst:ram/mig} [current_design]
 set_property SRC_FILE_INFO {cfile:C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/constraint/alchitry.xdc rfile:../../../../../constraint/alchitry.xdc id:3} [current_design]
-current_instance ram/mig
-set_property src_info {type:SCOPED_XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
-create_clock -period 12.308 [get_ports {}]
-current_instance
 current_instance clk_wiz
-set_property src_info {type:SCOPED_XDC file:2 line:1 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:SCOPED_XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
 create_clock -period 10.000 [get_ports -no_traverse {}]
-set_property src_info {type:SCOPED_XDC file:2 line:4 export:INPUT save:INPUT read:READ} [current_design]
-create_generated_clock -source [get_ports clk_in1] -edges {1 2 3} -edge_shift {0.000 -2.500 -5.000} [get_ports {}]
-set_property src_info {type:SCOPED_XDC file:2 line:6 export:INPUT save:INPUT read:READ} [current_design]
-create_generated_clock -source [get_ports clk_in1] -edges {1 2 3} -edge_shift {0.000 -1.500 -3.000} [get_ports {}]
-set_property src_info {type:SCOPED_XDC file:2 line:8 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:SCOPED_XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
+create_generated_clock -source [get_ports clk_in1] -edges {1 2 3} -edge_shift {0.000 3.333 6.667} [get_ports {}]
+set_property src_info {type:SCOPED_XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]
 create_generated_clock -source [get_ports clk_in1] -edges {1 2 3} -edge_shift {0.000 0.000 0.000} [get_ports {}]
+set_property src_info {type:SCOPED_XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
+create_generated_clock -source [get_ports clk_in1] -edges {1 2 3} -edge_shift {0.000 -2.500 -5.000} [get_ports {}]
+current_instance
+current_instance ram/mig
+set_property src_info {type:SCOPED_XDC file:2 line:2 export:INPUT save:INPUT read:READ} [current_design]
+create_clock -period 12.308 [get_ports {}]
 current_instance
 set_property src_info {type:XDC file:3 line:6 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN N14 [get_ports {clk}]

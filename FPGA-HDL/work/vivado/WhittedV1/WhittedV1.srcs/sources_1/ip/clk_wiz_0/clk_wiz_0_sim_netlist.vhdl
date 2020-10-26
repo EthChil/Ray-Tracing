@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Sun Oct 18 13:11:57 2020
+-- Date        : Fri Oct 23 02:42:01 2020
 -- Host        : Tony-Maloney running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
@@ -93,20 +93,20 @@ clkout3_buf: unisim.vcomponents.BUFG
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
       BANDWIDTH => "OPTIMIZED",
-      CLKFBOUT_MULT_F => 10.000000,
+      CLKFBOUT_MULT_F => 6.000000,
       CLKFBOUT_PHASE => 0.000000,
       CLKFBOUT_USE_FINE_PS => false,
       CLKIN1_PERIOD => 10.000000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 10.000000,
+      CLKOUT0_DIVIDE_F => 6.000000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,
-      CLKOUT1_DIVIDE => 5,
+      CLKOUT1_DIVIDE => 3,
       CLKOUT1_DUTY_CYCLE => 0.500000,
       CLKOUT1_PHASE => 0.000000,
       CLKOUT1_USE_FINE_PS => false,
-      CLKOUT2_DIVIDE => 7,
+      CLKOUT2_DIVIDE => 10,
       CLKOUT2_DUTY_CYCLE => 0.500000,
       CLKOUT2_PHASE => 0.000000,
       CLKOUT2_USE_FINE_PS => false,

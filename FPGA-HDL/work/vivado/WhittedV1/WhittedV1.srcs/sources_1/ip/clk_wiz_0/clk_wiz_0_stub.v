@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Sun Oct 18 13:11:57 2020
+// Date        : Fri Oct 23 02:42:01 2020
 // Host        : Tony-Maloney running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v

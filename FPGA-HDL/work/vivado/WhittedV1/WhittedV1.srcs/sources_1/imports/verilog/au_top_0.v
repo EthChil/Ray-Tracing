@@ -38,8 +38,14 @@ module MemController(
     output wire [1:0]ddr3_dm,
     output wire ddr3_odt,
     
-    input wire request_read_vga,
-    output reg read_complete_vga,
+//    input wire request_read_vga,
+//    output reg read_complete_vga,
+    input wire vga_rd_full,
+    input wire vga_addr_empty,
+    
+    output reg vga_rd_wr_en,
+    output reg vga_addr_rd_en,
+    
     input reg [27:0]addr_vga,
     output reg [127:0]rd_data_vga,
     
@@ -61,7 +67,8 @@ module MemController(
     input wire clkLock,
     input wire rst,            // reset button (active low)
     //output reg [7:0]led,
-    output wire ui_clk
+    output wire ui_clk,
+    output reg [1:0]db
     );
     
     wire sync_rst;
@@ -146,105 +153,122 @@ module MemController(
     
     reg [2:0]state = DELAY;
     
+    reg [20:0] timeout = 0;
+    
     
     initial fork
         write_complete_rt = 0;
         read_complete_rt = 0;
         
-        read_complete_vga = 0;
+//        read_complete_vga = 0;
+        vga_rd_wr_en <= 0;
+        vga_addr_rd_en <= 0;
         
         rd_data_vga = 0;
     join
     
     always @(posedge ui_clk) begin
-        if(~rst) fork
-            write_complete_rt <= 0;
-            read_complete_rt <= 0;
+//        if(~rst) fork
+//            write_complete_rt <= 0;
+//            read_complete_rt <= 0;
             
-            read_complete_vga <= 0;
+//            vga_rd_wr_en <= 0;
+//            vga_addr_rd_en <= 0;
             
-            state <= DELAY;
-        join
+////            read_complete_vga <= 0;
+            
+//            state <= DELAY;
+//        join
+        
+        //db <= 0;
         
         if(~request_write_rt & write_complete_rt)
             write_complete_rt <= 0;
-        if(~request_read_vga & read_complete_vga)
-            read_complete_vga <= 0;
+//        if(~request_read_vga & read_complete_vga)
+//            read_complete_vga <= 0;
         if(~request_read_rt & read_complete_rt)
             read_complete_rt <= 0;
         
         //led <= 0;
         //led <= state;
         //led[7] <= ~wr_rdy;
-
-        case(state) //SUPER XL NOTE this is the issue it's not getting past write data
-            WRITE_DATA: begin
-                wr_en <= 1'b1;
-                
-                wr_mask <= wr_mask_rt;
-                wr_data <= wr_data_rt;
-                
-                if(wr_rdy)
-                    state <= WRITE_CMD;
-            end
-            WRITE_CMD: begin
-                en <= 1'b1;
-                cmd <= 0; //0 = write
-                addr <= {addr_wr_rt, 3'b000}; 
-                
-                if(rdy) begin
-                    write_complete_rt <= 1'b1;
-                    state <= DELAY;
+        if(~rst) begin
+            case(state) //SUPER XL NOTE this is the issue it's not getting past write data
+                WRITE_DATA: begin
+                    wr_en <= 1'b1;
+                    
+                    wr_mask <= wr_mask_rt;
+    //                wr_data <= wr_data_rt;
+                    wr_data <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
+                    
+                    if(wr_rdy) fork
+                        state <= WRITE_CMD;
+                        timeout <= 0;
+                    join
                 end
-            end
-            READ_CMD: begin
-                en <= 1'b1;
-                cmd <= 1'b1; //1 = read
-                
-                if(request_read_vga)
+                WRITE_CMD: begin
+                    en <= 1'b1;
+                    cmd <= 0; //0 = write
+                    addr <= {addr_wr_rt, 3'b000}; 
+                    
+                    if(rdy) begin
+                        write_complete_rt <= 1'b1;
+                        state <= DELAY;
+                    end
+                end
+                READ_CMD: begin
+                    en <= 1'b1;
+                    cmd <= 1'b1; //1 = read
+                    
                     addr <= {addr_vga, 3'b000}; 
-                else if(request_read_rt)
-                    addr <= {addr_rd_rt, 3'b000};
-                else 
-                    addr <= 28'b0;
+    //                else if(request_read_rt)
+    //                    addr <= {addr_rd_rt, 3'b000};
+    //                else 
+    //                    addr <= 28'b0;
+                    
+                    if(rdy)
+                        state <= WAIT_READ;
+                end
+                WAIT_READ: begin
+                    vga_addr_rd_en <= 0;
                 
-                if(rdy)
-                    state <= WAIT_READ;
-            end
-            WAIT_READ: begin
-                if(rd_valid) begin
-                
-                    //this will pipe the read data to the correct endpoint
-                    if(request_read_vga) begin //VGA gets priority to ensure that the pixels are being driven
-                        //rd_data_vga <= rd_data;
+                    if(rd_valid) begin
+    
+                    
+                        //this will pipe the read data to the correct endpoint
                         rd_data_vga <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
-                        read_complete_vga <= 1;
+                        vga_rd_wr_en <= 1;
+                            //rd_data_vga <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
+    //                    else if(request_read_rt) begin
+    //                        rd_data_rt <= rd_data;
+    //                        read_complete_rt <= 1;
+    //                    end
+                        
+                        //led <= rd_data;
+                        
+                        state <= DELAY;
+                        
+                        timeout <= 0;
                     end
-                    else if(request_read_rt) begin
-                        rd_data_rt <= rd_data;
-                        read_complete_rt <= 1;
-                    end
-                    
-                    //led <= rd_data;
-                    
+                end
+                DELAY: begin
+                    //This will maximize read cycles which are crucial for 
+    //                if(request_write_rt & ~write_complete_rt) fork
+    //                    state <= WRITE_DATA;
+    //                join
+                    vga_rd_wr_en <= 0;
+                    if(~vga_rd_full & ~vga_addr_empty) fork
+                        state <= READ_CMD;
+                        vga_addr_rd_en <= 1;
+                    join
+    //                else if(request_read_rt & ~read_complete_rt) fork
+    //                    state <= READ_CMD;
+    //                join
+                end
+                default: begin
                     state <= DELAY;
                 end
-            end
-            DELAY: begin
-                //This will maximize read cycles which are crucial for 
-                if(request_write_rt & ~write_complete_rt) fork
-                    state <= WRITE_DATA;
-                join
-                else if(request_read_vga & ~read_complete_vga) fork
-                    state <= READ_CMD;
-                join
-                else if(request_read_rt & ~read_complete_rt) fork
-                    state <= READ_CMD;
-                join
-            end
-            default: begin
-                state <= DELAY;
-            end
-       endcase
+           endcase
+       end
     end    
 endmodule

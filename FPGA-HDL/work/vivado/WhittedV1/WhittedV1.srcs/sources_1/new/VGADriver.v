@@ -28,26 +28,31 @@
 //TODO change code from one row per pixel to one row per five pixels
 
 module VGADriver(
-//VGA stuff
-output reg [7:0]red, //Drive
-output reg [7:0]green,
-output reg [7:0]blue,
-output wire hSync,
-output wire vSync,
+    //VGA stuff
+    output reg [7:0]red, //Drive
+    output reg [7:0]green,
+    output reg [7:0]blue,
+    output wire hSync,
+    output wire vSync,
+    
+    output reg [10:0]vPix,
+    input wire pixelClock,
+    
+    //Memory Interface
+//    output reg request_read,
+//    input wire read_complete,
+    output reg rd_rd_en,
+    output reg addr_wr_en,
 
-output reg [10:0]vPix,
-input wire pixelClock,
-
-//Memory Interface
-output reg request_read,
-input wire read_complete,
-
-output reg [27:0]VGA_addr,
-input wire [127:0]VGA_rd,
-
-//Peripheral lines
-input wire rst,
-output reg [7:0]led
+    input wire rd_empty,
+    input wire addr_full,
+    
+    output reg [27:0]VGA_addr,
+    input wire [127:0]VGA_rd,
+    
+    //Peripheral lines
+    input wire rst
+    //output reg [7:0]led
 );
     //ui_clk is 81.25mhz
     //
@@ -55,14 +60,15 @@ output reg [7:0]led
     //Pixel buffer holds current group of 5 pixels
     reg [119:0]pixelBuffer;
     
-    parameter WAIT = 2'd0;
-    parameter REQ_FIRST_BLOCK = 2'd1;
-    parameter REQ_SECOND_BLOCK = 2'd2;
-    parameter DRAW = 2'd3;
+    parameter WAIT = 3'd0;
+    parameter REQ_FIRST_BLOCK = 3'd1;
+    parameter DRAW = 3'd2;
+    parameter HANG = 3'd3;
+    parameter REST = 3'd4;
     
     reg [11:0] hPix;
     
-    reg [1:0]startupStateMachine;
+    reg [2:0]startupStateMachine;
     
     //boolean that tracks if we are in a display section of the screen
     wire paintPixel = (hPix <= `hView & vPix < `vView);
@@ -77,9 +83,11 @@ output reg [7:0]led
         //`ifdef noRam
         //startupStateMachine = DRAW;
         //`else
-        startupStateMachine = WAIT;
+        startupStateMachine = HANG;
         //`endif
         VGA_addr = 0;
+        rd_rd_en <= 0;
+        addr_wr_en <= 0;
 
         //initially 0 so that they aren't x
         red = 8'b0;
@@ -96,8 +104,8 @@ output reg [7:0]led
         //pixel buffer starts at 0 and will be set once things are called from memory
         pixelBuffer = 0;
         
-        request_read = 0;
         
+//        request_read = 0;
     join
     
     
@@ -122,34 +130,56 @@ output reg [7:0]led
     //on every clock the pixels must be driven
     always @(posedge pixelClock) begin
         //C1, R1 Done -> Reset
-        if(read_complete & request_read)
-            request_read <= 0;
+//        if(read_complete & request_read)
+//            request_read <= 0;
             
-        if(startupStateMachine == DRAW) begin
-            led <= 0;
+        if(startupStateMachine == DRAW & ~rst) begin
+            //led[6] <= rd_empty;
+            //led[7] <= addr_full;
                 //Send a request to memory for the next pixel
-            if(paintPixel & pixOffset >= 4 & ~request_read & ~read_complete) begin //this will send a request to the ram for the next pixel*
-                pixelBuffer <= VGA_rd; //load pixel from memory into buffer
-                
-                //Reset the offset counter
+            if(paintPixel & pixOffset >= 4 & ~rd_empty & ~addr_full) begin //this will send a request to the ram for the next pixel*
+               rd_rd_en <= 1;
+            
                 pixOffset <= 0;
                 bitOffset <= 0;
                 
+                pixelBuffer <= VGA_rd; //load pixel from memory into buffer
+//                blue <= 0;
+                
+//                if(| pixelBuffer)
+//                    pixelBuffer <= 0;
+//                else
+//                    pixelBuffer <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
+                
+                //Reset the offset counter
+
+                
                 //Grab address of next group
+                
+                
                 if(hPix >= (`hView-5) & vPix >= `vView) //edge case end of frame
                     VGA_addr <= 0;
                 else
                     VGA_addr <= VGA_addr + 1;
+
+
+                addr_wr_en <= 1;
                     
-                request_read <= 1;
+                //request_read <= 1;
                 
             end
             else if(pixOffset >= 4 & paintPixel) fork
-                //pixelBuffer <= 0;
+                //pixelBuffer <= 128'b1;
+//                blue <= 1;
+                //led <= 1;
                 pixOffset <= 0;
                 bitOffset <= 0;
+                rd_rd_en <= 0;
+                addr_wr_en <= 0;
             join
             else if(paintPixel) fork
+                rd_rd_en <= 0;
+                addr_wr_en <= 0;
                 pixOffset <= pixOffset + 1;
                 bitOffset <= ((pixOffset +1) * 24);
             join
@@ -163,11 +193,11 @@ output reg [7:0]led
             //Handle drawing the pixels
             if(paintPixel) fork //this will paint the next pixel
                 red <= pixelBuffer >> (bitOffset);
-                //red <= request_read;
-                //green <= pixelBuffer >> (bitOffset + 8);
-                green <= request_read;
-                blue <= read_complete;
-                //blue <= pixelBuffer >> (bitOffset + 16);
+                //red <= request_read; //always on
+                green <= pixelBuffer >> (bitOffset + 8);
+                //green <= read_complete; 
+                //blue <= read_complete;
+                blue <= pixelBuffer >> (bitOffset + 16); //on then off sometimes
             join
             else begin
                 red <= 0;
@@ -196,7 +226,7 @@ output reg [7:0]led
         
         //If the chip is reset the draw should restart
         //This will reset all the crucial values
-        if(~rst) fork
+        if(rst) fork
             //initially 0 so that they aren't x
             red <= 8'b0;
             blue <= 8'b0;
@@ -214,29 +244,41 @@ output reg [7:0]led
             //Startup state machine starts at wait while stuff loads
             startupStateMachine <= WAIT;
             
-            request_read <= 0;
         join
         
         //This will be set at the beginning and after a reset
         //This ensures that the memory is hit and the buffer prepped for the initial frame
-        if(startupStateMachine != DRAW | ~rst) begin
-            led <= 1;
+        if(startupStateMachine != DRAW & ~rst) begin
+            //led <= startupStateMachine;
         
             //When starting up the pixel buffer needs to be filled and a request needs to be sent for the next set
             case(startupStateMachine)
-                WAIT:
-                    if(~request_read & ~read_complete) begin
-                        VGA_addr <= 0;
-                        request_read <= 1;
-                        startupStateMachine <= REQ_FIRST_BLOCK;
-                    end
+                WAIT: begin
+                    VGA_addr <= 0;
+                    addr_wr_en <= 1;
+//                        request_read <= 1;
+                    startupStateMachine <= REQ_FIRST_BLOCK;
+                end
                 REQ_FIRST_BLOCK: begin
-                    if(~request_read & ~read_complete) begin
+                    addr_wr_en <= 0;
+                    if(~rd_empty) begin
+                        rd_rd_en <= 1;
                         VGA_addr <= VGA_addr + 1;
+                        addr_wr_en <= 1;
                         pixelBuffer <= VGA_rd;
-                        request_read <= 1;
-                        startupStateMachine <= DRAW;
+//                        request_read <= 1;
+                        startupStateMachine <= REST;
                     end
+                end
+                HANG: begin
+                    #10;
+                    startupStateMachine <= WAIT;
+                end
+                REST: begin
+                    addr_wr_en <= 0;
+                    rd_rd_en <= 0;
+                    
+                    startupStateMachine <= DRAW;
                 end
                 default:
                     startupStateMachine <= WAIT;

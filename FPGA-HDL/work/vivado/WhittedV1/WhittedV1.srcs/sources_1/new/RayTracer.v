@@ -97,11 +97,14 @@ module RayTracer(
 
        //TODO: figure out a method by which to sync the pixel for now this should be fine tho
         //pixel_buffer <= pixel_buffer << 12;
-//        if(hPix <= 1000)
-//            pixel_buffer <= ((pixel_buffer << 24) | (24'h000000));
-//        else
-//            pixel_buffer <= ((pixel_buffer << 24) | (24'hFFFFFF));
-        //pixel_buffer <= 119'hFFFF00FFFF00FFFF00FFFF00FFFF00;
+        
+        if(hPix <= 1000)
+            //pixel_buffer <= ((pixel_buffer << 24) | (24'h000000));
+            pixel_buffer <=  128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
+        else
+            pixel_buffer <=  0;
+            //pixel_buffer <= ((pixel_buffer << 24) | (24'hFFFFFF));
+        
         
         offset <= offset + 1;
         
@@ -110,7 +113,7 @@ module RayTracer(
                 offset <= 0;
                 addr_wr_rt <= addr_wr_rt + 1;
                 //wr_data_rt <= pixel_buffer;
-                wr_data_rt <= 128'h0FFFF00FFFF00FFFF00FFFF00FFFF00;
+                //wr_data_rt <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
             join
             
             pixel_buffer <= 0;

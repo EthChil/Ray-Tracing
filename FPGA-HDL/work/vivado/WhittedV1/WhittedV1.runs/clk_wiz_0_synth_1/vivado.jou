@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Sun Oct 18 13:11:15 2020
-# Process ID: 19236
+# Start of session at: Fri Oct 23 02:41:20 2020
+# Process ID: 19440
 # Current directory: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.runs/clk_wiz_0_synth_1
 # Command line: vivado.exe -log clk_wiz_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
 # Log file: C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.runs/clk_wiz_0_synth_1/clk_wiz_0.vds

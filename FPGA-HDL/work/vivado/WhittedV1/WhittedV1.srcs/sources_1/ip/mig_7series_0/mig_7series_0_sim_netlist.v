@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Sun Oct  4 01:08:01 2020
+// Date        : Sat Oct 24 15:33:04 2020
 // Host        : Tony-Maloney running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/ethan/Documents/temp/WhittedV1/cores/mig_7series_0/mig_7series_0_sim_netlist.v
+//               c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/mig_7series_0/mig_7series_0_sim_netlist.v
 // Design      : mig_7series_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

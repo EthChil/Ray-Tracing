@@ -28,6 +28,8 @@ module topTB();
     wire [11:0]hPix;
     wire [10:0]vPix;
     
+    
+    
     always 
         #5 clkEx <= ~clkEx;
     

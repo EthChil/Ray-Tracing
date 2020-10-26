@@ -1351,7 +1351,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:786486ac</spirit:value>
+            <spirit:value>9:0b5c9a44</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1367,11 +1367,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Oct 18 17:11:09 UTC 2020</spirit:value>
+            <spirit:value>Fri Oct 23 06:41:13 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ff885035</spirit:value>
+            <spirit:value>9:44ece709</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1386,11 +1386,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Oct 18 17:11:10 UTC 2020</spirit:value>
+            <spirit:value>Fri Oct 23 06:41:15 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ff885035</spirit:value>
+            <spirit:value>9:44ece709</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1401,7 +1401,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ff885035</spirit:value>
+            <spirit:value>9:44ece709</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1416,11 +1416,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Oct 18 17:11:10 UTC 2020</spirit:value>
+            <spirit:value>Fri Oct 23 06:41:15 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ff885035</spirit:value>
+            <spirit:value>9:44ece709</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1435,11 +1435,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Oct 18 17:11:10 UTC 2020</spirit:value>
+            <spirit:value>Fri Oct 23 06:41:15 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:589468e9</spirit:value>
+            <spirit:value>9:fa3169b9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1454,11 +1454,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Oct 18 17:11:10 UTC 2020</spirit:value>
+            <spirit:value>Fri Oct 23 06:41:15 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:589468e9</spirit:value>
+            <spirit:value>9:fa3169b9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1472,11 +1472,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Oct 18 17:11:10 UTC 2020</spirit:value>
+            <spirit:value>Fri Oct 23 06:41:15 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ff885035</spirit:value>
+            <spirit:value>9:44ece709</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1490,11 +1490,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Oct 18 17:11:10 UTC 2020</spirit:value>
+            <spirit:value>Fri Oct 23 06:41:15 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ff885035</spirit:value>
+            <spirit:value>9:44ece709</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1508,11 +1508,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Oct 18 17:11:57 UTC 2020</spirit:value>
+            <spirit:value>Fri Oct 23 06:42:01 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ff885035</spirit:value>
+            <spirit:value>9:44ece709</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2760,15 +2760,15 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_OUTCLK_SUM_ROW1</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW1" spirit:order="247">clk_out1__100.00000______0.000______50.0______130.958_____98.575</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW1" spirit:order="247">clk_out1__100.00000______0.000______50.0______151.366____132.063</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_OUTCLK_SUM_ROW2</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW2" spirit:order="248">clk_out2__200.00000______0.000______50.0______114.829_____98.575</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW2" spirit:order="248">clk_out2__200.00000______0.000______50.0______132.221____132.063</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_OUTCLK_SUM_ROW3</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW3" spirit:order="249">clk_out3__142.85714______0.000______50.0______122.190_____98.575</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW3" spirit:order="249">clk_out3__60.00000______0.000______50.0______168.019____132.063</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_OUTCLK_SUM_ROW4</spirit:name>
@@ -2796,7 +2796,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT3_REQUESTED_OUT_FREQ</spirit:name>
-        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT3_REQUESTED_OUT_FREQ" spirit:order="256">141.5</spirit:value>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT3_REQUESTED_OUT_FREQ" spirit:order="256">60.5</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT4_REQUESTED_OUT_FREQ</spirit:name>
@@ -2880,7 +2880,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT3_OUT_FREQ</spirit:name>
-        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT3_OUT_FREQ" spirit:order="277">142.85714</spirit:value>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT3_OUT_FREQ" spirit:order="277">60.00000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT4_OUT_FREQ</spirit:name>
@@ -3000,15 +3000,15 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_MMCM_CLKFBOUT_MULT_F</spirit:name>
-        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKFBOUT_MULT_F" spirit:order="298">10.000</spirit:value>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKFBOUT_MULT_F" spirit:order="298">6.000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_MMCM_CLKIN1_PERIOD</spirit:name>
-        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKIN1_PERIOD" spirit:order="299">10.000</spirit:value>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKIN1_PERIOD" spirit:order="299">10.0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_MMCM_CLKIN2_PERIOD</spirit:name>
-        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKIN2_PERIOD" spirit:order="300">10.000</spirit:value>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKIN2_PERIOD" spirit:order="300">10.0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_MMCM_CLKOUT4_CASCADE</spirit:name>
@@ -3040,15 +3040,15 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_MMCM_CLKOUT0_DIVIDE_F</spirit:name>
-        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKOUT0_DIVIDE_F" spirit:order="308">10.000</spirit:value>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKOUT0_DIVIDE_F" spirit:order="308">6.000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_MMCM_CLKOUT1_DIVIDE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKOUT1_DIVIDE" spirit:order="309">5</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKOUT1_DIVIDE" spirit:order="309">3</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_MMCM_CLKOUT2_DIVIDE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKOUT2_DIVIDE" spirit:order="310">7</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MMCM_CLKOUT2_DIVIDE" spirit:order="310">10</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_MMCM_CLKOUT3_DIVIDE</spirit:name>
@@ -3574,7 +3574,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_DIVIDE3_AUTO</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DIVIDE3_AUTO" spirit:order="411">0.7067137809187279</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DIVIDE3_AUTO" spirit:order="411">1.6528925619834711</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_DIVIDE4_AUTO</spirit:name>
@@ -3682,7 +3682,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT2_ACTUAL_FREQ</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT2_ACTUAL_FREQ" spirit:order="713">142.85714</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT2_ACTUAL_FREQ" spirit:order="713">60.00000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT3_ACTUAL_FREQ</spirit:name>
@@ -4398,7 +4398,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT3_REQUESTED_OUT_FREQ</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT3_REQUESTED_OUT_FREQ" spirit:order="68" spirit:configGroups="0 NoDisplay">141.5</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT3_REQUESTED_OUT_FREQ" spirit:order="68" spirit:configGroups="0 NoDisplay">60.5</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT3_REQUESTED_PHASE</spirit:name>
@@ -4662,7 +4662,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKFBOUT_MULT_F</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKFBOUT_MULT_F" spirit:order="126" spirit:configGroups="0 NoDisplay">10.000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKFBOUT_MULT_F" spirit:order="126" spirit:configGroups="0 NoDisplay">6.000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKFBOUT_PHASE</spirit:name>
@@ -4674,11 +4674,11 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKIN1_PERIOD</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKIN1_PERIOD" spirit:order="129" spirit:configGroups="0 NoDisplay">10.000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKIN1_PERIOD" spirit:order="129" spirit:configGroups="0 NoDisplay">10.0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKIN2_PERIOD</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKIN2_PERIOD" spirit:order="130" spirit:configGroups="0 NoDisplay">10.000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKIN2_PERIOD" spirit:order="130" spirit:configGroups="0 NoDisplay">10.0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKOUT4_CASCADE</spirit:name>
@@ -4706,7 +4706,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKOUT0_DIVIDE_F</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKOUT0_DIVIDE_F" spirit:order="137" spirit:configGroups="0 NoDisplay">10.000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKOUT0_DIVIDE_F" spirit:order="137" spirit:configGroups="0 NoDisplay">6.000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKOUT0_DUTY_CYCLE</spirit:name>
@@ -4722,7 +4722,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKOUT1_DIVIDE</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKOUT1_DIVIDE" spirit:order="141" spirit:configGroups="0 NoDisplay">5</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKOUT1_DIVIDE" spirit:order="141" spirit:configGroups="0 NoDisplay">3</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKOUT1_DUTY_CYCLE</spirit:name>
@@ -4738,7 +4738,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKOUT2_DIVIDE</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKOUT2_DIVIDE" spirit:order="145" spirit:configGroups="0 NoDisplay">7</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MMCM_CLKOUT2_DIVIDE" spirit:order="145" spirit:configGroups="0 NoDisplay">10</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MMCM_CLKOUT2_DUTY_CYCLE</spirit:name>
@@ -5021,32 +5021,32 @@
     <spirit:parameter>
       <spirit:name>CLKOUT1_JITTER</spirit:name>
       <spirit:displayName>Clkout1 Jitter</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT1_JITTER" spirit:order="1000">130.958</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT1_JITTER" spirit:order="1000">151.366</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT1_PHASE_ERROR</spirit:name>
       <spirit:displayName>Clkout1 Phase</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT1_PHASE_ERROR" spirit:order="1001">98.575</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT1_PHASE_ERROR" spirit:order="1001">132.063</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT2_JITTER</spirit:name>
       <spirit:displayName>Clkout2 Jitter</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT2_JITTER" spirit:order="1002">114.829</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT2_JITTER" spirit:order="1002">132.221</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT2_PHASE_ERROR</spirit:name>
       <spirit:displayName>Clkout2 Phase</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT2_PHASE_ERROR" spirit:order="1003">98.575</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT2_PHASE_ERROR" spirit:order="1003">132.063</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT3_JITTER</spirit:name>
       <spirit:displayName>Clkout3 Jitter</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT3_JITTER" spirit:order="1004">122.190</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT3_JITTER" spirit:order="1004">168.019</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT3_PHASE_ERROR</spirit:name>
       <spirit:displayName>Clkout3 Phase</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT3_PHASE_ERROR" spirit:order="1005">98.575</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.CLKOUT3_PHASE_ERROR" spirit:order="1005">132.063</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT4_JITTER</spirit:name>
