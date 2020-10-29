@@ -5,8 +5,8 @@ create_clock -period 10.0 [get_ports clk]
 #Peripherals
 set_property PACKAGE_PIN N14 [get_ports {clk}]
 set_property IOSTANDARD LVCMOS33 [get_ports {clk}]
-#set_property PACKAGE_PIN P6 [get_ports {rst}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {rst}]
+#set_property PACKAGE_PIN P6 [get_ports {rst_clk}]
+#set_property IOSTANDARD LVCMOS33 [get_ports {rst_clk}]
 
 #LED Stuff
 set_property PACKAGE_PIN K13 [get_ports led[0]]

@@ -29,9 +29,15 @@
 //81.25mhz ui_clk from ram
 //60.5mhz (display 720p @ 50hz)
 
+//Comment out if creating bitstream
+//`define TB
 
 
 module Top(    
+    `ifdef TB
+        input wire temp_clk,
+    `endif
+    
     //DDR3 passthroughs
     inout wire [15:0]ddr3_dq,
     inout wire [1:0]ddr3_dqs_n,
@@ -59,14 +65,18 @@ module Top(
 
     //Peripherals
     input wire clk,
-    //input wire rst,
+    //input wire rst_clk,
     output reg [7:0]led,
     input wire usb_rx,           // USB->Serial input
     output wire usb_tx           // USB->Serial output
     );
     
-    reg rst = 1;
-    reg [3:0]ctr = 4'd10;
+    reg rst_clk = 0;
+    reg fifo_rst = 0;
+    reg startup_rst = 1;
+    reg [3:0]ctr = 0;
+    reg [1:0]clk_rst_ctr = 0;
+    reg [7:0]startup_ctr = 0;
     
     reg [7:0]red8;
     reg [7:0]green8;
@@ -74,7 +84,10 @@ module Top(
     
     wire [1:0]db;
     
+
+    
     assign red = (| red8);
+    //assign red = ram_clk;
     assign green = (| green8);
     assign blue = (| blue8);
     //assign green = db[0];
@@ -86,14 +99,16 @@ module Top(
     wire clk200;
     wire clk141;
     wire clkLock;
-    wire ram_clk;
     
-//    always @(posedge clk) begin
-//        ctr <= ctr + 1;
-//        if(& ctr)
-//            rst <= 0;
-//    end
-    
+    `ifdef TB
+        wire ram_clk = temp_clk;
+    `else
+        wire ram_clk;
+    `endif
+
+    //The issue is known take note, 
+    //currently the problem is that the clocks into the fifos aren't coming up properly prior to the fifo being reset
+    //there may also be an issue with how the data is moving through the fifo the clocks issue needs to be debugged first
 
     
     //VGA to RT arbitration
@@ -119,24 +134,44 @@ module Top(
     wire vga_addr_rd_en;
     wire vga_addr_wr_en;
     
+    wire startup_latch = (& startup_ctr);
+    
+
     always @(posedge clk) begin
-        if(~vga_addr_rd_en & ~vga_addr_wr_en & ~vga_rd_rd_en & ~vga_rd_wr_en & rst & ctr )//have it hold reset then drop it low then hold it high then drop it low and hold it there permenantly
-        if(~vga_addr_rd_en & ~vga_addr_wr_en & ~vga_rd_rd_en & ~vga_rd_wr_en & ~rst & ctr < 4'd11) begin
-            ctr <= ctr - 1;
-            if(ctr == 0) begin
-                rst <= 1;
-                ctr <= 0;
-            end
+        if(~startup_latch)
+            startup_ctr <= startup_ctr + 1;
+    
+        if(~ (& clk_rst_ctr)) begin
+            rst_clk <= 0;
+            clk_rst_ctr <= clk_rst_ctr + 1;
         end
-        if(rst) begin
-            led <= 0;
+        else
+            rst_clk <= 1;
+    end
+    
+    always @(posedge clk100) begin
+        //have it hold reset then drop it low then hold it high then drop it low and hold it there permenantly
+        if(~(& ctr) & startup_latch) begin
             ctr <= ctr + 1;
+            fifo_rst <= 1;
             if(& ctr) begin
-                led <= 1;
-                rst <= 0;
-                ctr <= 4'b1111;
+                fifo_rst <= 0;
+                startup_rst <= 0;
             end
         end
+        else if(startup_latch) begin
+            fifo_rst <= 0;
+            startup_rst <= 0;
+        end
+        else begin
+            fifo_rst <= 0;
+            startup_rst <= 1;
+        end
+        
+//        if(~rst_clk)
+//            rst <= 1;
+//        else
+//            rst <= 0;
     end
     
 //    wire request_read_vga_out;
@@ -186,7 +221,7 @@ module Top(
         .rd_en(vga_rd_rd_en),
         
         //Top interface
-        .rst(rst),
+        .rst(fifo_rst),
         .wr_clk(ram_clk), //ram side 81.25mhz
         .rd_clk(clk141) //vga side 60.5mhz
     );
@@ -203,7 +238,7 @@ module Top(
         .rd_en(vga_addr_rd_en),
         
         //Top interfaces
-        .rst(rst),
+        .rst(fifo_rst),
         .wr_clk(clk141), //vga side 60.5mhz
         .rd_clk(ram_clk) //ram side 81.25mhz
     );
@@ -258,7 +293,7 @@ module Top(
 
     clk_wiz_0 clk_wiz(    
         .clk_in1(clk),
-        .reset(rst),
+        .reset(~rst_clk),
         .clk_out1(clk100),
         .clk_out2(clk200),
         .clk_out3(clk141),//actually 142.87125
@@ -295,8 +330,8 @@ module Top(
         .VGA_rd(rd_data_vga_b),
 
         //Peripherals
-        .rst(rst)
-        //.led(led)
+        .rst(startup_rst),
+        .led(led)
     );
 
     
@@ -314,17 +349,19 @@ module Top(
         .rd_data_rt(rd_data_rt_b),
         
         .vgaV(vPix),
-        .rst(rst),
+        .rst(startup_rst),
         .clk(clk141)
     );
     
     MemController ram(
     //Peripherals
-    .ui_clk(ram_clk),
+    `ifndef TB
+        .ui_clk(ram_clk),
+    `endif
     .clkLock(clkLock),
     .clk100(clk100),
     .clk200(clk200),
-    .rst(rst),
+    .rst(startup_rst),
 //    .led(led),
     
     //inouts

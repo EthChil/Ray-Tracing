@@ -151,7 +151,7 @@ module MemController(
     localparam WAIT_READ = 3'd4;
     localparam DELAY = 3'd5;
     
-    reg [2:0]state = DELAY;
+    reg [2:0]state = WRITE_DATA;
     
     reg [20:0] timeout = 0;
     
@@ -166,6 +166,8 @@ module MemController(
         
         rd_data_vga = 0;
     join
+    
+    reg [17:0]addr_map = 0;
     
     always @(posedge ui_clk) begin
 //        if(~rst) fork
@@ -188,32 +190,42 @@ module MemController(
 //            read_complete_vga <= 0;
         if(~request_read_rt & read_complete_rt)
             read_complete_rt <= 0;
+            
+        
         
         //led <= 0;
         //led <= state;
         //led[7] <= ~wr_rdy;
         if(~rst) begin
-            case(state) //SUPER XL NOTE this is the issue it's not getting past write data
+            case(state)
                 WRITE_DATA: begin
                     wr_en <= 1'b1;
                     
-                    wr_mask <= wr_mask_rt;
+//                    wr_mask <= wr_mask_rt;
     //                wr_data <= wr_data_rt;
                     wr_data <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
                     
                     if(wr_rdy) fork
                         state <= WRITE_CMD;
-                        timeout <= 0;
+//                        timeout <= 0;
                     join
                 end
                 WRITE_CMD: begin
                     en <= 1'b1;
                     cmd <= 0; //0 = write
-                    addr <= {addr_wr_rt, 3'b000}; 
+//                    addr <= {addr_wr_rt, 3'b000}; 
+                    addr <= {addr_map, 3'b000};
                     
-                    if(rdy) begin
-                        write_complete_rt <= 1'b1;
-                        state <= DELAY;
+//                    if(rdy) begin
+////                        write_complete_rt <= 1'b1;
+//                        state <= DELAY;
+//                    end
+                    
+                    if(rdy & addr_map >= 18'd184320)         
+                        state <= DELAY;           
+                    else if(rdy) begin
+                        state <= WRITE_DATA;
+                        addr_map <= addr_map + 1;
                     end
                 end
                 READ_CMD: begin
@@ -236,7 +248,8 @@ module MemController(
     
                     
                         //this will pipe the read data to the correct endpoint
-                        rd_data_vga <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
+//                        rd_data_vga <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
+                        rd_data_vga <= rd_data;
                         vga_rd_wr_en <= 1;
                             //rd_data_vga <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
     //                    else if(request_read_rt) begin

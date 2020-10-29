@@ -51,8 +51,8 @@ module VGADriver(
     input wire [127:0]VGA_rd,
     
     //Peripheral lines
-    input wire rst
-    //output reg [7:0]led
+    input wire rst,
+    output reg [7:0]led
 );
     //ui_clk is 81.25mhz
     //
@@ -69,7 +69,8 @@ module VGADriver(
     reg [11:0] hPix;
     
     reg [2:0]startupStateMachine;
-    
+    reg [4:0]startupCounter = 0;
+        
     //boolean that tracks if we are in a display section of the screen
     wire paintPixel = (hPix <= `hView & vPix < `vView);
     //pix offset tracks position within 5 pixel group
@@ -134,8 +135,8 @@ module VGADriver(
 //            request_read <= 0;
             
         if(startupStateMachine == DRAW & ~rst) begin
-            //led[6] <= rd_empty;
-            //led[7] <= addr_full;
+            led[6] <= rd_empty;
+            led[7] <= addr_full;
                 //Send a request to memory for the next pixel
             if(paintPixel & pixOffset >= 4 & ~rd_empty & ~addr_full) begin //this will send a request to the ram for the next pixel*
                rd_rd_en <= 1;
@@ -156,7 +157,8 @@ module VGADriver(
                 
                 //Grab address of next group
                 
-                
+                //Address map
+                //0 -> 184320 (
                 if(hPix >= (`hView-5) & vPix >= `vView) //edge case end of frame
                     VGA_addr <= 0;
                 else
@@ -169,6 +171,8 @@ module VGADriver(
                 
             end
             else if(pixOffset >= 4 & paintPixel) fork
+                if(rd_empty)
+                    pixelBuffer <= 0;
                 //pixelBuffer <= 128'b1;
 //                blue <= 1;
                 //led <= 1;
@@ -242,7 +246,7 @@ module VGADriver(
             pixelBuffer <= 0;
             
             //Startup state machine starts at wait while stuff loads
-            startupStateMachine <= WAIT;
+            startupStateMachine <= HANG;
             
         join
         
@@ -271,8 +275,10 @@ module VGADriver(
                     end
                 end
                 HANG: begin
-                    #10;
-                    startupStateMachine <= WAIT;
+                    startupCounter <= startupCounter + 1;
+                    if(& startupCounter) begin
+                        startupStateMachine <= WAIT;
+                    end
                 end
                 REST: begin
                     addr_wr_en <= 0;

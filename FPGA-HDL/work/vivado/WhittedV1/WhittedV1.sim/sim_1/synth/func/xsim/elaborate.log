@@ -4,31 +4,31 @@ Running: I:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 78a8060f62
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-5021] port 'usb_rx' is not connected on this instance [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sim_1/new/topTB.v:36]
+WARNING: [VRFC 10-5021] port 'usb_rx' is not connected on this instance [C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sim_1/new/topTB.v:38]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1fs
 Compiling module unisims_ver.OBUF
 Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.FDRE_default
 Compiling module unisims_ver.BUFG
 Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=6.0,C...
 Compiling module xil_defaultlib.clk_wiz_0_clk_wiz_0_clk_wiz
 Compiling module xil_defaultlib.clk_wiz_0
-Compiling module unisims_ver.LUT6
-Compiling module unisims_ver.FDSE(INIT=1'b0)
-Compiling module unisims_ver.FDSE_default
-Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.LUT4
 Compiling module unisims_ver.GND
 Compiling module unisims_ver.VCC
-Compiling module unisims_ver.x_lut2_mux4
-Compiling module unisims_ver.LUT2
-Compiling module unisims_ver.FDRE(INIT=1'b1)
 Compiling module unisims_ver.FDPE(INIT=1'b0)
 Compiling module unisims_ver.SRL16E_default
 Compiling module xil_defaultlib.fifo_generator_1_reset_builtin
-Compiling module unisims_ver.x_lut1_mux2
-Compiling module unisims_ver.LUT1
 Compiling module unisims_ver.FF18_INTERNAL_VLOG(DATA_WIDTH=36...
 Compiling module unisims_ver.FIFO18E1(ALMOST_EMPTY_OFFSET=13'...
 Compiling module xil_defaultlib.fifo_generator_1_builtin_prim_v6
@@ -44,8 +44,6 @@ Compiling module unisims_ver.FF36_INTERNAL_VLOG(DATA_WIDTH=72...
 Compiling module unisims_ver.FIFO36E1(ALMOST_EMPTY_OFFSET=13'...
 Compiling module xil_defaultlib.fifo_generator_0_builtin_prim_v6...
 Compiling module xil_defaultlib.fifo_generator_0_builtin_extdept...
-Compiling module unisims_ver.x_lut3_mux8
-Compiling module unisims_ver.LUT3
 Compiling module xil_defaultlib.fifo_generator_0_builtin_prim_v6
 Compiling module xil_defaultlib.fifo_generator_0_builtin_extdept...
 Compiling module xil_defaultlib.fifo_generator_0_builtin_top_v6
@@ -54,9 +52,10 @@ Compiling module xil_defaultlib.fifo_generator_0_fifo_generator_...
 Compiling module xil_defaultlib.fifo_generator_0_fifo_generator_...
 Compiling module xil_defaultlib.fifo_generator_0_fifo_generator_...
 Compiling module xil_defaultlib.fifo_generator_0
-Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.OBUFT
+Compiling module unisims_ver.LUT6
 Compiling module unisims_ver.RAM32M
-Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.FDSE_default
 Compiling module unisims_ver.CARRY4
 Compiling module unisims_ver.XADC(INIT_40=16'b01000000000000,...
 Compiling module xil_defaultlib.mig_7series_0_mig_7series_v4_2_t...
@@ -78,7 +77,6 @@ Compiling module xil_defaultlib.mig_7series_0_mig_7series_v4_2_d...
 Compiling module unisims_ver.MUXF7
 Compiling module xil_defaultlib.mig_7series_0_mig_7series_v4_2_d...
 Compiling module xil_defaultlib.mig_7series_0_mig_7series_v4_2_d...
-Compiling module unisims_ver.OBUFT
 Compiling module unisims_ver.IOBUF
 Compiling module unisims_ver.IOBUFDS_INTERMDISABLE(DQS_BIAS="...
 Compiling module xil_defaultlib.mig_7series_0_mig_7series_v4_2_d...
