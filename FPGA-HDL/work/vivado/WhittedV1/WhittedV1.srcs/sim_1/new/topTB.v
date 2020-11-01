@@ -35,6 +35,6 @@ module topTB();
     always
         #(6.15) ram_clk_synth <= ~ram_clk_synth;
     
-    Top tester(.clk(clkEx), .led(led), .hSync(hSync), .vSync(vSync), .temp_clk(ram_clk_synth));
+    Top tester(.clk(clkEx), .led(led), .hSync(hSync), .vSync(vSync), .temp_clk(ram_clk_synth), .hPix(hPix), .vPix(vPix));
 
 endmodule

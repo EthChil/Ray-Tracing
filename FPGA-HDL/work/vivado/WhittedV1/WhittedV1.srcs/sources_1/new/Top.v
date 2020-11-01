@@ -30,12 +30,14 @@
 //60.5mhz (display 720p @ 50hz)
 
 //Comment out if creating bitstream
-//`define TB
+`include "display_specs.vh"
 
 
 module Top(    
     `ifdef TB
         input wire temp_clk,
+        output wire [11:0]hPix,
+        output wire [10:0]vPix,
     `endif
     
     //DDR3 passthroughs
@@ -73,10 +75,13 @@ module Top(
     
     reg rst_clk = 0;
     reg fifo_rst = 0;
-    reg startup_rst = 1;
+    reg vga_rst = 1;
+    reg ram_rst = 1;
     reg [3:0]ctr = 0;
+    reg [3:0]ctr2 = 0;
     reg [1:0]clk_rst_ctr = 0;
     reg [7:0]startup_ctr = 0;
+    reg [7:0]startup_ctr2 = 0;
     
     reg [7:0]red8;
     reg [7:0]green8;
@@ -112,12 +117,14 @@ module Top(
 
     
     //VGA to RT arbitration
-    wire [10:0]vPix;
+    `ifndef TB
+        wire [10:0]vPix;
+    `endif
     
     //RAM to VGA arbitration read
     //addr FIFO
-    wire [27:0]addr_vga_a;
-    wire [27:0]addr_vga_b;
+    wire state_vga_a;
+    wire state_vga_b;
     
     wire [127:0]rd_data_vga_a;
     wire [127:0]rd_data_vga_b;
@@ -125,22 +132,20 @@ module Top(
     wire vga_rd_full;
     wire vga_rd_empty;
     
-    wire vga_addr_full;
-    wire vga_addr_empty;
+    wire vga_state_full;
+    wire vga_state_empty;
     
     wire vga_rd_rd_en;
     wire vga_rd_wr_en;
     
-    wire vga_addr_rd_en;
-    wire vga_addr_wr_en;
+    wire vga_state_rd_en;
+    wire vga_state_wr_en;
     
     wire startup_latch = (& startup_ctr);
+    wire startup_latch2 = (& startup_ctr2);
     
 
     always @(posedge clk) begin
-        if(~startup_latch)
-            startup_ctr <= startup_ctr + 1;
-    
         if(~ (& clk_rst_ctr)) begin
             rst_clk <= 0;
             clk_rst_ctr <= clk_rst_ctr + 1;
@@ -148,24 +153,50 @@ module Top(
         else
             rst_clk <= 1;
     end
+
+    always @(posedge clk141) begin
+        if(~startup_latch)
+            startup_ctr <= startup_ctr + 1;
+    end
     
-    always @(posedge clk100) begin
+    always @(posedge ram_clk) begin
+        if(~startup_latch2)
+            startup_ctr2 <= startup_ctr2 + 1;
+    end
+    
+    always @(posedge ram_clk) begin
+        if(~(& ctr2) & startup_latch2) begin
+            ctr2 <= ctr2 + 1;
+            if(& ctr) begin
+                ram_rst <= 0;
+            end
+        end
+        if(startup_latch2) begin
+            ram_rst <= 0;
+        end
+        else begin
+            ram_rst <= 1;
+        end
+    end
+        
+    
+    always @(posedge clk141) begin
         //have it hold reset then drop it low then hold it high then drop it low and hold it there permenantly
         if(~(& ctr) & startup_latch) begin
             ctr <= ctr + 1;
             fifo_rst <= 1;
             if(& ctr) begin
                 fifo_rst <= 0;
-                startup_rst <= 0;
+                vga_rst <= 0;
             end
         end
         else if(startup_latch) begin
             fifo_rst <= 0;
-            startup_rst <= 0;
+            vga_rst <= 0;
         end
         else begin
             fifo_rst <= 0;
-            startup_rst <= 1;
+            vga_rst <= 1;
         end
         
 //        if(~rst_clk)
@@ -226,16 +257,16 @@ module Top(
         .rd_clk(clk141) //vga side 60.5mhz
     );
 
-    fifo_generator_1 fifo_ram_addr (
+    fifo_generator_1 fifo_ram_state (
         //vga interfaces
-        .full(vga_addr_full),
-        .din(addr_vga_a),
-        .wr_en(vga_addr_wr_en),
+        .full(vga_state_full),
+        .din(state_vga_a),
+        .wr_en(vga_state_wr_en),
         
         //ram interfaces
-        .empty(vga_addr_empty),
-        .dout(addr_vga_b),
-        .rd_en(vga_addr_rd_en),
+        .empty(vga_state_empty),
+        .dout(state_vga_b),
+        .rd_en(vga_state_rd_en),
         
         //Top interfaces
         .rst(fifo_rst),
@@ -314,6 +345,10 @@ module Top(
         //Next driven pixel
         .vPix(vPix),
         
+        `ifdef TB
+            .hPix(hPix),
+        `endif
+        
         //Pixel clock every pulse it will march onto the next pixel
         .pixelClock(clk141),
         
@@ -321,17 +356,17 @@ module Top(
 //        .request_read(request_read_vga_out),
 //        .read_complete(read_complete_vga_in),
         .rd_empty(vga_rd_empty),
-        .addr_full(vga_addr_full),
+        .state_full(vga_state_full),
         
         .rd_rd_en(vga_rd_rd_en),
-        .addr_wr_en(vga_addr_wr_en),
+        .state_wr_en(vga_state_wr_en),
         
-        .VGA_addr(addr_vga_a),
+        .VGA_state(state_vga_a),
         .VGA_rd(rd_data_vga_b),
 
         //Peripherals
-        .rst(startup_rst),
-        .led(led)
+        .rst(vga_rst)
+        //.led(led)
     );
 
     
@@ -349,20 +384,18 @@ module Top(
         .rd_data_rt(rd_data_rt_b),
         
         .vgaV(vPix),
-        .rst(startup_rst),
+        .rst(vga_rst),
         .clk(clk141)
     );
     
     MemController ram(
     //Peripherals
-    `ifndef TB
-        .ui_clk(ram_clk),
-    `endif
+    .ui_clk(ram_clk),
     .clkLock(clkLock),
     .clk100(clk100),
     .clk200(clk200),
-    .rst(startup_rst),
-//    .led(led),
+    .rst(ram_rst),
+    .led(led[1:0]),
     
     //inouts
     .ddr3_dq(ddr3_dq),
@@ -387,12 +420,12 @@ module Top(
 //    .request_read_vga(request_read_vga_in),
 //    .read_complete_vga(read_complete_vga_out),
     .vga_rd_wr_en(vga_rd_wr_en),
-    .vga_addr_rd_en(vga_addr_rd_en),
+    .vga_state_rd_en(vga_state_rd_en),
 
     .vga_rd_full(vga_rd_full),
-    .vga_addr_empty(vga_addr_empty),
+    .vga_state_empty(vga_state_empty),
     
-    .addr_vga(addr_vga_b),
+    .vga_cmd(state_vga_b),
     .rd_data_vga(rd_data_vga_a),
     
     //Memory connection ray tracing core

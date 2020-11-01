@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Fri Oct 23 16:43:27 2020
+-- Date        : Sat Oct 31 14:46:09 2020
 -- Host        : Tony-Maloney running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/fifo_generator_1/fifo_generator_1_sim_netlist.vhdl
@@ -18,13 +18,13 @@ entity fifo_generator_1_builtin_prim_v6 is
   port (
     empty : out STD_LOGIC;
     full : out STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 27 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 );
     rd_clk : in STD_LOGIC;
     rd_en : in STD_LOGIC;
     RST : in STD_LOGIC;
     wr_clk : in STD_LOGIC;
     wr_en : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 27 downto 0 )
+    din : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of fifo_generator_1_builtin_prim_v6 : entity is "builtin_prim_v6";
@@ -58,8 +58,35 @@ architecture STRUCTURE of fifo_generator_1_builtin_prim_v6 is
   signal \gf18e1_inst.sngfifo18e1_n_33\ : STD_LOGIC;
   signal \gf18e1_inst.sngfifo18e1_n_34\ : STD_LOGIC;
   signal \gf18e1_inst.sngfifo18e1_n_35\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_36\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_37\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_38\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_39\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_40\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_41\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_42\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_43\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_44\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_45\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_46\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_47\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_48\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_49\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_50\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_51\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_52\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_53\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_54\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_55\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_56\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_57\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_58\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_59\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_60\ : STD_LOGIC;
   signal \gf18e1_inst.sngfifo18e1_n_62\ : STD_LOGIC;
   signal \gf18e1_inst.sngfifo18e1_n_63\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_64\ : STD_LOGIC;
+  signal \gf18e1_inst.sngfifo18e1_n_65\ : STD_LOGIC;
   signal \gf18e1_inst.sngfifo18e1_n_9\ : STD_LOGIC;
   signal overflow_i : STD_LOGIC;
   signal underflow_i : STD_LOGIC;
@@ -88,22 +115,45 @@ begin
         port map (
       ALMOSTEMPTY => \gf18e1_inst.sngfifo18e1_n_0\,
       ALMOSTFULL => \gf18e1_inst.sngfifo18e1_n_1\,
-      DI(31 downto 26) => B"000000",
-      DI(25 downto 16) => din(27 downto 18),
-      DI(15 downto 0) => din(15 downto 0),
-      DIP(3 downto 2) => B"00",
-      DIP(1 downto 0) => din(17 downto 16),
+      DI(31 downto 1) => B"0000000000000000000000000000000",
+      DI(0) => din(0),
+      DIP(3 downto 0) => B"0000",
       DO(31) => \gf18e1_inst.sngfifo18e1_n_30\,
       DO(30) => \gf18e1_inst.sngfifo18e1_n_31\,
       DO(29) => \gf18e1_inst.sngfifo18e1_n_32\,
       DO(28) => \gf18e1_inst.sngfifo18e1_n_33\,
       DO(27) => \gf18e1_inst.sngfifo18e1_n_34\,
       DO(26) => \gf18e1_inst.sngfifo18e1_n_35\,
-      DO(25 downto 16) => dout(27 downto 18),
-      DO(15 downto 0) => dout(15 downto 0),
+      DO(25) => \gf18e1_inst.sngfifo18e1_n_36\,
+      DO(24) => \gf18e1_inst.sngfifo18e1_n_37\,
+      DO(23) => \gf18e1_inst.sngfifo18e1_n_38\,
+      DO(22) => \gf18e1_inst.sngfifo18e1_n_39\,
+      DO(21) => \gf18e1_inst.sngfifo18e1_n_40\,
+      DO(20) => \gf18e1_inst.sngfifo18e1_n_41\,
+      DO(19) => \gf18e1_inst.sngfifo18e1_n_42\,
+      DO(18) => \gf18e1_inst.sngfifo18e1_n_43\,
+      DO(17) => \gf18e1_inst.sngfifo18e1_n_44\,
+      DO(16) => \gf18e1_inst.sngfifo18e1_n_45\,
+      DO(15) => \gf18e1_inst.sngfifo18e1_n_46\,
+      DO(14) => \gf18e1_inst.sngfifo18e1_n_47\,
+      DO(13) => \gf18e1_inst.sngfifo18e1_n_48\,
+      DO(12) => \gf18e1_inst.sngfifo18e1_n_49\,
+      DO(11) => \gf18e1_inst.sngfifo18e1_n_50\,
+      DO(10) => \gf18e1_inst.sngfifo18e1_n_51\,
+      DO(9) => \gf18e1_inst.sngfifo18e1_n_52\,
+      DO(8) => \gf18e1_inst.sngfifo18e1_n_53\,
+      DO(7) => \gf18e1_inst.sngfifo18e1_n_54\,
+      DO(6) => \gf18e1_inst.sngfifo18e1_n_55\,
+      DO(5) => \gf18e1_inst.sngfifo18e1_n_56\,
+      DO(4) => \gf18e1_inst.sngfifo18e1_n_57\,
+      DO(3) => \gf18e1_inst.sngfifo18e1_n_58\,
+      DO(2) => \gf18e1_inst.sngfifo18e1_n_59\,
+      DO(1) => \gf18e1_inst.sngfifo18e1_n_60\,
+      DO(0) => dout(0),
       DOP(3) => \gf18e1_inst.sngfifo18e1_n_62\,
       DOP(2) => \gf18e1_inst.sngfifo18e1_n_63\,
-      DOP(1 downto 0) => dout(17 downto 16),
+      DOP(1) => \gf18e1_inst.sngfifo18e1_n_64\,
+      DOP(0) => \gf18e1_inst.sngfifo18e1_n_65\,
       EMPTY => empty,
       FULL => full,
       RDCLK => rd_clk,
@@ -471,13 +521,13 @@ entity fifo_generator_1_builtin_extdepth_v6 is
   port (
     empty : out STD_LOGIC;
     full : out STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 27 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 );
     rd_clk : in STD_LOGIC;
     rd_en : in STD_LOGIC;
     RST : in STD_LOGIC;
     wr_clk : in STD_LOGIC;
     wr_en : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 27 downto 0 )
+    din : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of fifo_generator_1_builtin_extdepth_v6 : entity is "builtin_extdepth_v6";
@@ -534,8 +584,8 @@ begin
 \gonep.inst_prim\: entity work.fifo_generator_1_builtin_prim_v6
      port map (
       RST => RST,
-      din(27 downto 0) => din(27 downto 0),
-      dout(27 downto 0) => dout(27 downto 0),
+      din(0) => din(0),
+      dout(0) => dout(0),
       empty => empty,
       full => full,
       rd_clk => rd_clk,
@@ -552,13 +602,13 @@ entity fifo_generator_1_builtin_top_v6 is
   port (
     empty : out STD_LOGIC;
     full : out STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 27 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 );
     rd_clk : in STD_LOGIC;
     rd_en : in STD_LOGIC;
     RST : in STD_LOGIC;
     wr_clk : in STD_LOGIC;
     wr_en : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 27 downto 0 )
+    din : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of fifo_generator_1_builtin_top_v6 : entity is "builtin_top_v6";
@@ -569,8 +619,8 @@ begin
 \gextw[1].gnll_fifo.inst_extd\: entity work.fifo_generator_1_builtin_extdepth_v6
      port map (
       RST => RST,
-      din(27 downto 0) => din(27 downto 0),
-      dout(27 downto 0) => dout(27 downto 0),
+      din(0) => din(0),
+      dout(0) => dout(0),
       empty => empty,
       full => full,
       rd_clk => rd_clk,
@@ -587,12 +637,12 @@ entity fifo_generator_1_fifo_generator_v13_2_5_builtin is
   port (
     empty : out STD_LOGIC;
     full : out STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 27 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 );
     wr_clk : in STD_LOGIC;
     rd_clk : in STD_LOGIC;
     rd_en : in STD_LOGIC;
     wr_en : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 27 downto 0 );
+    din : in STD_LOGIC_VECTOR ( 0 to 0 );
     rst : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -612,8 +662,8 @@ begin
 \v7_bi_fifo.fblk\: entity work.fifo_generator_1_builtin_top_v6
      port map (
       RST => wr_rst_i,
-      din(27 downto 0) => din(27 downto 0),
-      dout(27 downto 0) => dout(27 downto 0),
+      din(0) => din(0),
+      dout(0) => dout(0),
       empty => empty,
       full => full,
       rd_clk => rd_clk,
@@ -630,12 +680,12 @@ entity fifo_generator_1_fifo_generator_top is
   port (
     empty : out STD_LOGIC;
     full : out STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 27 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 );
     wr_clk : in STD_LOGIC;
     rd_clk : in STD_LOGIC;
     rd_en : in STD_LOGIC;
     wr_en : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 27 downto 0 );
+    din : in STD_LOGIC_VECTOR ( 0 to 0 );
     rst : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -646,8 +696,8 @@ architecture STRUCTURE of fifo_generator_1_fifo_generator_top is
 begin
 \gbi.bi\: entity work.fifo_generator_1_fifo_generator_v13_2_5_builtin
      port map (
-      din(27 downto 0) => din(27 downto 0),
-      dout(27 downto 0) => dout(27 downto 0),
+      din(0) => din(0),
+      dout(0) => dout(0),
       empty => empty,
       full => full,
       rd_clk => rd_clk,
@@ -665,12 +715,12 @@ entity fifo_generator_1_fifo_generator_v13_2_5_synth is
   port (
     empty : out STD_LOGIC;
     full : out STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 27 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 );
     wr_clk : in STD_LOGIC;
     rd_clk : in STD_LOGIC;
     rd_en : in STD_LOGIC;
     wr_en : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 27 downto 0 );
+    din : in STD_LOGIC_VECTOR ( 0 to 0 );
     rst : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -681,8 +731,8 @@ architecture STRUCTURE of fifo_generator_1_fifo_generator_v13_2_5_synth is
 begin
 \gconvfifo.rf\: entity work.fifo_generator_1_fifo_generator_top
      port map (
-      din(27 downto 0) => din(27 downto 0),
-      dout(27 downto 0) => dout(27 downto 0),
+      din(0) => din(0),
+      dout(0) => dout(0),
       empty => empty,
       full => full,
       rd_clk => rd_clk,
@@ -707,7 +757,7 @@ entity fifo_generator_1_fifo_generator_v13_2_5 is
     wr_rst : in STD_LOGIC;
     rd_clk : in STD_LOGIC;
     rd_rst : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 27 downto 0 );
+    din : in STD_LOGIC_VECTOR ( 0 to 0 );
     wr_en : in STD_LOGIC;
     rd_en : in STD_LOGIC;
     prog_empty_thresh : in STD_LOGIC_VECTOR ( 8 downto 0 );
@@ -720,7 +770,7 @@ entity fifo_generator_1_fifo_generator_v13_2_5 is
     injectdbiterr : in STD_LOGIC;
     injectsbiterr : in STD_LOGIC;
     sleep : in STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 27 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 );
     full : out STD_LOGIC;
     almost_full : out STD_LOGIC;
     wr_ack : out STD_LOGIC;
@@ -989,7 +1039,7 @@ entity fifo_generator_1_fifo_generator_v13_2_5 is
   attribute C_DEFAULT_VALUE : string;
   attribute C_DEFAULT_VALUE of fifo_generator_1_fifo_generator_v13_2_5 : entity is "BlankString";
   attribute C_DIN_WIDTH : integer;
-  attribute C_DIN_WIDTH of fifo_generator_1_fifo_generator_v13_2_5 : entity is 28;
+  attribute C_DIN_WIDTH of fifo_generator_1_fifo_generator_v13_2_5 : entity is 1;
   attribute C_DIN_WIDTH_AXIS : integer;
   attribute C_DIN_WIDTH_AXIS of fifo_generator_1_fifo_generator_v13_2_5 : entity is 1;
   attribute C_DIN_WIDTH_RACH : integer;
@@ -1005,7 +1055,7 @@ entity fifo_generator_1_fifo_generator_v13_2_5 is
   attribute C_DOUT_RST_VAL : string;
   attribute C_DOUT_RST_VAL of fifo_generator_1_fifo_generator_v13_2_5 : entity is "0";
   attribute C_DOUT_WIDTH : integer;
-  attribute C_DOUT_WIDTH of fifo_generator_1_fifo_generator_v13_2_5 : entity is 28;
+  attribute C_DOUT_WIDTH of fifo_generator_1_fifo_generator_v13_2_5 : entity is 1;
   attribute C_ENABLE_RLOCS : integer;
   attribute C_ENABLE_RLOCS of fifo_generator_1_fifo_generator_v13_2_5 : entity is 0;
   attribute C_ENABLE_RST_SYNC : integer;
@@ -1874,8 +1924,8 @@ VCC: unisim.vcomponents.VCC
     );
 inst_fifo_gen: entity work.fifo_generator_1_fifo_generator_v13_2_5_synth
      port map (
-      din(27 downto 0) => din(27 downto 0),
-      dout(27 downto 0) => dout(27 downto 0),
+      din(0) => din(0),
+      dout(0) => dout(0),
       empty => empty,
       full => full,
       rd_clk => rd_clk,
@@ -1894,10 +1944,10 @@ entity fifo_generator_1 is
     rst : in STD_LOGIC;
     wr_clk : in STD_LOGIC;
     rd_clk : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 27 downto 0 );
+    din : in STD_LOGIC_VECTOR ( 0 to 0 );
     wr_en : in STD_LOGIC;
     rd_en : in STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 27 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 );
     full : out STD_LOGIC;
     empty : out STD_LOGIC
   );
@@ -2094,7 +2144,7 @@ architecture STRUCTURE of fifo_generator_1 is
   attribute C_DEFAULT_VALUE : string;
   attribute C_DEFAULT_VALUE of U0 : label is "BlankString";
   attribute C_DIN_WIDTH : integer;
-  attribute C_DIN_WIDTH of U0 : label is 28;
+  attribute C_DIN_WIDTH of U0 : label is 1;
   attribute C_DIN_WIDTH_AXIS : integer;
   attribute C_DIN_WIDTH_AXIS of U0 : label is 1;
   attribute C_DIN_WIDTH_RACH : integer;
@@ -2110,7 +2160,7 @@ architecture STRUCTURE of fifo_generator_1 is
   attribute C_DOUT_RST_VAL : string;
   attribute C_DOUT_RST_VAL of U0 : label is "0";
   attribute C_DOUT_WIDTH : integer;
-  attribute C_DOUT_WIDTH of U0 : label is 28;
+  attribute C_DOUT_WIDTH of U0 : label is 1;
   attribute C_ENABLE_RLOCS : integer;
   attribute C_ENABLE_RLOCS of U0 : label is 0;
   attribute C_ENABLE_RST_SYNC : integer;
@@ -2541,8 +2591,8 @@ U0: entity work.fifo_generator_1_fifo_generator_v13_2_5
       clk => '0',
       data_count(8 downto 0) => NLW_U0_data_count_UNCONNECTED(8 downto 0),
       dbiterr => NLW_U0_dbiterr_UNCONNECTED,
-      din(27 downto 0) => din(27 downto 0),
-      dout(27 downto 0) => dout(27 downto 0),
+      din(0) => din(0),
+      dout(0) => dout(0),
       empty => empty,
       full => full,
       injectdbiterr => '0',

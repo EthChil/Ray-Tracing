@@ -19,6 +19,8 @@
 
 //TODO: add error code system using leds
 
+`include "display_specs.vh"
+
 module MemController(
     /* DDR3 Connections */
     inout wire [15:0]ddr3_dq,
@@ -41,12 +43,12 @@ module MemController(
 //    input wire request_read_vga,
 //    output reg read_complete_vga,
     input wire vga_rd_full,
-    input wire vga_addr_empty,
+    input wire vga_state_empty,
     
     output reg vga_rd_wr_en,
-    output reg vga_addr_rd_en,
+    output reg vga_state_rd_en,
     
-    input reg [27:0]addr_vga,
+    input wire vga_cmd,
     output reg [127:0]rd_data_vga,
     
     input wire request_write_rt,
@@ -66,10 +68,17 @@ module MemController(
     input wire clk200,
     input wire clkLock,
     input wire rst,            // reset button (active low)
-    //output reg [7:0]led,
-    output wire ui_clk,
+    output reg [1:0]led,
+    `ifdef TB
+        input wire ui_clk,
+    `else
+        output wire ui_clk,
+    `endif
     output reg [1:0]db
     );
+    
+    //this is the local address counter
+    reg [27:0]addr_vga = 0;
     
     wire sync_rst;
     
@@ -126,7 +135,9 @@ module MemController(
     .app_rdy(rdy),
     .app_wdf_rdy(wr_rdy),
     
-    .ui_clk(ui_clk),
+    `ifndef TB
+        .ui_clk(ui_clk),
+    `endif
     //clocks
     .sys_clk_i(clk100), //100mhz
     .clk_ref_i(clk200), //200mhz
@@ -142,16 +153,23 @@ module MemController(
     //assign led = 8'h00;      // turn LEDs off
 
 
-    
+    localparam STOP = 1'b0;
+    localparam START = 1'b1;
     
     localparam WRITE_DATA = 3'd0;
     localparam WRITE_CMD = 3'd1;
     localparam READ_CMD = 3'd2;
-    localparam READ = 3'd3;
+    localparam RESET = 3'd3;
     localparam WAIT_READ = 3'd4;
     localparam DELAY = 3'd5;
     
-    reg [2:0]state = WRITE_DATA;
+    `ifdef TB
+        reg [2:0]state = DELAY;
+    `else
+        reg [2:0]state = WRITE_DATA;
+    `endif
+    
+    reg vga_state = STOP;
     
     reg [20:0] timeout = 0;
     
@@ -162,7 +180,9 @@ module MemController(
         
 //        read_complete_vga = 0;
         vga_rd_wr_en <= 0;
-        vga_addr_rd_en <= 0;
+        vga_state_rd_en <= 0;
+        
+        led <= 0;
         
         rd_data_vga = 0;
     join
@@ -191,11 +211,12 @@ module MemController(
         if(~request_read_rt & read_complete_rt)
             read_complete_rt <= 0;
             
-        
+        //led[0] <= vga_rd_full;
+        //led[1] <= vga_state_empty;
         
         //led <= 0;
         //led <= state;
-        //led[7] <= ~wr_rdy;
+        //led[7] <= ~wr_rdy;2
         if(~rst) begin
             case(state)
                 WRITE_DATA: begin
@@ -229,8 +250,10 @@ module MemController(
                     end
                 end
                 READ_CMD: begin
-                    en <= 1'b1;
-                    cmd <= 1'b1; //1 = read
+                    `ifndef TB
+                        en <= 1'b1;
+                        cmd <= 1'b1; //1 = read
+                    `endif
                     
                     addr <= {addr_vga, 3'b000}; 
     //                else if(request_read_rt)
@@ -238,19 +261,28 @@ module MemController(
     //                else 
     //                    addr <= 28'b0;
                     
+                    `ifndef TB
                     if(rdy)
+                    `endif
                         state <= WAIT_READ;
                 end
                 WAIT_READ: begin
-                    vga_addr_rd_en <= 0;
-                
+//                    vga_addr_rd_en <= 0;
+                    
+                    `ifndef TB
                     if(rd_valid) begin
+                    `endif
     
                     
                         //this will pipe the read data to the correct endpoint
-//                        rd_data_vga <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
-                        rd_data_vga <= rd_data;
+                        if(addr_vga >= 28'd100000)
+                            rd_data_vga <= 128'h00000000000000000000000000000000;
+                        else
+                            rd_data_vga <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
+//                        rd_data_vga <= rd_data;
                         vga_rd_wr_en <= 1;
+                        
+                        addr_vga <= addr_vga + 1;
                             //rd_data_vga <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
     //                    else if(request_read_rt) begin
     //                        rd_data_rt <= rd_data;
@@ -260,9 +292,9 @@ module MemController(
                         //led <= rd_data;
                         
                         state <= DELAY;
-                        
-                        timeout <= 0;
+                    `ifndef TB    
                     end
+                    `endif
                 end
                 DELAY: begin
                     //This will maximize read cycles which are crucial for 
@@ -270,13 +302,31 @@ module MemController(
     //                    state <= WRITE_DATA;
     //                join
                     vga_rd_wr_en <= 0;
-                    if(~vga_rd_full & ~vga_addr_empty) fork
+                    
+                    if(addr_vga >= 28'd184320)
+                        addr_vga <= 0;
+                        
+                    if(vga_state_rd_en) fork
+                        state <= RESET;
+                    join
+                    
+                    if(~vga_state_empty) fork
+                        vga_state_rd_en <= 1;
+                    join
+                    else if(~vga_rd_full & vga_state == START) fork
                         state <= READ_CMD;
-                        vga_addr_rd_en <= 1;
+                        //vga_addr_rd_en <= 1;
                     join
     //                else if(request_read_rt & ~read_complete_rt) fork
     //                    state <= READ_CMD;
     //                join
+                end
+                RESET: begin
+                    led <= led + 1; //only reaching one this should be 2
+                    addr_vga <= 0;
+                    vga_state <= vga_cmd;
+                    vga_state_rd_en <= 0;
+                    state <= DELAY;
                 end
                 default: begin
                     state <= DELAY;

@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Fri Oct 23 16:43:27 2020
+// Date        : Sat Oct 31 14:46:09 2020
 // Host        : Tony-Maloney running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               c:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/work/vivado/WhittedV1/WhittedV1.srcs/sources_1/ip/fifo_generator_1/fifo_generator_1_stub.v
@@ -16,14 +16,14 @@
 (* x_core_info = "fifo_generator_v13_2_5,Vivado 2020.1" *)
 module fifo_generator_1(rst, wr_clk, rd_clk, din, wr_en, rd_en, dout, full, 
   empty)
-/* synthesis syn_black_box black_box_pad_pin="rst,wr_clk,rd_clk,din[27:0],wr_en,rd_en,dout[27:0],full,empty" */;
+/* synthesis syn_black_box black_box_pad_pin="rst,wr_clk,rd_clk,din[0:0],wr_en,rd_en,dout[0:0],full,empty" */;
   input rst;
   input wr_clk;
   input rd_clk;
-  input [27:0]din;
+  input [0:0]din;
   input wr_en;
   input rd_en;
-  output [27:0]dout;
+  output [0:0]dout;
   output full;
   output empty;
 endmodule
