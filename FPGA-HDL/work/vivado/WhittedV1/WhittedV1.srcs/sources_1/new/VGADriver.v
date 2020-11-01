@@ -117,6 +117,8 @@ module VGADriver(
         //pixel buffer starts at 0 and will be set once things are called from memory
         pixelBuffer = 0;
         
+        led <= 0;
+        
         
 //        request_read = 0;
     join
@@ -146,13 +148,14 @@ module VGADriver(
 //        if(read_complete & request_read)
 //            request_read <= 0;
 
-        led <= startupStateMachine;
+        //led <= startupStateMachine;
             
         case(sync_state)
             STOP: begin
                 if(~state_wr_en) begin
                     VGA_state <= 0; //STOP
                     state_wr_en <= 1;
+                    led <= led + 1;
                 end
                 else begin
                     state_wr_en <= 0;
@@ -166,11 +169,13 @@ module VGADriver(
                     else
                         rd_rd_en <= 0;
                 end
-                else
+                else begin
                     sync_state <= START;
+                end
             end
             START: begin
                 if(~state_wr_en) begin
+                    led <= led + 1;
                     VGA_state <= 1; //START
                     state_wr_en <= 1;
                 end
@@ -328,7 +333,7 @@ module VGADriver(
                     startupStateMachine <= REQ_FIRST_BLOCK;
                 end
                 REQ_FIRST_BLOCK: begin
-                    led[7] <= rd_empty;
+                    //led[7] <= rd_empty;
 //                    addr_wr_en <= 0;
                     if(sync_state == SLEEP & ~rd_empty) begin
                         rd_rd_en <= 1;

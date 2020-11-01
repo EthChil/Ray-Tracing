@@ -68,7 +68,7 @@ module MemController(
     input wire clk200,
     input wire clkLock,
     input wire rst,            // reset button (active low)
-    output reg [1:0]led,
+    output reg [7:0]led,
     `ifdef TB
         input wire ui_clk,
     `else
@@ -166,7 +166,8 @@ module MemController(
     `ifdef TB
         reg [2:0]state = DELAY;
     `else
-        reg [2:0]state = WRITE_DATA;
+//        reg [2:0]state = WRITE_DATA;
+        reg [2:0]state = DELAY; //NOTE PUT THIS BACK 
     `endif
     
     reg vga_state = STOP;
@@ -217,6 +218,8 @@ module MemController(
         //led <= 0;
         //led <= state;
         //led[7] <= ~wr_rdy;2
+        //led <= state;
+        
         if(~rst) begin
             case(state)
                 WRITE_DATA: begin
@@ -303,16 +306,19 @@ module MemController(
     //                join
                     vga_rd_wr_en <= 0;
                     
-                    if(addr_vga >= 28'd184320)
-                        addr_vga <= 0;
+                    if(addr_vga >= 28'd184321)
+//                        addr_vga <= 0;
+                        vga_state <= STOP;
                         
                     if(vga_state_rd_en) fork
                         state <= RESET;
+                        vga_state_rd_en <= 0;
                     join
-                    
-                    if(~vga_state_empty) fork
+                    else if(~vga_state_empty) fork
+                        led <= led + 1;
                         vga_state_rd_en <= 1;
                     join
+                    
                     else if(~vga_rd_full & vga_state == START) fork
                         state <= READ_CMD;
                         //vga_addr_rd_en <= 1;
@@ -322,10 +328,9 @@ module MemController(
     //                join
                 end
                 RESET: begin
-                    led <= led + 1; //only reaching one this should be 2
+                    //led <= led + 1; //only reaching one this should be 2 (sims show 2)
                     addr_vga <= 0;
                     vga_state <= vga_cmd;
-                    vga_state_rd_en <= 0;
                     state <= DELAY;
                 end
                 default: begin

@@ -12,7 +12,7 @@
 
 //VGA constants
 
-`define TB
+//`define TB
 
 `define s720
 //`define s1080

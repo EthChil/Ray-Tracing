@@ -395,7 +395,7 @@ module Top(
     .clk100(clk100),
     .clk200(clk200),
     .rst(ram_rst),
-    .led(led[1:0]),
+    .led(led),
     
     //inouts
     .ddr3_dq(ddr3_dq),
