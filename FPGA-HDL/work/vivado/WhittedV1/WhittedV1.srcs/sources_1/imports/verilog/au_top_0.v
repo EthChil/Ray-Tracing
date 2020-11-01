@@ -275,13 +275,29 @@ module MemController(
                     `ifndef TB
                     if(rd_valid) begin
                     `endif
-    
+                        //NOTES OF CURRENT ISSUES
+                        //1. first 5 pixels are loading up incorrect look into that, should be a quick fix
+                        //2. there is some jumping going on where there is a bit of a disconnect in the addresses 
+                        //   just a guess it might be reading one too many or one too few adresses
+                        //   adding onto this when testing with multiple layers the lower down the more shifted to the 
+                        //   right it is this adds credence to the fact that it's something accumulating across a frame
+                        
+                        //NEXT STEPS
+                        //1. Once the issues above are remedied the code below should be run through the actual memory to verify that works
+                        //2. Once passing data through memory is verified the RT FIFO should be set up
+                        //   Just as a thought for this the FIFO can be filled during paint periods then on the porch can be loaded into memory
+                        //   also the fifo can be filled more during the porch as well, no point in wasting compute
                     
                         //this will pipe the read data to the correct endpoint
-                        if(addr_vga >= 28'd100000)
-                            rd_data_vga <= 128'h00000000000000000000000000000000;
-                        else
+                        if(addr_vga <= 28'd61440) //100 lines
+                            rd_data_vga <= 128'h000000FF0000FF0000FF0000FF0000FF;
+                        else if(addr_vga <= 28'd122880)
                             rd_data_vga <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
+                        else if(addr_vga <= 28'd184320)
+                            rd_data_vga <= 128'h0000FF0000FF0000FF0000FF0000FF00;
+                        else
+                            rd_data_vga <= 128'h00000000000000000000000000000000;
+                            
 //                        rd_data_vga <= rd_data;
                         vga_rd_wr_en <= 1;
                         
