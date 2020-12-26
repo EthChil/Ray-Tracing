@@ -276,11 +276,12 @@ module MemController(
                     if(rd_valid) begin
                     `endif
                         //NOTES OF CURRENT ISSUES
-                        //1. first 5 pixels are loading up incorrect look into that, should be a quick fix
+                        //1. first 5 pixels are loading up incorrect look into that, should be a quick fix (done, it was prematurely loading the pixels)
                         //2. there is some jumping going on where there is a bit of a disconnect in the addresses 
                         //   just a guess it might be reading one too many or one too few adresses
                         //   adding onto this when testing with multiple layers the lower down the more shifted to the 
                         //   right it is this adds credence to the fact that it's something accumulating across a frame
+                        //3. addresses seem to be getting compressed by half
                         
                         //NEXT STEPS
                         //1. Once the issues above are remedied the code below should be run through the actual memory to verify that works
@@ -289,8 +290,9 @@ module MemController(
                         //   also the fifo can be filled more during the porch as well, no point in wasting compute
                     
                         //this will pipe the read data to the correct endpoint
-                        if(addr_vga <= 28'd61440) //100 lines
-                            rd_data_vga <= 128'h000000FF0000FF0000FF0000FF0000FF;
+                        //TEST IDEA for issue 2 try to colour in one line and see how much it's jumping by (theory it's the vsync timing)
+                        if(addr_vga < 28'd256) //100 lines
+                            rd_data_vga <= 128'h000000AF0000BF0000CF0000DF0000EF;
                         else if(addr_vga <= 28'd122880)
                             rd_data_vga <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
                         else if(addr_vga <= 28'd184320)

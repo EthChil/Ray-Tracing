@@ -1,0 +1,8 @@
+Vivado Simulator 2020.1
+Time resolution is 1 fs
+WARNING: file design.txt could not be opened
+ *** Warning: The analog data file design.txt for XADC instance topTB.tester.ram.mig.u_mig_7series_0_mig.\temp_mon_enabled.u_tempmon .\xadc_supplied_temperature.XADC_inst  was not found. Use the SIM_MONITOR_FILE parameter to specify the analog data file name or use the default name: design.txt.
+
+WARNING: file design.txt could not be opened
+ *** Warning: The analog data file design.txt for XADC instance topTB.tester.ram.mig.u_mig_7series_0_mig.\temp_mon_enabled.u_tempmon .\xadc_supplied_temperature.XADC_inst  was not found. Use the SIM_MONITOR_FILE parameter to specify the analog data file name or use the default name: design.txt.
+

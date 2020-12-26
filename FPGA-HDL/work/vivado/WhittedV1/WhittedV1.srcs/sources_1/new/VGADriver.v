@@ -70,12 +70,15 @@ module VGADriver(
     localparam HANG = 3'd3;
     localparam REST = 3'd4;
     
-    localparam STOP = 2'd0;
-    localparam DRAIN = 2'd1;
-    localparam START = 2'd2;
-    localparam SLEEP = 2'd3;
+    localparam STOP = 3'd0;
+    localparam DRAIN = 3'd1;
+    localparam START = 3'd2;
+    localparam PREP = 3'd3;
+    localparam PREP2 = 3'd4;
+    localparam PULL = 3'd5;
+    localparam SLEEP = 3'd6;
     
-    reg [1:0] sync_state = SLEEP;
+    reg [2:0] sync_state = SLEEP;
     
     `ifndef TB
         reg [11:0] hPix;
@@ -85,7 +88,7 @@ module VGADriver(
     reg [4:0]startupCounter = 0;
         
     //boolean that tracks if we are in a display section of the screen
-    wire paintPixel = (hPix <= `hView & vPix < `vView);
+    wire paintPixel = (hPix < `hView & vPix < `vView);
     //pix offset tracks position within 5 pixel group
     reg [2:0]pixOffset;
     
@@ -108,7 +111,7 @@ module VGADriver(
         green = 8'b0;
         
         //obviously we will start with the first pixel on the screen
-        hPix = 1;
+        hPix = 0;
         vPix = 0;
         
         //pixel offset goes from 1 -> 5 
@@ -181,8 +184,23 @@ module VGADriver(
                 end
                 else begin
                     state_wr_en <= 0;
-                    sync_state <= SLEEP;
+                    sync_state <= PREP;
                 end
+            end
+            PREP: begin
+                if(~rd_empty & ~rd_rd_en)
+                    rd_rd_en <= 1;
+                else begin
+                    rd_rd_en <= 0;
+                    sync_state <= PREP2;
+                end
+            end
+            PREP2: begin
+                sync_state <= PULL;
+            end
+            PULL: begin
+                pixelBuffer <= VGA_rd;
+                sync_state <= SLEEP;
             end
         endcase 
             
@@ -200,12 +218,14 @@ module VGADriver(
             `else
             if(paintPixel & pixOffset >= 4 & ~rd_empty) begin
             `endif
-                rd_rd_en <= 1;
+                rd_rd_en <= 0; //needs to go high then low before reading in, this will require a rewrite this is likely the cause of the first 5 pixels being fucked up
             
                 pixOffset <= 0;
                 bitOffset <= 0;
                 
                 pixelBuffer <= VGA_rd; //load pixel from memory into buffer
+                
+                
 //                blue <= 0;
                 
 //                if(| pixelBuffer)
@@ -245,7 +265,11 @@ module VGADriver(
 //                addr_wr_en <= 0;
             join
             else if(paintPixel) fork
-                rd_rd_en <= 0;
+                
+                if(pixOffset == 2 & ~rd_empty)
+                    rd_rd_en <= 1;
+                else
+                    rd_rd_en <= 0;
 //                addr_wr_en <= 0;
                 pixOffset <= pixOffset + 1;
                 bitOffset <= ((pixOffset +1) * 24);
@@ -263,12 +287,24 @@ module VGADriver(
             
             //Handle drawing the pixels
             if(paintPixel) fork //this will paint the next pixel
-                red <= pixelBuffer >> (bitOffset);
-                //red <= rd_empty; //always on
-                green <= pixelBuffer >> (bitOffset + 8);
-                //green <= read_complete; 
-                //blue <= read_complete;
-                blue <= pixelBuffer >> (bitOffset + 16); //on then off sometimes
+//                red <= pixelBuffer >> (bitOffset);
+//                //red <= rd_empty; //always on
+//                green <= pixelBuffer >> (bitOffset + 8);
+//                //green <= read_complete; 
+//                //blue <= read_complete;
+//                blue <= pixelBuffer >> (bitOffset + 16); //on then off sometimes
+                
+                
+                if(vPix >= 11'd1) fork
+                    red <= 8'b11111111;
+                    green <= 8'b00000000;
+                    blue <= 8'b11111111;
+                join
+                else fork
+                    red <= 8'b11111111;
+                    green <= 8'b11111111;
+                    blue <= 8'b11111111;
+                join
             join
             else begin
                 red <= 0;
@@ -304,17 +340,16 @@ module VGADriver(
             green <= 8'b0;
             
             //obviously we will start with the first pixel on the screen
-            hPix <= 1'b1;
+            hPix <= 0;
             vPix <= 0;
             
             //pixel offset goes from 1 -> 5 
-            pixOffset <= 1'b1;
+            pixOffset <= 0;
             //pixel buffer starts at 0 and will be set once things are called from memory
             pixelBuffer <= 0;
             
             //Startup state machine starts at wait while stuff loads
             startupStateMachine <= HANG;
-            
         join
         
         //This will be set at the beginning and after a reset
@@ -336,26 +371,13 @@ module VGADriver(
                     //led[7] <= rd_empty;
 //                    addr_wr_en <= 0;
                     if(sync_state == SLEEP & ~rd_empty) begin
-                        rd_rd_en <= 1;
-//                        VGA_addr <= VGA_addr + 1;
-//                        addr_wr_en <= 1;
-//                        request_read <= 1;
-                        startupStateMachine <= REST;
+                        startupStateMachine <= DRAW;
                     end
                 end
                 HANG: begin
                     startupCounter <= startupCounter + 1;
                     if(& startupCounter) begin
                         startupStateMachine <= WAIT;
-                    end
-                end
-                REST: begin
-//                    addr_wr_en <= 0;
-                    if(rd_rd_en)
-                        rd_rd_en <= 0;
-                    else begin
-                        pixelBuffer <= VGA_rd;
-                        startupStateMachine <= DRAW;
                     end
                 end
                 default:
