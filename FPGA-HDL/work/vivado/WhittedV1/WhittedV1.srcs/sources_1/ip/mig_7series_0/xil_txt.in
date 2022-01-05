@@ -16,9 +16,9 @@ SET_PREFERENCE tool vivado
 SET_PREFERENCE compnamestatus 0
 SET_PARAMETER component_name mig_7series_0
 SET_PARAMETER xml_input_file C:/Users/ethan/Documents/GitHub/Ray-Tracing/FPGA-HDL/cores/managed_ip_project/mig.prj
-SET_PARAMETER data_dir_path i:/Xilinx/Vivado/2020.1/data/ip/xilinx/mig_7series_v4_2
+SET_PARAMETER data_dir_path e:/Vivado/Vivado/2020.2/data/ip/xilinx/mig_7series_v4_2
 SET_CORE_NAME Memory Interface Generator (MIG 7 Series)
 SET_CORE_VERSION 4.2
 SET_CORE_VLNV xilinx.com:ip:mig_7series:4.2
-SET_CORE_PATH i:/Xilinx/Vivado/2020.1/data/ip/xilinx/mig_7series_v4_2
-SET_CORE_DATASHEET i:/Xilinx/Vivado/2020.1/data/ip/xilinx/mig_7series_v4_2/data/docs/ds176_7series_MIS.pdf
+SET_CORE_PATH e:/Vivado/Vivado/2020.2/data/ip/xilinx/mig_7series_v4_2
+SET_CORE_DATASHEET e:/Vivado/Vivado/2020.2/data/ip/xilinx/mig_7series_v4_2/data/docs/ds176_7series_MIS.pdf

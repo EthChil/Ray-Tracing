@@ -1,3 +1,11 @@
+2020.2:
+ * Version 4.2 (Rev. 1)
+ * No changes
+
+2020.1.1:
+ * Version 4.2 (Rev. 1)
+ * No changes
+
 2020.1:
  * Version 4.2 (Rev. 1)
  * No changes

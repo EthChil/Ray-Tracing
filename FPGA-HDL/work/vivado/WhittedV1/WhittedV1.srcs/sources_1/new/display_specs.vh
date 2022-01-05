@@ -12,13 +12,48 @@
 
 //VGA constants
 
-//`define TB
+`define TB
 
-`define s720
-//`define s1080
-//`define s900
+`ifdef TB
+    `define s50
+`endif
+
+`ifndef TB
+    `define s720
+    //`define s1080
+    //`define s900
+`endif
 
 //REDO this offset crap mostly delete it or just rethink it maybe a contributing factor to issue 2
+
+`ifdef s50
+    `define hView 70 
+    `define hOffsetIndex 1
+    `define hFrontPorch 10 //pix
+    `define hSync 5 //pix
+    `define hBackPorch 20 //pix
+    `define hLength ((`hView + `hSync + `hBackPorch + `hFrontPorch) - `hOffsetIndex)
+    `define hSyncEnd ((`hLength - `hBackPorch) - `hOffsetIndex)//2248
+    `define hSyncStart ((`hLength - (`hBackPorch + `hSync)) - `hOffsetIndex) //2048
+    //0.01666666us per pixel
+    
+    
+    //math time
+    //at hsync 128 -pulse width was 2.15us
+    //target is 2.116us (pretty close to me)
+    //pixel clock is 60.5mhz target (actually 60mhz)
+    //this works out to 0.0165289us per pixel (this means currently it appears that the hsync is ~130 px)
+    //at the moment the actual time per pixel is
+    
+    `define vView 50
+    `define vOffsetIndex 1
+    `define vFrontPorch 2 //lines
+    `define vSync 3 //lines
+    `define vBackPorch 4 //lines
+    `define vLength ((`vView + `vSync + `vBackPorch + `vFrontPorch) - `hOffsetIndex) //1119
+    `define vSyncEnd ((`vLength - `vBackPorch) - `hOffsetIndex) //1087
+    `define vSyncStart ((`vLength - (`vBackPorch + `vSync)) - `hOffsetIndex) //1082
+`endif
 
 //720p
 `ifdef s720 //pixel clock 74.5mhz @ 60hz, 60.5mhz @ 50hz

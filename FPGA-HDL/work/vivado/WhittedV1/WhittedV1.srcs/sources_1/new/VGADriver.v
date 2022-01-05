@@ -147,6 +147,13 @@ module VGADriver(
     
     //on every clock the pixels must be driven
     always @(posedge pixelClock) begin
+        //NEW IDEA
+        //FIFO holds a full row of pixels
+        //at the end of every clock just pull the next pixel from the FIFO
+        //The handling for loading in the next row to the FIFO is handled in TOP not in VGA, VGA purely drives pixels to the display and drives the HSYNC and VSYNC lines, that is it
+    
+    
+    
         //C1, R1 Done -> Reset
 //        if(read_complete & request_read)
 //            request_read <= 0;
@@ -158,7 +165,7 @@ module VGADriver(
                 if(~state_wr_en) begin
                     VGA_state <= 0; //STOP
                     state_wr_en <= 1;
-                    led <= led + 1;
+                    led <= led + 1; //DEBUG
                 end
                 else begin
                     state_wr_en <= 0;
@@ -178,7 +185,7 @@ module VGADriver(
             end
             START: begin
                 if(~state_wr_en) begin
-                    led <= led + 1;
+                    led <= led + 1; //DEBUG
                     VGA_state <= 1; //START
                     state_wr_en <= 1;
                 end
@@ -213,11 +220,11 @@ module VGADriver(
                 
                
                 //Send a request to memory for the next pixel
-            `ifdef TB
-            if(paintPixel & pixOffset >= 4) begin //this will send a request to the ram for the next pixel*
-            `else
+//            `ifdef TB
+//            if(paintPixel & pixOffset >= 4) begin //this will send a request to the ram for the next pixel*
+//            `else
             if(paintPixel & pixOffset >= 4 & ~rd_empty) begin
-            `endif
+//            `endif
                 rd_rd_en <= 0; //needs to go high then low before reading in, this will require a rewrite this is likely the cause of the first 5 pixels being fucked up
             
                 pixOffset <= 0;
@@ -287,24 +294,24 @@ module VGADriver(
             
             //Handle drawing the pixels
             if(paintPixel) fork //this will paint the next pixel
-//                red <= pixelBuffer >> (bitOffset);
-//                //red <= rd_empty; //always on
-//                green <= pixelBuffer >> (bitOffset + 8);
-//                //green <= read_complete; 
-//                //blue <= read_complete;
-//                blue <= pixelBuffer >> (bitOffset + 16); //on then off sometimes
+                red <= pixelBuffer >> (bitOffset);
+                //red <= rd_empty; //always on
+                green <= pixelBuffer >> (bitOffset + 8);
+                //green <= read_complete; 
+                //blue <= read_complete;
+                blue <= pixelBuffer >> (bitOffset + 16); //on then off sometimes
                 
                 
-                if(vPix >= 11'd1) fork
-                    red <= 8'b11111111;
-                    green <= 8'b00000000;
-                    blue <= 8'b11111111;
-                join
-                else fork
-                    red <= 8'b11111111;
-                    green <= 8'b11111111;
-                    blue <= 8'b11111111;
-                join
+//                if(vPix >= 11'd1) fork
+//                    red <= 8'b11111111;
+//                    green <= 8'b00000000;
+//                    blue <= 8'b11111111;
+//                join
+//                else fork
+//                    red <= 8'b11111111;
+//                    green <= 8'b11111111;
+//                    blue <= 8'b11111111;
+//                join
             join
             else begin
                 red <= 0;

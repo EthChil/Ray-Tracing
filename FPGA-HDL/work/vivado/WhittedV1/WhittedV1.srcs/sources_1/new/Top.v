@@ -257,22 +257,22 @@ module Top(
         .rd_clk(clk141) //vga side 60.5mhz
     );
 
-    fifo_generator_1 fifo_ram_state (
-        //vga interfaces
-        .full(vga_state_full),
-        .din(state_vga_a),
-        .wr_en(vga_state_wr_en),
+//    fifo_generator_1 fifo_ram_state (
+//        //vga interfaces
+//        .full(vga_state_full),
+//        .din(state_vga_a),
+//        .wr_en(vga_state_wr_en),
         
-        //ram interfaces
-        .empty(vga_state_empty),
-        .dout(state_vga_b),
-        .rd_en(vga_state_rd_en),
+//        //ram interfaces
+//        .empty(vga_state_empty),
+//        .dout(state_vga_b),
+//        .rd_en(vga_state_rd_en),
         
-        //Top interfaces
-        .rst(fifo_rst),
-        .wr_clk(clk141), //vga side 60.5mhz
-        .rd_clk(ram_clk) //ram side 81.25mhz
-    );
+//        //Top interfaces
+//        .rst(fifo_rst),
+//        .wr_clk(clk141), //vga side 60.5mhz
+//        .rd_clk(ram_clk) //ram side 81.25mhz
+//    );
 //    arbitrator_ram_rd arb_ram2vga (
 //        .addr(addr_vga_a),
 //        .addr_out(addr_vga_b),

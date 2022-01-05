@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1605015588">
+<GenRun Id="synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1634763106">
   <File Type="PA-TCL" Name="Top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Top_reports.tcl"/>
   <File Type="RDS-RDS" Name="Top.vds"/>
   <File Type="RDS-UTIL" Name="Top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="Top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="Top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Top_timing_summary_synth.pb"/>
-  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Arbitrator.v">
       <FileInfo>
@@ -105,6 +102,13 @@
         <Attr Name="ScopedToCell" Val="mig_7series_0"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/deklet.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="Top"/>
@@ -141,7 +145,7 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="fifo_generator_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="fifo_generator_1"/>
   <BlockFileSet Type="BlockSrcs" Name="mig_7series_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
 </GenRun>
