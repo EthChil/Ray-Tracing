@@ -218,8 +218,7 @@ module VGADriver(
             if(sync_state == SLEEP & ~vSync)
                 sync_state <= STOP;
                 
-               
-                //Send a request to memory for the next pixel
+            
 //            `ifdef TB
 //            if(paintPixel & pixOffset >= 4) begin //this will send a request to the ram for the next pixel*
 //            `else

@@ -42,26 +42,47 @@ module MemController(
     
 //    input wire request_read_vga,
 //    output reg read_complete_vga,
-    input wire vga_rd_full,
-    input wire vga_state_empty,
+//OLD CONFIGURATION
+//    input wire vga_rd_full,
+//    input wire vga_state_empty,
     
-    output reg vga_rd_wr_en,
-    output reg vga_state_rd_en,
+//    output reg vga_rd_wr_en,
+//    output reg vga_state_rd_en,
     
-    input wire vga_cmd,
-    output reg [127:0]rd_data_vga,
+//    input wire vga_cmd,
+//    output reg [127:0]rd_data_vga,
     
-    input wire request_write_rt,
-    output reg write_complete_rt,
-    input wire request_read_rt,
-    output reg read_complete_rt,
+//    input wire request_write_rt,
+//    output reg write_complete_rt,
+//    input wire request_read_rt,
+//    output reg read_complete_rt,
     
-    input reg [127:0] wr_data_rt,
-    input reg [15:0] wr_mask_rt,
-    input reg [27:0] addr_wr_rt,
+//    input reg [127:0] wr_data_rt,
+//    input reg [15:0] wr_mask_rt,
+//    input reg [27:0] addr_wr_rt,
     
-    input reg [27:0] addr_rd_rt,
-    output reg [127:0] rd_data_rt,
+//    input reg [27:0] addr_rd_rt,
+//    output reg [127:0] rd_data_rt,
+
+    input reg [27:0] addr,
+    output reg [127:0] data,
+    
+    input wire request_read,
+    input wire request_write,
+    output wire busy, //Indicates if ram is busy doing a read or write
+    output wire done, //Indicates if reqeuested operation is finished, remains high until request drops low
+    
+    //WAIT FOR REQUEST
+    //req_read HIGH or req_write HIGH
+    
+    //PROCESS
+    //do the request, BUSY HIGH
+    
+    //WAIT for process to complete
+    //BUSY HIGH
+    
+    //process completes
+    //BUSY LOW, DONE HIGH
 
     //Default stuff
     input wire clk100,            // 100MHz clock
@@ -229,10 +250,10 @@ module MemController(
     //                wr_data <= wr_data_rt;
                     wr_data <= 128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
                     
-                    if(wr_rdy) fork
+                    if(wr_rdy) begin
                         state <= WRITE_CMD;
 //                        timeout <= 0;
-                    join
+                    end
                 end
                 WRITE_CMD: begin
                     en <= 1'b1;
@@ -313,7 +334,7 @@ module MemController(
                         //led <= rd_data;
                         
                         state <= DELAY;
-                    `ifndef TB    
+                    `ifndef TB
                     end
                     `endif
                 end
